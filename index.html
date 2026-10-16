@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emirates Studies Midterm Practice Quiz (Lectures 3 & 4)</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --correct: #22c55e;
+      --wrong: #ef4444;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body {
+      margin: 0; padding: 24px 16px;
+      background: var(--bg); color: var(--text);
+      display: flex; justify-content: center;
+    }
+    .container { width: 100%; max-width: 850px; }
+    header {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 20px 24px; border-radius: 12px; margin-bottom: 20px;
+      position: sticky; top: 12px; z-index: 10;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    h1 { margin: 0; font-size: 1.25rem; color: var(--accent); }
+    .stats { font-weight: 600; font-size: 0.95rem; background: #0f172a; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border); }
+    .controls { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    button.ctrl-btn {
+      background: #0f172a; color: var(--text); border: 1px solid var(--border);
+      padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 500;
+      transition: all 0.15s ease;
+    }
+    button.ctrl-btn:hover, button.ctrl-btn.active { border-color: var(--accent); color: var(--accent); }
+    .q-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 24px; margin-bottom: 16px;
+    }
+    .q-meta { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 6px; font-weight: 700; }
+    .q-text { font-size: 1.05rem; font-weight: 600; margin-bottom: 14px; line-height: 1.45; }
+    .options { display: flex; flex-direction: column; gap: 8px; }
+    .opt-btn {
+      text-align: left; background: #0f172a; color: var(--text);
+      border: 1px solid var(--border); padding: 12px 16px;
+      border-radius: 8px; cursor: pointer; font-size: 0.95rem;
+      transition: all 0.15s ease;
+    }
+    .opt-btn:hover:not(:disabled) { border-color: var(--accent); background: #162238; }
+    .opt-btn:disabled { cursor: default; }
+    .opt-btn.correct { background: rgba(34, 197, 94, 0.18); border-color: var(--correct); color: #86efac; font-weight: 600; }
+    .opt-btn.wrong { background: rgba(239, 68, 68, 0.18); border-color: var(--wrong); color: #fca5a5; }
+    .feedback {
+      margin-top: 12px; padding: 10px 14px; border-radius: 8px;
+      font-size: 0.9rem; background: #0f172a; border-left: 4px solid var(--accent);
+      color: var(--muted); display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <h1>UAE Studies Midterm Quiz (40 Questions)</h1>
+        <div class="stats" id="scoreDisplay">Score: 0 / 0 (0%)</div>
+      </div>
+      <div class="controls">
+        <button class="ctrl-btn active" onclick="filterQuiz('all', this)">All (40)</button>
+        <button class="ctrl-btn" onclick="filterQuiz('L3', this)">Lecture 3 Only (20)</button>
+        <button class="ctrl-btn" onclick="filterQuiz('L4', this)">Lecture 4 Only (20)</button>
+        <button class="ctrl-btn" onclick="shuffleQuiz()">Shuffle Questions</button>
+        <button class="ctrl-btn" onclick="resetQuiz()">Reset Quiz</button>
+      </div>
+    </header>
+    <div id="quizContainer"></div>
+  </div>
+
+  <script>
+    const questionsData = [
+      { id: 1, lec: "L3", q: "During the COP28 climate summit hosted in 2023, the UAE launched a climate fund worth:", opts: ["$5.4 billion", "$10 billion", "$30 billion", "$50 billion"], ans: 2, exp: "Lecture 3, Slide 4: COP28 (2023) launched a $30 billion climate fund." },
+      { id: 2, lec: "L3", q: "Early Arab tribes that migrated to the Gulf seeking resources and trade included the:", opts: ["Azd and Tamim", "Quraish and Aus", "Khazraj and Thaqif", "Taghlib and Bakr"], ans: 0, exp: "Lecture 3, Slide 6: Early Arab tribes, like the Azd and Tamim, migrated to the Gulf." },
+      { id: 3, lec: "L3", q: "Small, distinctive dome-shaped tombs and early copper mining in Al Ain are characteristic of the:", opts: ["Wadi Suq Period (2000–1300 BC)", "Hafeet Period (3200–2500 BC)", "Iron Age (1300–300 BC)", "Pre-Islamic Period (300 BC–630 AD)"], ans: 1, exp: "Lecture 3, Slide 7: The Hafeet Period (3200–2500 BC) features dome-shaped tombs at Jebel Hafeet and copper mining/smelting." },
+      { id: 4, lec: "L3", q: "Which ancient society (2500–2000 BC) is known for large circular stone tombs, textile production, and exporting copper to Mesopotamia?", opts: ["Hafeet Society", "Umm an-Nar Society", "Wadi Suq Society", "Julphar Society"], ans: 1, exp: "Lecture 3, Slide 8: Umm an-Nar Society (2500–2000 BC) featured circular stone tombs, textiles, stone work, and Mesopotamian trade." },
+      { id: 5, lec: "L3", q: "A shift from large communal tombs to individual burials, along with golden jewelry and early pearl diving, occurred during the:", opts: ["Hafeet Period", "Umm an-Nar Period", "Wadi Suq Period (2000–1300 BC)", "Late Islamic Period"], ans: 2, exp: "Lecture 3, Slide 9: The Wadi Suq Period (2000–1300 BC) shifted to individual burials, pearl diving, golden jewelry, and fortified settlements." },
+      { id: 6, lec: "L3", q: "Which two key developments revolutionized agriculture and desert trade during the Iron Age (1300–300 BC)?", opts: ["Aflaj irrigation systems and domesticated camels", "Copper smelting and dhow building", "Coin minting and coastal monasteries", "Pearl diving and mud-brick forts"], ans: 0, exp: "Lecture 3, Slide 10: The Iron Age introduced Aflaj water systems, forts/watchtowers (Hili), and domesticated camels." },
+      { id: 7, lec: "L3", q: "Archaeological evidence of Christianity spreading to the Gulf during the Pre-Islamic Period (300 BC–630 AD) was discovered at:", opts: ["Jebel Hafeet", "Qattara and Shimal", "Sir Bani Yas monastery", "Al Badiyah"], ans: 2, exp: "Lecture 3, Slide 11: Sites like the Sir Bani Yas monastery show diverse faiths were present in the Pre-Islamic period." },
+      { id: 8, lec: "L3", q: "To spread Islam peacefully in the 7th century, Prophet Muhammad (PBUH) sent which envoy to Oman?", opts: ["Al-'Alaa Al-Hadrami", "Amr ibn al-'As", "Khalid ibn al-Walid", "Saad ibn Abi Waqqas"], ans: 1, exp: "Lecture 3, Slide 12: He sent Al-'Alaa Al-Hadrami to Bahrain and Amr ibn al-'As to Oman." },
+      { id: 9, lec: "L3", q: "After embracing Islam, Gulf tribes joined Muslim armies against the Sasanian Empire in which two pivotal battles?", opts: ["Badr and Uhud", "Yarmouk and Ajnadayn", "Qadisiyya (636 AD) and Nahawand (642 AD)", "Hittin and Ain Jalut"], ans: 2, exp: "Lecture 3, Slide 13: Gulf tribes participated in the Battle of Qadisiyya (636 AD) and Battle of Nahawand (642 AD)." },
+      { id: 10, lec: "L3", q: "What is the oldest mosque in the UAE, built in the 15th century from mud and stone with four small domes?", opts: ["Sheikh Zayed Grand Mosque", "Al Badiyah Mosque", "Jumeirah Mosque", "Al Bidya Fort Mosque"], ans: 1, exp: "Lecture 3, Slide 15: Al Badiyah Mosque (15th Century) is the oldest mosque in the UAE, featuring four small domes." },
+      { id: 11, lec: "L3", q: "The 15th-century navigator Ahmed bin Majid ('The Lion of the Sea') used which tool for celestial star positioning?", opts: ["The kamal", "The magnetic compass", "The sextant", "The telescope"], ans: 0, exp: "Lecture 3, Slide 16: His use of tools like the kamal for star positioning enabled precise, long-distance voyages." },
+      { id: 12, lec: "L3", q: "Which local Arab dynasty expelled the Portuguese from Muscat in 1650?", opts: ["The Bani Yas Alliance", "The Al Qawasim", "The Omani Ya'ariba dynasty", "The Al-Jabour emirate"], ans: 2, exp: "Lecture 3, Slide 18: The Omani Ya'ariba dynasty expelled the Portuguese from Muscat in 1650." },
+      { id: 13, lec: "L3", q: "In 1622, the Portuguese were driven out of the vital island of Hormuz by a:", opts: ["Dutch-Ottoman alliance", "British-Persian alliance", "French-Omani alliance", "Spanish-Portuguese union"], ans: 1, exp: "Lecture 3, Slide 19: In 1622, a British-Persian alliance drove Portugal out of Hormuz." },
+      { id: 14, lec: "L3", q: "Which treaty made the Trucial States a formal British protectorate by prohibiting local rulers from engaging with other foreign powers?", opts: ["The General Maritime Treaty of 1820", "The Annual Maritime Truces of 1835", "The Permanent Maritime Peace Treaty of 1853", "The Exclusive Agreement of 1892"], ans: 3, exp: "Lecture 3, Slide 22: The 1892 Exclusive Agreement made the Trucial States a British protectorate." },
+      { id: 15, lec: "L3", q: "In the 1930s, the UAE's pearling industry collapsed dramatically due to:", opts: ["British naval blockades and heavy taxation", "Japanese cultured pearls and the Great Depression", "The discovery of copper and iron trade routes", "Severe droughts and coral reef bleaching"], ans: 1, exp: "Lecture 3, Slides 23 & 30: The collapse was caused by Japanese cultured pearls and the Great Depression." },
+      { id: 16, lec: "L3", q: "When and where was the first shipment of oil exported from Abu Dhabi?", opts: ["1939 from Jebel Dhanna", "1950 from Ruwais", "1962 from Das Island", "1966 from Umm Shaif"], ans: 2, exp: "Lecture 3, Slide 24: The first oil was exported from Das Island, near Abu Dhabi, in 1962." },
+      { id: 17, lec: "L3", q: "Which ruler established Abu Dhabi as the capital in 1795?", opts: ["Sheikh Shakhbut bin Dhiyab", "Sheikh Tahnoun bin Shakhbut", "Sheikh Khalifa bin Shakhbut", "Sheikh Zayed the First"], ans: 0, exp: "Lecture 3, Slide 26: Sheikh Shakhbut bin Dhiyab (1793–1816) established Abu Dhabi as the capital in 1795." },
+      { id: 18, lec: "L3", q: "Under Sheikh Zayed the First (1855–1909), Abu Dhabi built Al Jahili Fort in 1898 and expanded its pearl fleet to:", opts: ["217 ships", "300 ships", "400 ships", "500 ships"], ans: 2, exp: "Lecture 3, Slide 29: Under Sheikh Zayed the First, the pearl fleet expanded to 400 ships (300 under Tahnoun, 217 under Khalifa)." },
+      { id: 19, lec: "L3", q: "On December 9, 1971, the UAE joined the United Nations as its:", opts: ["100th member", "132nd member", "150th member", "193rd member"], ans: 1, exp: "Lecture 3, Slide 34: On December 9, 1971, the UAE became the 132nd member of the UN (after joining the Arab League on Dec 6)." },
+      { id: 20, lec: "L3", q: "True or False: Before becoming Ruler of Abu Dhabi in 1966, Sheikh Zayed bin Sultan Al Nahyan served as Governor of Al Ain from 1946 to 1966, where he modernized the aflaj irrigation systems.", opts: ["True", "False"], ans: 0, exp: "Lecture 3, Slide 31: He governed Al Ain from 1946 to 1966, modernized the aflaj, and built the first schools and clinics." },
+      { id: 21, lec: "L4", q: "In the UAE's value dynamics, how do religious values compare to social/traditional values?", opts: ["Both religious and social values constantly change with modernization", "Religious values remain fixed and unchanging, while social values are flexible and adaptive", "Social values are strictly fixed, while religious values adapt to globalization", "Both are replaced by globalized legal frameworks"], ans: 1, exp: "Lecture 4, Slides 2 & 8: Religious values remain fixed and unchanging, while social/traditional values are flexible and adaptive." },
+      { id: 22, lec: "L4", q: "Which scholar emphasized that family structures and upbringing serve as the primary mechanisms for transmitting values across generations?", opts: ["Émile Durkheim", "Jean-Jacques Rousseau", "Ibn Khaldun", "Talcott Parsons"], ans: 2, exp: "Lecture 4, Slide 3: Ibn Khaldun emphasized family structures and upbringing as the primary mechanism for transmitting values." },
+      { id: 23, lec: "L4", q: "According to Jean-Jacques Rousseau, which institution serves as a vital conduit for transmitting cultural values from one generation to the next?", opts: ["Tribal councils", "Education systems", "Economic markets", "Military service"], ans: 1, exp: "Lecture 4, Slide 3: Rousseau demonstrated how education systems serve as vital conduits for transmitting cultural values." },
+      { id: 24, lec: "L4", q: "Which sociologist recognized that social change is natural and inevitable, but must be carefully directed to preserve core cultural elements?", opts: ["Talcott Parsons", "Émile Durkheim", "Ibn Khaldun", "Max Weber"], ans: 0, exp: "Lecture 4, Slide 3: Parsons recognized social change is natural and inevitable, but must be directed to preserve core elements." },
+      { id: 25, lec: "L4", q: "What is the primary source of unchanging moral values in Emirati society?", opts: ["Global treaties", "Islam (the Quran and Sunnah)", "Modern urban policies", "Social media networks"], ans: 1, exp: "Lecture 4, Slide 7: Islam (the Quran and Sunnah) serves as the primary source of unchanging values." },
+      { id: 26, lec: "L4", q: "The traditional Emirati tribal system is best described as a:", opts: ["Matriarchal, urban-centered structure", "Patriarchal, family-centered structure", "Decentralized individualistic system", "Purely economic trade guild"], ans: 1, exp: "Lecture 4, Slide 11: It is a traditional patriarchal, family-centered structure built on cooperation, loyalty, and hospitality." },
+      { id: 27, lec: "L4", q: "The ancient tribal practice of Shura (decision-making through consultation) is directly reflected today in the:", opts: ["Central Bank of the UAE", "Federal National Council (FNC)", "Ministry of Foreign Affairs", "Dubai International Financial Centre"], ans: 1, exp: "Lecture 4, Slide 12: Shura is clearly reflected in the Federal National Council's (FNC) consultative role." },
+      { id: 28, lec: "L4", q: "What percentage of Federal National Council (FNC) seats are constitutionally reserved for women?", opts: ["25%", "30%", "50% (Half)", "70%"], ans: 2, exp: "Lecture 4, Slide 18: Half (50%) of Federal National Council seats are constitutionally reserved for women." },
+      { id: 29, lec: "L4", q: "In traditional Emirati society, practices such as faza'a, shoufa, and dakhla are historical examples of:", opts: ["Maritime navigation techniques", "Social solidarity and collective help", "Bronze Age copper smelting", "Oasis irrigation methods"], ans: 1, exp: "Lecture 4, Slide 19: Faza'a, shoufa, and dakhla are traditional practices demonstrating social solidarity in action." },
+      { id: 30, lec: "L4", q: "Specifically, what does the traditional practice of faza'a represent?", opts: ["Collective help during times of hardship", "Selling pearls to foreign merchants", "Migrating to the mountains in summer", "Minting local coins for trade"], ans: 0, exp: "Lecture 4, Slide 19: Faza'a means collective help (shoufa = community support, dakhla = intervention)." },
+      { id: 31, lec: "L4", q: "According to Durkheim's theory applied to the UAE, solidarity based on kinship, shared ancestry, and tribal cohesion in traditional communities is called:", opts: ["Organic solidarity", "Mechanical solidarity", "Urban solidarity", "Global solidarity"], ans: 1, exp: "Lecture 4, Slide 20: Mechanical solidarity is based on kinship and tribal cohesion in traditional communities." },
+      { id: 32, lec: "L4", q: "In Durkheim's theory, organic solidarity in the UAE emerges from:", opts: ["Shared tribal lineage in desert oases", "Interdependence and specialized roles in modern urban centers", "Agricultural farming in Al Ain", "Religious uniformity in rural villages"], ans: 1, exp: "Lecture 4, Slide 20: Organic solidarity emerges from interdependence and specialized roles in modern urban centers." },
+      { id: 33, lec: "L4", q: "Which of the following is given in the lecture as an example of a 'fixed norm' versus a 'flexible norm'?", opts: ["Daily prayer practices (fixed) vs. evolving fashion choices (flexible)", "Evolving fashion choices (fixed) vs. daily prayer practices (flexible)", "Social media usage (fixed) vs. speaking Arabic (flexible)", "Urban architecture (fixed) vs. tribal genealogy (flexible)"], ans: 0, exp: "Lecture 4, Slide 22: Daily prayer practices remain steadfast (fixed), while fashion choices adapt (flexible)." },
+      { id: 34, lec: "L4", q: "Why is the Arabic language currently under pressure in the UAE?", opts: ["Lack of government funding for schools", "A multilingual population and the increasing dominance of English in education and business", "The decline of social media platforms", "Restrictions on printing traditional poetry"], ans: 1, exp: "Lecture 4, Slide 25: Residents speak multiple languages daily, and English increasingly dominates education and work." },
+      { id: 35, lec: "L4", q: "To revitalize and protect the Arabic language among younger generations, the UAE government launched:", opts: ["The Year of Tolerance and Expo 2020", "The Arabic Charter and the National Reading Challenge", "The Federal Demographic Council", "The General Maritime Treaty"], ans: 1, exp: "Lecture 4, Slide 25: The government responded with the Arabic Charter and the National Reading Challenge." },
+      { id: 36, lec: "L4", q: "Which of the following is identified as a positive influence of social media in Emirati society?", opts: ["Reduced face-to-face family interaction", "Supporting youth entrepreneurship and showcasing Emirati heritage globally", "Creating unrealistic lifestyle expectations", "Widening generational divides"], ans: 1, exp: "Lecture 4, Slide 27: Social media supports knowledge access, youth entrepreneurship, and showcasing heritage." },
+      { id: 37, lec: "L4", q: "UAE Vision 2071 aims to position the nation globally as a model of:", opts: ["Complete Westernization", "Rooted modernity (balancing heritage preservation with modern innovation)", "Isolated traditionalism", "Hydrocarbon dependency"], ans: 1, exp: "Lecture 4, Slide 30: Vision 2071 positions the UAE as a global model of 'rooted modernity'." },
+      { id: 38, lec: "L4", q: "True or False: According to Ibn Khaldun, preserving lineage and genealogy strengthens unity and provides a foundation for social cohesion.", opts: ["True", "False"], ans: 0, exp: "Lecture 4, Slide 14: Ibn Khaldun emphasized that lineage strengthens unity and provides a foundation for social cohesion." },
+      { id: 39, lec: "L4", q: "True or False: The UAE combines both Durkheim's mechanical solidarity (in rural/tribal contexts) and organic solidarity (in modern urban centers).", opts: ["True", "False"], ans: 0, exp: "Lecture 4, Slide 20: The UAE successfully blends both mechanical and organic solidarity." },
+      { id: 40, lec: "L4", q: "True or False: In 2019, the UAE celebrated the 'Year of Tolerance' and established a dedicated Ministry of Tolerance to institutionalize coexistence among its 200+ nationalities.", opts: ["True", "False"], ans: 0, exp: "Lecture 4, Slides 15 & 16: The UAE hosts 200+ nationalities, celebrated 2019 as the Year of Tolerance, and created the Ministry of Tolerance." }
+    ];
+
+    let activeQuestions = [...questionsData];
+    let score = 0;
+    let answeredCount = 0;
+
+    function renderQuiz() {
+      const container = document.getElementById("quizContainer");
+      container.innerHTML = "";
+      score = 0;
+      answeredCount = 0;
+      updateScore();
+
+      activeQuestions.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "q-card";
+
+        const meta = document.createElement("div");
+        meta.className = "q-meta";
+        meta.textContent = `${item.lec === 'L3' ? 'Lecture 3: International Politics & History' : 'Lecture 4: Core Values & Heritage'} • Question ${index + 1} of ${activeQuestions.length}`;
+
+        const qText = document.createElement("div");
+        qText.className = "q-text";
+        qText.textContent = item.q;
+
+        const optsDiv = document.createElement("div");
+        optsDiv.className = "options";
+
+        const fb = document.createElement("div");
+        fb.className = "feedback";
+        fb.innerHTML = `<strong>Explanation:</strong> ${item.exp}`;
+
+        const letters = ["a", "b", "c", "d"];
+        item.opts.forEach((optText, optIndex) => {
+          const btn = document.createElement("button");
+          btn.className = "opt-btn";
+          btn.textContent = `${letters[optIndex]}. ${optText}`;
+          btn.onclick = () => selectAnswer(btn, optIndex, item.ans, optsDiv, fb);
+          optsDiv.appendChild(btn);
+        });
+
+        card.appendChild(meta);
+        card.appendChild(qText);
+        card.appendChild(optsDiv);
+        card.appendChild(fb);
+        container.appendChild(card);
+      });
+    }
+
+    function selectAnswer(clickedBtn, chosenIdx, correctIdx, optsDiv, fb) {
+      const allBtns = optsDiv.querySelectorAll(".opt-btn");
+      allBtns.forEach((b, i) => {
+        b.disabled = true;
+        if (i === correctIdx) b.classList.add("correct");
+      });
+
+      if (chosenIdx === correctIdx) {
+        score++;
+      } else {
+        clickedBtn.classList.add("wrong");
+      }
+      answeredCount++;
+      fb.style.display = "block";
+      updateScore();
+    }
+
+    function updateScore() {
+      const pct = answeredCount === 0 ? 0 : Math.round((score / answeredCount) * 100);
+      document.getElementById("scoreDisplay").textContent = `Score: ${score} / ${answeredCount} (${pct}%)`;
+    }
+
+    function filterQuiz(filterType, btnEl) {
+      document.querySelectorAll(".ctrl-btn").forEach(b => b.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+      if (filterType === "all") activeQuestions = [...questionsData];
+      else activeQuestions = questionsData.filter(q => q.lec === filterType);
+      renderQuiz();
+    }
+
+    function shuffleQuiz() {
+      for (let i = activeQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [activeQuestions[i], activeQuestions[j]] = [activeQuestions[j], activeQuestions[i]];
+      }
+      renderQuiz();
+    }
+
+    function resetQuiz() {
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
