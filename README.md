@@ -5,11 +5,11 @@ An interactive study and quiz portal designed for university practice tests, mid
 ## 🚀 Live Website
 
 Access the live site on GitHub Pages:  
-**[https://drakz-z.github.io/uae-studies-quiz/](https://drakz-z.github.io/uae-studies-quiz/)**
+**[https://drakz-z.github.io/questions/](https://drakz-z.github.io/questions/)**
 
 Direct Links:
-- 🏛️ [Emirates Studies Practice Quiz](https://drakz-z.github.io/uae-studies-quiz/#emirates-studies)
-- ⚛️ [Engineering Physics 1 Practice Quiz](https://drakz-z.github.io/uae-studies-quiz/#engineering-physics-1)
+- 🏛️ [Emirates Studies Practice Quiz](https://drakz-z.github.io/questions/#emirates-studies)
+- ⚛️ [Engineering Physics 1 Practice Quiz](https://drakz-z.github.io/questions/#engineering-physics-1)
 
 ---
 
@@ -48,7 +48,7 @@ Master bank of midterm theory questions with instant answer feedback and step-by
 Clone the repository and open `index.html` in any browser:
 
 ```bash
-git clone https://github.com/Drakz-z/uae-studies-quiz.git
-cd uae-studies-quiz
+git clone https://github.com/Drakz-z/questions.git
+cd questions
 # Open index.html in your browser
 ```
