@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Study Portal • Emirates Studies & Physics 1</title>
-  <meta name="description" content="Interactive university study portal for Emirates Studies (Midterm & Blooket Practice) and Physics 1." />
+  <title>Study Portal • Emirates Studies & Engineering Physics 1</title>
+  <meta name="description" content="Comprehensive university study portal for Emirates Studies (Midterm & Blooket Practice) and Engineering Physics 1 (Master Bank of Midterm Theory Questions)." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
       --l4-color: #c084fc;
       --blooket-color: #fbbf24;
       --physics-color: #818cf8;
+      --physics-glow: rgba(129, 140, 248, 0.25);
       --correct: #22c55e;
       --wrong: #ef4444;
       --border: #1e293b;
@@ -38,7 +39,7 @@
       background: var(--bg);
       background-image: 
         radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.06) 0px, transparent 50%);
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.08) 0px, transparent 50%);
       background-attachment: fixed;
       color: var(--text);
       min-height: 100vh;
@@ -102,15 +103,15 @@
     .portal-subtitle {
       font-size: 1rem;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 540px;
       margin: 0 auto;
       line-height: 1.5;
     }
 
     .subjects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
       margin-top: 10px;
     }
 
@@ -147,14 +148,14 @@
     }
 
     .subject-card.emirates-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
+      border-color: rgba(56, 189, 248, 0.45);
     }
     .subject-card.emirates-card:hover::before {
       background: linear-gradient(90deg, #38bdf8, #818cf8);
     }
 
     .subject-card.physics-card:hover {
-      border-color: rgba(129, 140, 248, 0.4);
+      border-color: rgba(129, 140, 248, 0.45);
     }
     .subject-card.physics-card:hover::before {
       background: linear-gradient(90deg, #818cf8, #c084fc);
@@ -204,12 +205,6 @@
       border: 1px solid rgba(34, 197, 94, 0.3);
     }
 
-    .badge-empty {
-      background: rgba(148, 163, 184, 0.12);
-      color: var(--muted);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-    }
-
     .card-title {
       font-size: 1.35rem;
       font-weight: 700;
@@ -241,6 +236,12 @@
       color: #cbd5e1;
     }
 
+    .chip-accent {
+      background: rgba(129, 140, 248, 0.12);
+      border-color: rgba(129, 140, 248, 0.3);
+      color: #a5b4fc;
+    }
+
     .enter-btn {
       display: inline-flex;
       align-items: center;
@@ -269,7 +270,7 @@
     }
 
     .physics-card .enter-btn {
-      background: rgba(129, 140, 248, 0.12);
+      background: rgba(129, 140, 248, 0.14);
       color: var(--physics-color);
       border-color: rgba(129, 140, 248, 0.3);
     }
@@ -277,7 +278,7 @@
     .physics-card:hover .enter-btn {
       background: var(--physics-color);
       color: #090e17;
-      box-shadow: 0 4px 16px rgba(129, 140, 248, 0.3);
+      box-shadow: 0 4px 16px var(--physics-glow);
     }
 
     /* Course / Quiz Header */
@@ -318,9 +319,9 @@
     }
 
     .back-btn:hover {
-      background: rgba(56, 189, 248, 0.12);
-      border-color: var(--accent);
-      color: var(--accent);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--muted);
+      color: #fff;
     }
 
     .stats {
@@ -330,8 +331,12 @@
       padding: 8px 16px;
       border-radius: 9px;
       border: 1px solid var(--border);
-      color: #38bdf8;
+      color: var(--accent);
       letter-spacing: -0.01em;
+    }
+
+    .stats-physics {
+      color: var(--physics-color) !important;
     }
 
     .header-content {
@@ -345,6 +350,10 @@
       color: var(--accent);
       font-weight: 700;
       letter-spacing: -0.01em;
+    }
+
+    .course-title-physics {
+      color: var(--physics-color) !important;
     }
 
     .sub-header {
@@ -400,6 +409,19 @@
       color: var(--blooket-color);
     }
 
+    /* Physics Filter Controls */
+    .physics-controls button.ctrl-btn:hover {
+      border-color: var(--physics-color);
+      color: var(--physics-color);
+    }
+
+    .physics-controls button.ctrl-btn.active {
+      background: rgba(129, 140, 248, 0.14);
+      border-color: var(--physics-color);
+      color: var(--physics-color);
+      box-shadow: 0 0 12px rgba(129, 140, 248, 0.25);
+    }
+
     /* Quiz Card Styles */
     .q-card {
       background: var(--card);
@@ -424,6 +446,13 @@
       color: var(--muted);
       flex-wrap: wrap;
       gap: 8px;
+    }
+
+    .q-tags-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
     }
 
     .q-tag {
@@ -454,6 +483,18 @@
       background: rgba(251, 191, 36, 0.14);
       color: var(--blooket-color);
       border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+
+    .tag-theory {
+      background: rgba(129, 140, 248, 0.14);
+      color: var(--physics-color);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+    }
+
+    .tag-chapter {
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
+      border: 1px solid var(--border);
     }
 
     .q-text {
@@ -489,6 +530,11 @@
       transform: translateX(3px);
     }
 
+    .physics-view .opt-btn:hover:not(:disabled) {
+      border-color: var(--physics-color);
+      background: #14182e;
+    }
+
     .opt-btn:disabled {
       cursor: default;
     }
@@ -518,69 +564,16 @@
       line-height: 1.55;
     }
 
+    .physics-view .feedback {
+      border-left-color: var(--physics-color);
+    }
+
     .feedback strong {
       color: var(--accent);
     }
 
-    /* Empty state for Physics 1 */
-    .empty-state-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 60px 24px;
-      text-align: center;
-      margin-top: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .empty-icon-wrap {
-      width: 76px;
-      height: 76px;
-      border-radius: 20px;
-      background: rgba(129, 140, 248, 0.12);
-      border: 1px solid rgba(129, 140, 248, 0.25);
+    .physics-view .feedback strong {
       color: var(--physics-color);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .empty-title {
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .empty-desc {
-      font-size: 0.96rem;
-      color: var(--muted);
-      max-width: 440px;
-      margin: 0 auto 28px;
-      line-height: 1.6;
-    }
-
-    .btn-return {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(129, 140, 248, 0.15);
-      color: var(--physics-color);
-      border: 1px solid rgba(129, 140, 248, 0.35);
-      padding: 11px 22px;
-      border-radius: 10px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn-return:hover {
-      background: var(--physics-color);
-      color: #090e17;
-      box-shadow: 0 4px 16px rgba(129, 140, 248, 0.3);
     }
 
     @media (max-width: 640px) {
@@ -602,7 +595,7 @@
       <header class="portal-header">
         <div class="portal-badge">Academic Study Portal</div>
         <h1 class="portal-title">Select a Subject</h1>
-        <p class="portal-subtitle">Choose a course to practice interactive midterm quizzes, questions, and study materials.</p>
+        <p class="portal-subtitle">Choose a course to practice interactive midterm quizzes, questions, and master banks.</p>
       </header>
 
       <div class="subjects-grid">
@@ -614,7 +607,7 @@
               <span class="card-status-badge badge-active">Active • 62 Questions</span>
             </div>
             <h2 class="card-title">Emirates Studies</h2>
-            <p class="card-desc">Interactive midterm practice covering Lectures 3 & 4 plus Blooket practice review with instant answers and explanations.</p>
+            <p class="card-desc">Comprehensive midterm practice covering Lectures 3 & 4 plus Blooket practice review with instant answers and explanations.</p>
             <div class="card-chips">
               <span class="chip">Lecture 3 (20)</span>
               <span class="chip">Lecture 4 (20)</span>
@@ -625,21 +618,24 @@
           <button class="enter-btn">Start Practice →</button>
         </div>
 
-        <!-- Subject: Physics 1 -->
-        <div class="subject-card physics-card" onclick="navigateTo('physics-1')">
+        <!-- Subject: Engineering Physics 1 -->
+        <div class="subject-card physics-card" onclick="navigateTo('engineering-physics-1')">
           <div>
             <div class="card-top">
               <div class="card-icon">⚛️</div>
-              <span class="card-status-badge badge-empty">Empty Subject</span>
+              <span class="card-status-badge badge-active">Active • 41 Questions</span>
             </div>
-            <h2 class="card-title">Physics 1</h2>
-            <p class="card-desc">General Physics 1 practice questions, formula reviews, and problem sets will be available here.</p>
+            <h2 class="card-title">Engineering Physics 1</h2>
+            <p class="card-desc">Master bank of midterm theory questions covering 1D Motion, 2D/3D Projectiles, Circular Motion, Newton's Laws, and Applications.</p>
             <div class="card-chips">
-              <span class="chip">Coming Soon</span>
-              <span class="chip">No Questions Yet</span>
+              <span class="chip chip-accent">Theory Questions (41)</span>
+              <span class="chip">Ch 2: 1D Motion (8)</span>
+              <span class="chip">Ch 3: 2D Motion (13)</span>
+              <span class="chip">Ch 4: Newton's Laws (7)</span>
+              <span class="chip">Ch 5: Applications (13)</span>
             </div>
           </div>
-          <button class="enter-btn">Open Subject →</button>
+          <button class="enter-btn">Start Practice →</button>
         </div>
       </div>
     </section>
@@ -649,49 +645,55 @@
       <header class="course-header">
         <div class="header-nav-row">
           <button class="back-btn" onclick="navigateTo('portal')">← All Subjects</button>
-          <div class="stats" id="scoreDisplay">Score: 0 / 0 (0%)</div>
+          <div class="stats" id="emiratesScoreDisplay">Score: 0 / 0 (0%)</div>
         </div>
         <div class="header-content">
           <h1 class="course-title">Emirates Studies Practice Quiz</h1>
-          <div class="sub-header" id="quizSub">All Questions (62 Total)</div>
+          <div class="sub-header" id="emiratesSub">All Questions (62 Total)</div>
         </div>
         <div class="controls">
-          <button class="ctrl-btn active" id="btn-all" onclick="filterQuiz('all', this)">All (62)</button>
-          <button class="ctrl-btn" id="btn-l3" onclick="filterQuiz('L3', this)">Lecture 3 (20)</button>
-          <button class="ctrl-btn" id="btn-l4" onclick="filterQuiz('L4', this)">Lecture 4 (20)</button>
-          <button class="ctrl-btn btn-blooket" id="btn-blooket" onclick="filterQuiz('blooket', this)">⚡ Blooket (22)</button>
-          <button class="ctrl-btn" onclick="shuffleQuiz()">🔀 Shuffle</button>
-          <button class="ctrl-btn" onclick="resetQuiz()">🔄 Reset</button>
+          <button class="ctrl-btn active" id="btn-em-all" onclick="filterEmirates('all', this)">All (62)</button>
+          <button class="ctrl-btn" id="btn-em-l3" onclick="filterEmirates('L3', this)">Lecture 3 (20)</button>
+          <button class="ctrl-btn" id="btn-em-l4" onclick="filterEmirates('L4', this)">Lecture 4 (20)</button>
+          <button class="ctrl-btn btn-blooket" id="btn-em-blooket" onclick="filterEmirates('blooket', this)">⚡ Blooket (22)</button>
+          <button class="ctrl-btn" onclick="shuffleEmirates()">🔀 Shuffle</button>
+          <button class="ctrl-btn" onclick="resetEmirates()">🔄 Reset</button>
         </div>
       </header>
 
-      <div id="quizContainer"></div>
+      <div id="emiratesQuizContainer"></div>
     </section>
 
-    <!-- VIEW 3: PHYSICS 1 (EMPTY PLACEHOLDER) -->
-    <section id="view-physics" class="view-section">
+    <!-- VIEW 3: ENGINEERING PHYSICS 1 QUIZ VIEW -->
+    <section id="view-physics" class="view-section physics-view">
       <header class="course-header">
         <div class="header-nav-row">
           <button class="back-btn" onclick="navigateTo('portal')">← All Subjects</button>
+          <div class="stats stats-physics" id="physicsScoreDisplay">Score: 0 / 0 (0%)</div>
         </div>
         <div class="header-content">
-          <h1 class="course-title" style="color: var(--physics-color);">Physics 1</h1>
-          <div class="sub-header">General Physics I Course Materials</div>
+          <h1 class="course-title course-title-physics">Engineering Physics 1 Practice Quiz</h1>
+          <div class="sub-header" id="physicsSub">Category: Theory Questions (41 Questions Total)</div>
+        </div>
+        <div class="controls physics-controls">
+          <button class="ctrl-btn active" id="btn-phys-all" onclick="filterPhysics('all', this)">All Theory (41)</button>
+          <button class="ctrl-btn" id="btn-phys-ch2" onclick="filterPhysics('ch2', this)">Ch 2: 1D Motion (8)</button>
+          <button class="ctrl-btn" id="btn-phys-ch3" onclick="filterPhysics('ch3', this)">Ch 3: 2D & Projectiles (13)</button>
+          <button class="ctrl-btn" id="btn-phys-ch4" onclick="filterPhysics('ch4', this)">Ch 4: Newton's Laws (7)</button>
+          <button class="ctrl-btn" id="btn-phys-ch5" onclick="filterPhysics('ch5', this)">Ch 5: Applications (13)</button>
+          <button class="ctrl-btn" onclick="shufflePhysics()">🔀 Shuffle</button>
+          <button class="ctrl-btn" onclick="resetPhysics()">🔄 Reset</button>
         </div>
       </header>
 
-      <div class="empty-state-card">
-        <div class="empty-icon-wrap">⚛️</div>
-        <h2 class="empty-title">Physics 1 is Empty</h2>
-        <p class="empty-desc">No study materials or quiz questions have been uploaded for Physics 1 yet. Check back once new content is added!</p>
-        <button class="btn-return" onclick="navigateTo('portal')">← Back to Subjects</button>
-      </div>
+      <div id="physicsQuizContainer"></div>
     </section>
 
   </div>
 
   <script>
-    const questionsData = [
+    /* Question Datasets */
+    const emiratesQuestionsData = [
   {
     "id": 1,
     "lec": "L3",
@@ -1485,11 +1487,676 @@
     "exp": "Sheikh Zayed recognized that empowering women is an indispensable requirement for national prosperity; leaving women uneducated holds back half the nation's potential."
   }
 ];
+    const physicsQuestionsData = [
+  {
+    "id": 1,
+    "code": "Q1.1",
+    "label": "Q1.1 (Direct Variant of Quiz Q3)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.1] The position of a particle is given by x(t)=10-12t+2t². At t=2 s, which statement is correct?",
+    "opts": [
+      "It moves in the positive direction and speeds up.",
+      "It moves in the positive direction and slows down.",
+      "It moves in the negative direction and slows down.",
+      "It moves in the negative direction and speeds up."
+    ],
+    "ans": 2,
+    "exp": "Take the derivatives: v(t)=-12+4t and a(t)=+4 m/s². At t=2 s, v(2)=-12+8=-4 m/s (negative, so it moves in the negative direction), and a(2)=+4 m/s² (positive). Because v and a have opposite signs (- and +), it slows down."
+  },
+  {
+    "id": 2,
+    "code": "Q1.2",
+    "label": "Q1.2 (Another Variant of Quiz Q3)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.2] A particle's velocity is given by v(t)=12-3t². At t=1 s, which statement is correct?",
+    "opts": [
+      "It moves in the positive direction and speeds up.",
+      "It moves in the positive direction and slows down.",
+      "It moves in the negative direction and slows down.",
+      "It moves in the negative direction and speeds up."
+    ],
+    "ans": 1,
+    "exp": "At t=1 s, v(1)=12-3(1)²=+9 m/s (positive direction). The acceleration is a(t)=v'(t)=-6t, so a(1)=-6 m/s² (negative). Since v>0 and a<0 (opposite signs), it moves in the positive direction and slows down."
+  },
+  {
+    "id": 3,
+    "code": "Q1.3",
+    "label": "Q1.3 (Turning Point / Maximum Position Theory)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.3] If a particle's position is x(t)=t³-6t²+9t, how do you find the time when the particle reverses its direction of motion (turns around)?",
+    "opts": [
+      "Set x(t)=0",
+      "Set v(t)=0 (and check that v changes sign)",
+      "Set a(t)=0",
+      "Set v(t)=a(t)"
+    ],
+    "ans": 1,
+    "exp": "An object turns around (reverses direction) or reaches its maximum/minimum position when its instantaneous velocity v(t)=0 (here, v(t)=3t²-12t+9=0⟹t=1 s and t=3 s). Setting a(t)=0 only finds the point of maximum/minimum velocity (inflection point of x), not where it turns around!"
+  },
+  {
+    "id": 4,
+    "code": "Q1.4",
+    "label": "Q1.4 (Average Speed vs. Average Velocity)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.4] A runner sprints 100 m East in 10 s, then jogs 100 m West back to the starting point in 30 s. Which statement is true for the total 40 s trip?",
+    "opts": [
+      "Average speed is 0 m/s and average velocity is 0 m/s.",
+      "Average speed is 5.0 m/s and average velocity is 0 m/s.",
+      "Average speed is 0 m/s and average velocity is 5.0 m/s.",
+      "Average speed and average velocity are always equal in 1D motion."
+    ],
+    "ans": 1,
+    "exp": "Average velocity is (net displacement/Δt)=(0 m/40 s)=0 m/s. Average speed is (total distance/Δt)=(200 m/40 s)=5.0 m/s. Average velocity only equals average speed if the object moves in one direction without ever turning around."
+  },
+  {
+    "id": 5,
+    "code": "Q1.5",
+    "label": "Q1.5 (Zero Velocity vs. Zero Acceleration)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.5] Can an object have zero velocity and non-zero acceleration at the same instant? Can it have non-zero velocity and zero acceleration?",
+    "opts": [
+      "Neither is possible.",
+      "v=0,a≠0 happens at the peak of a ball thrown straight up; v≠0,a=0 happens when a car cruises at a constant velocity.",
+      "v=0,a≠0 is impossible because if velocity is zero, dv/dt must be zero.",
+      "Both only happen in free fall."
+    ],
+    "ans": 1,
+    "exp": "At the highest point of vertical free fall, vᵧ=0 momentarily, but aᵧ=-g=-9.81 m/s²≠0. Conversely, any object moving at constant velocity has v≠0 and a=0."
+  },
+  {
+    "id": 6,
+    "code": "Q1.6",
+    "label": "Q1.6 (Quiz Q5 Concept Variant — Upward vs. Downward Throw)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.6] Stone A is thrown vertically upward with speed v₀=8.0 m/s from the roof of a 50 m building. Stone B is thrown vertically downward with the same initial speed v₀=8.0 m/s from the same roof (as in Quiz Q5). Neglecting air resistance, how do their speeds compare just before hitting the ground?",
+    "opts": [
+      "Stone A hits with a greater speed.",
+      "Stone B hits with a greater speed.",
+      "Both stones hit the ground with the exact same speed (32.3 m/s).",
+      "It depends on the masses of the stones."
+    ],
+    "ans": 2,
+    "exp": "By v_{y}^{2}=v_{0y}^{2}-2gΔy, since (-8.0)²=(+8.0)²=64, both stones hit the ground with the exact same final speed! Stone A simply goes up and passes the roof edge on its way down at 8.0 m/s, identical to Stone B. (Note: Stone A has a longer flight time and greater total distance, but the exact same displacement Δy=-50 m and final speed.)"
+  },
+  {
+    "id": 7,
+    "code": "Q1.7",
+    "label": "Q1.7 (Quiz Q4 Concept Variant — Braking Distance Scaling)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.7] A car traveling at speed v₀ slams on its brakes and skids to a stop (v_{f}=0) with constant deceleration a. If the car's initial speed were doubled (2v₀) with the same braking deceleration a, what happens to the stopping time and the stopping distance?",
+    "opts": [
+      "Stopping time doubles; stopping distance doubles.",
+      "Stopping time doubles; stopping distance quadruples (4×).",
+      "Stopping time quadruples; stopping distance doubles.",
+      "Both quadruple."
+    ],
+    "ans": 1,
+    "exp": "From 0=v₀+at⟹t=(v₀/|a|), doubling v₀ doubles the stopping time. From 0=v_{0}^{2}+2aΔx⟹Δx=(v_{0}^{2}/2|a|), because v₀ is squared, doubling v₀ quadruples (4×) the stopping distance!"
+  },
+  {
+    "id": 8,
+    "code": "Q1.8",
+    "label": "Q1.8 (Graph Reading — x-t and v-t Graphs)",
+    "chapter": "Chapter 2: 1D Motion & Free Fall",
+    "cat": "Theory Questions",
+    "q": "[Q1.8] On a position-time (x-t) graph and a velocity-time (v-t) graph, what do the slopes, concavity, and areas under the curves represent?",
+    "opts": [
+      "x-t slope = velocity, x-t curvature = acceleration; v-t slope = acceleration, v-t area = displacement",
+      "x-t slope = acceleration, x-t area = velocity; v-t slope = velocity, v-t area = acceleration",
+      "x-t slope = displacement; v-t slope = position, v-t area = acceleration",
+      "Both slopes represent acceleration, and both areas represent velocity"
+    ],
+    "ans": 0,
+    "exp": "x-t graph: Slope = instantaneous velocity v. Concave up (∪, smiling) = positive acceleration (a > 0); Concave down (∩, frowning) = negative acceleration (a < 0); Straight line = zero acceleration (a = 0). v-t graph: Slope = instantaneous acceleration a. Area under the curve = displacement Δx."
+  },
+  {
+    "id": 9,
+    "code": "Q2.1",
+    "label": "Q2.1 (Slide \"Average Velocity\" & Fig 3.2)",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.1] The average velocity vₐᵥ_g of a particle moving along a curved path between two points always points in the same direction as:",
+    "opts": [
+      "The instantaneous velocity at the starting point.",
+      "The instantaneous acceleration.",
+      "The displacement Δr between the two points.",
+      "The tangent to the curve at the endpoint."
+    ],
+    "ans": 2,
+    "exp": "As your Chapter 3 slides state: \"The average velocity between two points will have the same direction as the displacement.\" Instantaneous velocity v is always tangent to the curved path."
+  },
+  {
+    "id": 10,
+    "code": "Q2.2",
+    "label": "Q2.2 (Slides \"The acceleration vector - Fig 3.6\" & \"Parallel and perpendicular components of acceleration\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.2] When a race car drives around a curved track, its acceleration can be split into a parallel component (a_{∥}, tangent to the path) and a perpendicular component (a_{⊥}, pointing inward toward the center of the curve). What does each component do?",
+    "opts": [
+      "a_{∥} changes the direction of motion; a_{⊥} changes the speed.",
+      "a_{∥} changes the speed (magnitude of velocity); a_{⊥} changes the direction of velocity.",
+      "a_{⊥} is zero when speed is constant.",
+      "a_{∥} is always greater than a_{⊥}."
+    ],
+    "ans": 1,
+    "exp": "If the car curves at constant speed: a_{∥}=0, a_{⊥}=(v²/R) (total acceleration points purely inward, 90^{∘} to v). If the car curves while speeding up: a_{∥}>0, so total acceleration points inward and forward (angle <90^{∘} from v). If the car curves while slowing down: a_{∥}<0, so total acceleration points inward and backward (angle >90^{∘} from v)."
+  },
+  {
+    "id": 11,
+    "code": "Q2.3",
+    "label": "Q2.3 (Slide \"Skiing through a valley - Conceptual Example 3.4 & Fig 3.14\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.3] A skier glides down a frictionless hill, goes through the bottom of a circular valley, and starts up the next hill. What is the direction of the skier's acceleration at the lowest point of the valley?",
+    "opts": [
+      "Zero, because speed is maximum.",
+      "Horizontally forward in the direction of motion.",
+      "Straight upward (perpendicular to the valley floor, toward the center of the circular arc).",
+      "Straight downward."
+    ],
+    "ans": 2,
+    "exp": "At the bottom of the valley, the skier's speed is momentarily at its maximum (dv/dt=a_{∥}=0), so there is no tangential acceleration. However, the skier is moving along a curved path, so there is a perpendicular (centripetal) acceleration a_{⊥}=v²/R pointing straight upward toward the center of curvature! 2B. Projectile Motion (Slides 3.15–3.25 & Quiz Q6 Style)"
+  },
+  {
+    "id": 12,
+    "code": "Q2.4",
+    "label": "Q2.4 (Slide \"X and Y motion are separable - Fig 3.16\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.4] A red ball is dropped from rest at the exact same instant that a yellow ball is fired horizontally from the same height. Neglecting air resistance, which ball hits the level ground first, and which hits with the greater speed?",
+    "opts": [
+      "Red hits first; yellow has greater speed.",
+      "Yellow hits first; both have the same speed.",
+      "Both hit the ground at the exact same time; the yellow ball hits with a greater speed.",
+      "Both hit at the same time with the same speed."
+    ],
+    "ans": 2,
+    "exp": "Horizontal and vertical motions are independent. Both balls have v_{0y}=0 and fall the same vertical distance y, so they hit the ground at the exact same instant (t=√(2h/g)), as shown by the horizontal lines in the strobe photograph on Slide Figure 3.16. The yellow ball hits with a greater speed because v=√(v_{0x}^{2}+v_{y}^{2})."
+  },
+  {
+    "id": 13,
+    "code": "Q2.5",
+    "label": "Q2.5 (Classic Mid-Term Trap — Top of the Trajectory)",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.5] A projectile is launched at an angle θ=50^{∘} above the horizontal with initial speed v₀=45 m/s (as in Quiz Q6). At the highest point (peak) of its trajectory, what are its speed v and acceleration a?",
+    "opts": [
+      "v=0 m/s and a=0 m/s²",
+      "v=0 m/s and a=9.81 m/s² downward",
+      "v=v₀cos50^{∘} (horizontal) and a=9.81 m/s² downward",
+      "v=v₀sin50^{∘} and a=9.81 m/s² downward"
+    ],
+    "ans": 2,
+    "exp": "At the highest point, only the vertical velocity is zero (vᵧ=0). The horizontal velocity vₓ=v₀cosθ never changes! Thus, the speed at the peak is minimum (equal to v₀cosθ), NOT zero. And the acceleration is constant everywhere during the flight: a=g=9.81 m/s² downward."
+  },
+  {
+    "id": 14,
+    "code": "Q2.6",
+    "label": "Q2.6 (Angles Between v and a in Projectile Motion)",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.6] During a projectile's flight on level ground from launch to impact, at what point are the velocity vector v and acceleration vector a perpendicular (θ = 90°)?",
+    "opts": [
+      "At the initial launch point",
+      "Only at the highest point (peak) of the trajectory",
+      "Throughout the entire downward descent",
+      "Velocity and acceleration are never perpendicular in projectile motion"
+    ],
+    "ans": 1,
+    "exp": "Perpendicular (90°): Only at the peak, where velocity is purely horizontal (v_y = 0) and acceleration (gravity) is purely vertical downward. On the way up, the angle between v and a is obtuse (>90°, slowing down). On the way down, it is acute (<90°, speeding up). They are never parallel in 2D projectile motion."
+  },
+  {
+    "id": 15,
+    "code": "Q2.7",
+    "label": "Q2.7 (Quiz Q6 Range & Angle Theory)",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.7] In projectile motion on level ground, which launch angle yields the maximum horizontal range, and which other angle produces the exact same range as a 50° launch at the same initial speed?",
+    "opts": [
+      "45° produces maximum range; 40° yields the same range as 50°",
+      "60° produces maximum range; 30° yields the same range as 50°",
+      "45° produces maximum range; 25° yields the same range as 50°",
+      "90° produces maximum range; 40° yields the same range as 50°"
+    ],
+    "ans": 0,
+    "exp": "45° gives maximum horizontal range because sin(2×45°) = sin(90°) = 1. Complementary launch angles (θ and 90° - θ, such as 50° and 40°) always yield the exact same horizontal range on level ground because sin(2×50°) = sin(100°) = sin(80°) = sin(2×40°). However, the 50° launch reaches a higher peak and stays in the air longer."
+  },
+  {
+    "id": 16,
+    "code": "Q2.8",
+    "label": "Q2.8 (Slide \"The effects of wind/air resistance - Fig 3.20\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.8] How does air resistance change the trajectory of a baseball compared to an ideal vacuum trajectory?",
+    "opts": [
+      "Maximum height decreases, horizontal range decreases, and the trajectory is no longer a symmetric parabola.",
+      "Maximum height stays the same, but range decreases.",
+      "The ball still follows a symmetric parabola, just scaled down.",
+      "Only horizontal velocity is affected."
+    ],
+    "ans": 0,
+    "exp": "As your Chapter 3 slides state: \"Peak heights and distance fall. Trajectories cease to be parabolic.\""
+  },
+  {
+    "id": 17,
+    "code": "Q2.9",
+    "label": "Q2.9 (Slide \"Tranquilizing the falling monkey - Example 3.10\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.9] A zookeeper aims a tranquilizer dart directly at a monkey hanging from a branch. At the exact moment the dart is fired, the monkey lets go and drops from the branch. Neglecting air resistance, where should the zookeeper aim to hit the monkey?",
+    "opts": [
+      "Above the monkey.",
+      "Below the monkey.",
+      "Directly at the monkey's starting position.",
+      "Ahead of the monkey horizontally."
+    ],
+    "ans": 2,
+    "exp": "Gravity pulls both the dart and the monkey downward by the exact same vertical distance (1/2)gt² below their straight-line gravity-free paths in time t. Therefore, aiming directly at the monkey hits it every time (as long as the dart is fast enough to reach the tree before hitting the ground). 2C. Uniform & Non-Uniform Circular Motion (Slides 3.27–3.30 & Quiz Q7 Style)"
+  },
+  {
+    "id": 18,
+    "code": "Q2.10",
+    "label": "Q2.10 (Slide \"Uniform circular motion and projectile motion compared\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.10] For a particle in uniform circular motion (like in Quiz Q7), which of the following quantities are constant, and which are changing?",
+    "opts": [
+      "Speed, velocity, and acceleration are all constant.",
+      "Speed and the magnitude of acceleration (a_{rad}=v²/R) are constant, but the velocity and acceleration change continuously because their directions rotate.",
+      "Velocity is constant, and acceleration is zero.",
+      "Speed is constant, and acceleration is constant in both magnitude and direction."
+    ],
+    "ans": 1,
+    "exp": "In uniform circular motion, speed v=(2πR/T) is constant, so tangential acceleration a_{tan}=0. However, velocity is a directional quantity, and because its direction is constantly turning, there is a nonzero centripetal acceleration a_{rad}=(v²/R)=(4π²R/T²) pointing toward the center of the circle. Because \"toward the center\" changes direction as the particle moves around the circle, a is not a constant vector (unlike projectile motion, where a=g is constant in both magnitude and direction)."
+  },
+  {
+    "id": 19,
+    "code": "Q2.11",
+    "label": "Q2.11 (Quiz Q7 Scaling Trap)",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.11] Car A and Car B round the same circular track of radius R. If Car B travels at twice the speed (2v) of Car A, what is the ratio of Car B's centripetal acceleration to Car A's?",
+    "opts": [
+      "2× larger",
+      "4× larger",
+      "The same",
+      "1/2 as large"
+    ],
+    "ans": 1,
+    "exp": "Using a_c = v²/R (with constant radius R), doubling speed v makes the centripetal acceleration (2)² = 4× larger. (Note: if period T were constant instead, a_c = 4π²R/T² would scale linearly with R. Always check whether v or T is held constant!)"
+  },
+  {
+    "id": 20,
+    "code": "Q2.12",
+    "label": "Q2.12 (Slides \"Relative velocity on a straight road - Fig 3.33\" & \"Conductor on a train - Fig 3.34\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.12] A train moves East at 25 m/s relative to the ground. A conductor walks West at 2 m/s relative to the train. A car on a parallel road drives West at 15 m/s relative to the ground. What are the conductor's velocity relative to the ground and the train's speed relative to the car driver?",
+    "opts": [
+      "Conductor: 23 m/s East; Train relative to car: 40 m/s",
+      "Conductor: 27 m/s East; Train relative to car: 10 m/s",
+      "Conductor: 23 m/s West; Train relative to car: 40 m/s",
+      "Conductor: 25 m/s East; Train relative to car: 25 m/s"
+    ],
+    "ans": 0,
+    "exp": "v_{C/G} = v_{C/T} + v_{T/G} = -2 + 25 = +23 m/s (23 m/s East). For the train relative to the car: v_{T/Car} = v_{T/G} - v_{Car/G} = (+25) - (-15) = +40 m/s. When two vehicles move in opposite directions, their relative speed is the sum of their speeds."
+  },
+  {
+    "id": 21,
+    "code": "Q2.13",
+    "label": "Q2.13 (Slide \"Flying to the right or wrong airport\")",
+    "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
+    "cat": "Theory Questions",
+    "q": "[Q2.13] An airplane with airspeed v_{P/A} wants to fly due North relative to the ground while a crosswind blows due East with speed v_{A/G}. In what direction must the pilot aim the plane, and how does the ground speed compare to airspeed?",
+    "opts": [
+      "Aim West of North; ground speed is less than airspeed (v_{P/G} < v_{P/A})",
+      "Aim East of North; ground speed is greater than airspeed (v_{P/G} > v_{P/A})",
+      "Aim directly North; ground speed equals airspeed (v_{P/G} = v_{P/A})",
+      "Aim West of North; ground speed is greater than airspeed (v_{P/G} > v_{P/A})"
+    ],
+    "ans": 0,
+    "exp": "The pilot must aim West of North (into the wind) so the westward component of airspeed cancels the eastward crosswind. Because airspeed v_{P/A} is the hypotenuse of the velocity triangle and ground speed v_{P/G} is one leg (v_{P/G} = √(v_{P/A}² - v_{A/G}²)), ground speed is strictly less than airspeed."
+  },
+  {
+    "id": 22,
+    "code": "Q3.1",
+    "label": "Q3.1 (Slides \"Four common types of forces\" & \"Typical sizes - Table 4.1\")",
+    "chapter": "Chapter 4: Newton's Laws of Motion",
+    "cat": "Theory Questions",
+    "q": "[Q3.1] Which of the following statements about common forces is false?",
+    "opts": [
+      "Normal force, friction, and tension are contact forces, whereas weight (gravity) is a long-range force.",
+      "The Normal force (n) always acts perpendicular to the surface of contact.",
+      "Friction (f) always acts parallel to the surface of contact.",
+      "The magnitude of the Normal force (n) is always equal to the weight (mg) of the object."
+    ],
+    "ans": 3,
+    "exp": "The normal force is not always equal to mg! On an inclined plane, n=mgcosθ. In an accelerating elevator, n=m(g+aᵧ). If you push diagonally on a lawnmower, n includes the vertical component of your push."
+  },
+  {
+    "id": 23,
+    "code": "Q3.2",
+    "label": "Q3.2 (Slides \"Newton's First Law - Figs 4.9 & 4.10\")",
+    "chapter": "Chapter 4: Newton's Laws of Motion",
+    "cat": "Theory Questions",
+    "q": "[Q3.2] A hockey puck slides across frictionless ice at a constant velocity of 15 m/s East. What horizontal force is required to keep the puck moving at 15 m/s East?",
+    "opts": [
+      "A constant eastward force proportional to 15 m/s.",
+      "Zero net horizontal force (Fₓ=0).",
+      "A force equal to its weight mg.",
+      "A gradually decreasing eastward force."
+    ],
+    "ans": 1,
+    "exp": "By Newton's First Law, an object in motion continues in a straight line at constant speed with zero net force. Force is only required to change velocity (accelerate), not to maintain velocity!"
+  },
+  {
+    "id": 24,
+    "code": "Q3.3",
+    "label": "Q3.3 (Slide \"Inertial frames of reference - Fig 4.11\")",
+    "chapter": "Chapter 4: Newton's Laws of Motion",
+    "cat": "Theory Questions",
+    "q": "[Q3.3] Which of the following is an inertial frame of reference (a frame in which Newton's First and Second Laws are valid)?",
+    "opts": [
+      "A train speeding up as it leaves a station.",
+      "A train slowing down as it enters a station.",
+      "A car driving around a circular roundabout at a steady speed of 40 km/h.",
+      "A train moving in a straight line at a constant speed of 120 km/h."
+    ],
+    "ans": 3,
+    "exp": "An inertial frame is any frame with zero acceleration (a=0, which means constant speed and straight-line direction). Option C is not inertial because circular motion has centripetal acceleration v²/R≠0."
+  },
+  {
+    "id": 25,
+    "code": "Q3.4",
+    "label": "Q3.4 (Slides \"The relationship of F, m, and a\" & \"Newtons, kilograms, pounds, and slugs - Table 4.2\")",
+    "chapter": "Chapter 4: Newton's Laws of Motion",
+    "cat": "Theory Questions",
+    "q": "[Q3.4] Which statement about mass, weight, and their units is correct?",
+    "opts": [
+      "A slug is a unit of force, and a pound (lb) is a unit of mass.",
+      "A pound (lb) and a dyne are units of force, whereas a kilogram (kg) and a slug are units of mass.",
+      "If you take a 10 kg block to the Moon (where g_{Moon}≈(1/6)g_{Earth}), both its mass and its weight become (1/6) as large.",
+      "In free fall, an object's mass and weight (mg) both become zero."
+    ],
+    "ans": 1,
+    "exp": "As your Chapter 4 slides emphasize on Table 4.2: \"The pound is a force. The popular culture refers to it as a weight (mass is actually a slug). The Dyne is a cgs version of the Newton.\" Furthermore, mass (m) measures inertia and never changes with location, while weight (w=mg) depends on local g."
+  },
+  {
+    "id": 26,
+    "code": "Q3.5",
+    "label": "Q3.5 (Slide \"g, and hence weight, is only constant on earth, at sea level\")",
+    "chapter": "Chapter 4: Newton's Laws of Motion",
+    "cat": "Theory Questions",
+    "q": "[Q3.5] Suppose two objects of different masses (M=10 kg and m=1 kg) are dropped in a vacuum near Earth's surface. Why do both objects accelerate downward at the exact same rate g=9.81 m/s², even though the Earth pulls on the 10 kg object with 10× more gravitational force?",
+    "opts": [
+      "Because gravitational force is actually the same on both objects.",
+      "Because the 10 kg object also has 10× more inertia (mass) resisting acceleration, so in a=(F_{grav}/m)=(mg/m)=g, the mass cancels out!",
+      "Because air resistance cancels the extra weight.",
+      "Because heavier objects have less inertia."
+    ],
+    "ans": 1,
+    "exp": "The 10 kg block experiences 10× the gravitational force (W=Mg), but it also has 10× the inertia (M) in Newton's Second Law (a=W/M=Mg/M=g)."
+  },
+  {
+    "id": 27,
+    "code": "Q3.6",
+    "label": "Q3.6 (Slides \"Newton's Third Law",
+    "chapter": "Chapter 4: Newton's Laws of Motion",
+    "cat": "Theory Questions",
+    "q": "[Q3.6] Objects at rest & Objects in motion\"): A large locomotive engine pulls a lighter train car behind it, and the whole train is accelerating forward. How does the magnitude of the backward pull of the train car on the locomotive (F_{car on engine}) compare to the forward pull of the locomotive on the train car (F_{engine on car})?",
+    "opts": [
+      "F_{engine on car}>F_{car on engine} because the train is accelerating forward.",
+      "F_{engine on car}=F_{car on engine} only when moving at constant speed, not when accelerating.",
+      "F_{engine on car}=F_{car on engine} at all times, even while accelerating!",
+      "F_{car on engine}=0 if there is no friction."
+    ],
+    "ans": 2,
+    "exp": "Newton's Third Law holds 100% of the time—whether the objects are at rest, moving at constant speed, or accelerating! Why does the train accelerate forward if those two forces are equal? Because those two forces act on different objects! The locomotive accelerates forward because the forward friction of the tracks pushing on the locomotive's wheels is greater than the backward pull of the car on the locomotive."
+  },
+  {
+    "id": 28,
+    "code": "Q3.7",
+    "label": "Q3.7 (Slide \"Newton's Third Law",
+    "chapter": "Chapter 4: Newton's Laws of Motion",
+    "cat": "Theory Questions",
+    "q": "[Q3.7] Objects at rest\" — Apple on a Table): An apple sits at rest on a table. The Earth pulls downward on the apple with gravitational force w, and the table pushes upward on the apple with normal force n. Are w and n a Newton's Third Law action-reaction pair?",
+    "opts": [
+      "Yes, because they are equal and opposite (n=-w).",
+      "No, because n and w both act on the same object (the apple) — they are a Newton's First Law equilibrium pair! The true Third Law partner to F_{Earth on Apple} (w) is F_{Apple on Earth} (the apple pulling upward on the Earth).",
+      "Yes, but only when the table is level.",
+      "No, because normal force is larger than weight."
+    ],
+    "ans": 1,
+    "exp": "To find a true Newton's Third Law partner, simply swap the two nouns: Partner of \"Earth pulls down on apple\" ⟷ \"Apple pulls up on Earth.\" Partner of \"Table pushes up on apple\" (n) ⟷ \"Apple pushes down on table.\""
+  },
+  {
+    "id": 29,
+    "code": "Q4.1",
+    "label": "Q4.1 (Slides \"1-D equilibrium - Fig 5.1\" & \"1-D equilibrium considering the rope - Fig 5.2\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.1] A 700 N gymnast hangs motionless from the bottom of a vertical rope of weight 100 N attached to the ceiling. What are the tension in the rope at the bottom (where the gymnast holds it) and at the top (where it attaches to the ceiling)?",
+    "opts": [
+      "700 N at the bottom; 700 N at the top.",
+      "700 N at the bottom; 800 N at the top.",
+      "800 N at the bottom; 700 N at the top.",
+      "400 N at both ends."
+    ],
+    "ans": 1,
+    "exp": "When a rope has mass/weight (Example 5.2 in your slides), the bottom of the rope only supports the gymnast (T_{bottom}=700 N), while the top of the rope supports the combined system of gymnast + rope (T_{top}=700 N+100 N=800 N). Only when a rope is massless (Example 5.1) is the tension equal everywhere along the rope."
+  },
+  {
+    "id": 30,
+    "code": "Q4.2",
+    "label": "Q4.2 (Slide \"Beware incorrect free-body diagrams - Fig 5.6\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.2] A block is given a quick shove at the bottom of a rough inclined ramp and is now sliding up the ramp (after your hand has let go) and slowing down. What forces act on the block while it is sliding up the ramp?",
+    "opts": [
+      "An upslope \"force of the push\", gravity, normal force, and downslope friction.",
+      "An upslope force ma, gravity, normal force, and downslope friction.",
+      "Only gravity (w downward), normal force (n perpendicular to the ramp), and kinetic friction (f_{k} pointing down the ramp).",
+      "Gravity, normal force, and upslope kinetic friction."
+    ],
+    "ans": 2,
+    "exp": "As Slide Figure 5.6 (\"Beware incorrect free-body diagrams\") emphasizes: Once your hand stops touching the block, there is no upslope pushing force! The block moves up the ramp purely by inertia (velocity), while all forces along the ramp (mgsinθ+f_{k}) point down the ramp to slow it down. Never include ma as a force on a free-body diagram. 4B. Apparent Weight in an Elevator (Slides 5.9–5.10)"
+  },
+  {
+    "id": 31,
+    "code": "Q4.3",
+    "label": "Q4.3 (Slides \"Calculation of tension in an elevator cable - Fig 5.9\" & \"More adventures in the elevator - Fig 5.10\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.3] A passenger of mass m stands on a scale inside an elevator. In which of the following cases does the scale read MORE than the passenger's true weight (n>mg), and in which case does the cable have the greatest tension?",
+    "opts": [
+      "Moving upward and slowing down.",
+      "Moving upward at a constant speed of 8 m/s.",
+      "Either moving upward while speeding up, OR moving downward while slowing down (both have upward acceleration aᵧ>0).",
+      "Moving downward and speeding up."
+    ],
+    "ans": 2,
+    "exp": "From Fᵧ=n-mg=maᵧ⟹n=m(g+aᵧ), apparent weight n (and cable tension T=M(g+aᵧ)) depends only on the sign of aᵧ, not on the direction of velocity vᵧ: aᵧ>0 (Upward acceleration): Moving UP & speeding up, OR moving DOWN & slowing down ⟹n>mg (feels heavier). aᵧ<0 (Downward acceleration): Moving DOWN & speeding up, OR moving UP & slowing down ⟹n<mg (feels lighter). aᵧ=0 (Constant velocity or at rest): ⟹n=mg. aᵧ=-g (Free fall): ⟹n=0 (apparent weightlessness). 4C. Inclined Planes & Multi-Body Systems (Slides 5.12–5.15)"
+  },
+  {
+    "id": 32,
+    "code": "Q4.4",
+    "label": "Q4.4 (Slides \"Acceleration down a hill - Fig 5.12\" & \"Watch for this common error - Fig 5.13\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.4] As the angle θ of an inclined plane is increased from 0^{∘} toward 90^{∘} (before the block tips), what happens to the normal force (n) and the downslope component of gravity (w_{∥})?",
+    "opts": [
+      "Both n and w_{∥} increase.",
+      "n=mgcosθ decreases, while w_{∥}=mgsinθ increases.",
+      "n=mgsinθ increases, while w_{∥}=mgcosθ decreases.",
+      "n remains constant at mg."
+    ],
+    "ans": 1,
+    "exp": "As θ increases from 0^{∘} to 90^{∘}, cosθ decreases from 1 to 0 (so the normal force n=mgcosθ decreases), and sinθ increases from 0 to 1 (so the downslope pull mgsinθ increases)."
+  },
+  {
+    "id": 33,
+    "code": "Q4.5",
+    "label": "Q4.5 (Slide \"Multiple items in motion - Example 5.11 & Fig 5.14\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.5] A waitress pushes a 1.0 kg lunch tray across a frictionless counter with a horizontal force of 9.0 N. On the tray sits a 0.50 kg carton of milk (total mass =1.5 kg, so a=(9.0 N/1.5 kg)=6.0 m/s²). What is the net horizontal force acting on the milk carton alone?",
+    "opts": [
+      "9.0 N",
+      "6.0 N",
+      "3.0 N (m_{milk}⋅a=0.50 kg×6.0 m/s²)",
+      "0 N"
+    ],
+    "ans": 2,
+    "exp": "As your Chapter 5 slide states: \"The same acceleration acts on every surface of your lunch tray (Example 5.11).\" Once you find the common acceleration a=(F_{total}/m_{total}) of a multi-body system, the net force on any individual piece m_{i} is simply F_{net,i}=m_{i}a. 4D. Static & Kinetic Friction, Angled Tension & Terminal Speed (Slides 5.17–5.27)"
+  },
+  {
+    "id": 34,
+    "code": "Q4.6",
+    "label": "Q4.6 (Slides \"Coefficients of friction\" & \"Applied force is proportional until the object moves - Fig 5.19\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.6] A crate of weight W = 500 N sits at rest on a level floor where μ_s = 0.50 and μ_k = 0.40. What horizontal force is required to start it moving, and what is the friction force if you push horizontally with only 100 N?",
+    "opts": [
+      "250 N to start moving; friction force is 100 N",
+      "200 N to start moving; friction force is 250 N",
+      "250 N to start moving; friction force is 250 N",
+      "200 N to start moving; friction force is 200 N"
+    ],
+    "ans": 0,
+    "exp": "Maximum static friction is f_{s,max} = μ_s × n = 0.50(500 N) = 250 N, so at least 250 N is required to overcome static friction and initiate motion. When you push with only 100 N, since 100 N < 250 N, the crate stays at rest (a = 0) and static friction exactly balances your push: f_s = 100 N (not 250 N!)."
+  },
+  {
+    "id": 35,
+    "code": "Q4.7",
+    "label": "Q4.7 (Block at Rest on an Incline — Static Friction)",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.7] A block of mass m rests without slipping on a rough inclined plane of angle θ with static coefficient μ_s. What is the static friction force while at rest, and at what critical angle θ_c does it begin to slide?",
+    "opts": [
+      "f_s = mg sinθ; slips when tanθ_c = μ_s",
+      "f_s = μ_s mg cosθ; slips when sinθ_c = μ_s",
+      "f_s = mg cosθ; slips when tanθ_c = μ_s",
+      "f_s = μ_s mg; slips when cosθ_c = μ_s"
+    ],
+    "ans": 0,
+    "exp": "While at rest (a = 0), static friction simply balances the downslope component of gravity: f_s = mg sinθ. The block begins to slip when mg sinθ_c = f_{s,max} = μ_s mg cosθ_c ⟹ tanθ_c = μ_s. Notice that mass m and gravity g cancel completely!"
+  },
+  {
+    "id": 36,
+    "code": "Q4.8",
+    "label": "Q4.8 (Slides \"Consider the toboggan ride two more times - Examples 5.16 & 5.17, Figs 5.22 & 5.23\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.8] A toboggan slides down a rough incline of angle θ with kinetic friction coefficient μ_k. What angle θ produces constant speed (a = 0), and what is the toboggan's acceleration down a steeper hill?",
+    "opts": [
+      "Constant speed when tanθ = μ_k; acceleration is a = g(sinθ - μ_k cosθ)",
+      "Constant speed when sinθ = μ_k; acceleration is a = g(cosθ - μ_k sinθ)",
+      "Constant speed when tanθ = μ_k; acceleration is a = g(sinθ + μ_k cosθ)",
+      "Constant speed when cosθ = μ_k; acceleration is a = g sinθ"
+    ],
+    "ans": 0,
+    "exp": "At constant speed (a = 0): mg sinθ - μ_k mg cosθ = 0 ⟹ tanθ = μ_k. When accelerating down the incline: a = g(sinθ - μ_k cosθ). If the toboggan is sliding UP the rough incline while slowing down, both gravity and friction act downslope, giving |a| = g(sinθ + μ_k cosθ)."
+  },
+  {
+    "id": 37,
+    "code": "Q4.9",
+    "label": "Q4.9 (Slide \"The angle at which tension is applied matters - Example 5.21 & Fig 5.20\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.9] You pull a crate of weight W across a rough horizontal floor at constant speed using a rope angled at θ above the horizontal with tension T. What is the normal force n on the crate?",
+    "opts": [
+      "n=W",
+      "n=W+Tsinθ",
+      "n=W-Tsinθ",
+      "n=Wcosθ"
+    ],
+    "ans": 2,
+    "exp": "From vertical equilibrium (Fᵧ=n+Tsinθ-W=0), the upward component of rope tension (Tsinθ) helps support the crate, reducing the normal force to n=W-Tsinθ and therefore reducing the friction force f_{k}=μ_{k}(W-Tsinθ)."
+  },
+  {
+    "id": 38,
+    "code": "Q4.10",
+    "label": "Q4.10 (Slide \"For the sport of skydiving, terminal speed is vital - Example 5.19 & Figs 5.26–5.27\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.10] Two skydivers of identical shape and size jump from a plane, so they have the same drag coefficient D (where air drag is f=Dv²), but Skydiver A is twice as heavy (2m) as Skydiver B (m). Who reaches the higher terminal speed (v_{t})?",
+    "opts": [
+      "Both have the exact same terminal speed, just like in a vacuum.",
+      "Skydiver A (the heavier one) reaches a higher terminal speed (v_{t}=√((mg/D)), so √(2) times faster).",
+      "Skydiver B (the lighter one) reaches a higher terminal speed.",
+      "Terminal speed does not depend on weight."
+    ],
+    "ans": 1,
+    "exp": "In a vacuum, mass cancels out (a=g). With air resistance, terminal speed occurs when upward drag balances weight (Dv_{t}^{2}=mg⟹v_{t}=√((mg/D))). A heavier skydiver requires a larger drag force—and therefore a higher speed v_{t}—before drag equals their weight! 4E. Dynamics of Uniform Circular Motion (Slides 5.28–5.30)"
+  },
+  {
+    "id": 39,
+    "code": "Q4.11",
+    "label": "Q4.11 (Slide \"Examining a misnomer - Fig 5.30\")",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.11] Why do physicists call \"centrifugal force\" a misnomer (fictitious force), and why should you never draw \"centripetal force (mv²/R)\" as a separate arrow on a Free-Body Diagram?",
+    "opts": [
+      "Because objects in circular motion are in equilibrium (F=0).",
+      "Because only real physical interactions (gravity, tension, normal force, friction) go on a Free-Body Diagram, and their net inward sum equals F_{rad}=m(v²/R).",
+      "Because the net force in circular motion points tangent to the circle.",
+      "Because centripetal force points outward away from the center."
+    ],
+    "ans": 1,
+    "exp": "As shown on Slide Figure 5.30 (\"Examining a misnomer\"), drawing m(v²/R) on a free-body diagram double-counts the force! You only draw real forces (like tension T, normal force n, weight w, or static friction f_{s}), and then set F_{inward}=m(v²/R)."
+  },
+  {
+    "id": 40,
+    "code": "Q4.12",
+    "label": "Q4.12 (Flat vs. Banked Curves — Car Rounding a Turn)",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.12] What force provides centripetal acceleration for a car rounding a flat (unbanked) curve versus an icy (frictionless) banked curve of angle β?",
+    "opts": [
+      "Flat: static friction (v_max = √(μ_s g R)); Banked: horizontal component of normal force (v = √(g R tanβ))",
+      "Flat: kinetic friction; Banked: gravity component along the surface",
+      "Flat: normal force; Banked: static friction force",
+      "Flat: centrifugal force; Banked: vertical component of normal force"
+    ],
+    "ans": 0,
+    "exp": "On a flat curve, static friction pointing inward provides centripetal acceleration: f_{s,max} = μ_s mg = mv²/R ⟹ v_max = √(μ_s g R) (mass cancels out!). On an icy banked curve, the horizontal inward component of the normal force (n sinβ = mv²/R, while n cosβ = mg) provides centripetal acceleration, yielding tanβ = v²/(g R) ⟹ v = √(g R tanβ)."
+  },
+  {
+    "id": 41,
+    "code": "Q4.13",
+    "label": "Q4.13 (Vertical Circles — Ferris Wheel / Roller Coaster)",
+    "chapter": "Chapter 5: Applications of Newton's Laws",
+    "cat": "Theory Questions",
+    "q": "[Q4.13] A passenger of mass m rides a Ferris wheel of radius R rotating at constant speed v. Where does the passenger feel heaviest (largest normal force n from the seat) and lightest (smallest normal force n)?",
+    "opts": [
+      "Heaviest at the top; lightest at the bottom.",
+      "Heaviest at the bottom (n_{bottom}=mg+(mv²/R)); lightest at the top (n_{top}=mg-(mv²/R)).",
+      "Apparent weight is mg everywhere because speed is constant.",
+      "Heaviest on the left and right sides."
+    ],
+    "ans": 1,
+    "exp": "At the top, the center of the circle is below the rider, so net force points downward: mg-n_{top}=(mv²/R)⟹n_{top}=mg-(mv²/R) (feels lighter!). At the bottom, the center of the circle is above the rider, so net force points upward: n_{bottom}-mg=(mv²/R)⟹n_{bottom}=mg+(mv²/R) (feels heavier!). Quick Summary of the 10 Most Common Midterm \"Trick\" Statements (True/False Check) \"Negative acceleration always means an object is slowing down.\" → FALSE (If v<0 and a<0, it speeds up—Quiz Q3!). \"At the highest point of a 2D projectile's path, its velocity and acceleration are both zero.\" → FALSE (v=v_{0x}=v₀cosθ≠0, and a=g=9.81 m/s² downward). \"In uniform circular motion, acceleration is constant.\" → FALSE (The magnitude v²/R is constant, but the direction of the acceleration vector changes continuously). \"An object moving at constant speed has zero acceleration.\" → FALSE (Only if it moves at constant speed in a straight line; if it curves, a_{c}=v²/R≠0). \"The normal force n is always equal to mg.\" → FALSE (n=mgcosθ on an incline; n=m(g+aᵧ) in an elevator; n=mg-Tsinθ with an angled rope). \"Static friction is always equal to μ_{s}n.\" → FALSE (f_{s}≤μ_{s}n; it equals the applied force up until the object is on the verge of slipping). \"Normal force n and weight w on a resting book are a Newton's Third Law action-reaction pair.\" → FALSE (They act on the same object; Third Law pairs always act on two different objects). \"In a head-on collision between a heavy truck and a small car, the truck exerts a larger force on the car than the car exerts on the truck.\" → FALSE (By Newton's 3rd Law, the forces are 100% equal in magnitude; the car just has a larger acceleration a=F/m). \"When an elevator moves downward and slows down, you feel lighter (n<mg).\" → FALSE (Moving down while slowing down means acceleration points upward, so n>mg—you feel heavier!). \"When drawing a Free-Body Diagram for circular motion, you should include an inward arrow for the centripetal force mv²/R.\" → FALSE (mv²/R is the net force F, not a separate force—Slide Fig 5.30)."
+  }
+];
 
-    let currentFilter = "all";
-    let activeQuestions = [...questionsData];
-    let score = 0;
-    let answeredCount = 0;
+    /* Emirates Studies Quiz State */
+    let emFilter = "all";
+    let activeEmQuestions = [...emiratesQuestionsData];
+    let emScore = 0;
+    let emAnswered = 0;
+
+    /* Engineering Physics 1 Quiz State */
+    let physFilter = "all";
+    let activePhysQuestions = [...physicsQuestionsData];
+    let physScore = 0;
+    let physAnswered = 0;
 
     /* Routing / Navigation */
     function navigateTo(viewName) {
@@ -1499,9 +2166,9 @@
         document.getElementById('view-emirates').classList.add('active');
         window.location.hash = 'emirates-studies';
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (viewName === 'physics-1') {
+      } else if (viewName === 'engineering-physics-1' || viewName === 'physics-1') {
         document.getElementById('view-physics').classList.add('active');
-        window.location.hash = 'physics-1';
+        window.location.hash = 'engineering-physics-1';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         document.getElementById('view-portal').classList.add('active');
@@ -1510,13 +2177,12 @@
       }
     }
 
-    // Handle hash on page load and back/forward buttons
     function checkHashRoute() {
       const hash = window.location.hash.replace('#', '');
       if (hash === 'emirates-studies') {
         navigateTo('emirates-studies');
-      } else if (hash === 'physics-1') {
-        navigateTo('physics-1');
+      } else if (hash === 'engineering-physics-1' || hash === 'physics-1') {
+        navigateTo('engineering-physics-1');
       } else {
         navigateTo('portal');
       }
@@ -1524,15 +2190,17 @@
 
     window.addEventListener('hashchange', checkHashRoute);
 
-    /* Quiz Rendering & Logic */
-    function renderQuiz() {
-      const container = document.getElementById("quizContainer");
+    /* =========================================
+       EMIRATES STUDIES FUNCTIONS
+       ========================================= */
+    function renderEmiratesQuiz() {
+      const container = document.getElementById("emiratesQuizContainer");
       container.innerHTML = "";
-      score = 0;
-      answeredCount = 0;
-      updateScore();
+      emScore = 0;
+      emAnswered = 0;
+      updateEmiratesScore();
 
-      activeQuestions.forEach((item, index) => {
+      activeEmQuestions.forEach((item, index) => {
         const card = document.createElement("div");
         card.className = "q-card";
 
@@ -1551,7 +2219,7 @@
 
         meta.innerHTML = `
           <span class="q-tag ${tagClass}">${tagLabel}</span>
-          <span>Question ${index + 1} of ${activeQuestions.length}</span>
+          <span>Question ${index + 1} of ${activeEmQuestions.length}</span>
         `;
 
         const qText = document.createElement("div");
@@ -1570,7 +2238,7 @@
           const btn = document.createElement("button");
           btn.className = "opt-btn";
           btn.textContent = `${letters[optIndex] || ''}. ${optText}`;
-          btn.onclick = () => selectAnswer(btn, optIndex, item.ans, optsDiv, fb);
+          btn.onclick = () => selectEmiratesAnswer(btn, optIndex, item.ans, optsDiv, fb);
           optsDiv.appendChild(btn);
         });
 
@@ -1582,7 +2250,7 @@
       });
     }
 
-    function selectAnswer(clickedBtn, chosenIdx, correctIdx, optsDiv, fb) {
+    function selectEmiratesAnswer(clickedBtn, chosenIdx, correctIdx, optsDiv, fb) {
       const allBtns = optsDiv.querySelectorAll(".opt-btn");
       allBtns.forEach((b, i) => {
         b.disabled = true;
@@ -1590,62 +2258,187 @@
       });
 
       if (chosenIdx === correctIdx) {
-        score++;
+        emScore++;
       } else {
         clickedBtn.classList.add("wrong");
       }
-      answeredCount++;
+      emAnswered++;
       fb.style.display = "block";
-      updateScore();
+      updateEmiratesScore();
     }
 
-    function updateScore() {
-      const pct = answeredCount === 0 ? 0 : Math.round((score / answeredCount) * 100);
-      document.getElementById("scoreDisplay").textContent = `Score: ${score} / ${answeredCount} (${pct}%)`;
+    function updateEmiratesScore() {
+      const pct = emAnswered === 0 ? 0 : Math.round((emScore / emAnswered) * 100);
+      document.getElementById("emiratesScoreDisplay").textContent = `Score: ${emScore} / ${emAnswered} (${pct}%)`;
     }
 
-    function filterQuiz(filterType, btnEl) {
-      currentFilter = filterType;
-      document.querySelectorAll(".ctrl-btn").forEach(b => b.classList.remove("active"));
+    function filterEmirates(filterType, btnEl) {
+      emFilter = filterType;
+      document.querySelectorAll("#view-emirates .ctrl-btn").forEach(b => b.classList.remove("active"));
       if (btnEl) btnEl.classList.add("active");
 
-      const subHeader = document.getElementById("quizSub");
+      const subHeader = document.getElementById("emiratesSub");
       if (filterType === "all") {
-        activeQuestions = [...questionsData];
+        activeEmQuestions = [...emiratesQuestionsData];
         subHeader.textContent = "All Questions (62 Total)";
       } else if (filterType === "L3") {
-        activeQuestions = questionsData.filter(q => q.lec === "L3");
+        activeEmQuestions = emiratesQuestionsData.filter(q => q.lec === "L3");
         subHeader.textContent = "Lecture 3: International Politics & History (20 Questions)";
       } else if (filterType === "L4") {
-        activeQuestions = questionsData.filter(q => q.lec === "L4");
+        activeEmQuestions = emiratesQuestionsData.filter(q => q.lec === "L4");
         subHeader.textContent = "Lecture 4: Core Values & Heritage (20 Questions)";
       } else if (filterType === "blooket") {
-        activeQuestions = questionsData.filter(q => q.lec === "blooket");
+        activeEmQuestions = emiratesQuestionsData.filter(q => q.lec === "blooket");
         subHeader.textContent = "Blooket Practice Questions (22 Questions)";
       }
-      renderQuiz();
+      renderEmiratesQuiz();
     }
 
-    function shuffleQuiz() {
-      for (let i = activeQuestions.length - 1; i > 0; i--) {
+    function shuffleEmirates() {
+      for (let i = activeEmQuestions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [activeQuestions[i], activeQuestions[j]] = [activeQuestions[j], activeQuestions[i]];
+        [activeEmQuestions[i], activeEmQuestions[j]] = [activeEmQuestions[j], activeEmQuestions[i]];
       }
-      renderQuiz();
+      renderEmiratesQuiz();
     }
 
-    function resetQuiz() {
-      if (currentFilter === "all") {
-        activeQuestions = [...questionsData];
+    function resetEmirates() {
+      if (emFilter === "all") {
+        activeEmQuestions = [...emiratesQuestionsData];
       } else {
-        activeQuestions = questionsData.filter(q => q.lec === currentFilter);
+        activeEmQuestions = emiratesQuestionsData.filter(q => q.lec === emFilter);
       }
-      renderQuiz();
+      renderEmiratesQuiz();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // Initialize
-    renderQuiz();
+    /* =========================================
+       ENGINEERING PHYSICS 1 FUNCTIONS
+       ========================================= */
+    function renderPhysicsQuiz() {
+      const container = document.getElementById("physicsQuizContainer");
+      container.innerHTML = "";
+      physScore = 0;
+      physAnswered = 0;
+      updatePhysicsScore();
+
+      activePhysQuestions.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "q-card";
+
+        const meta = document.createElement("div");
+        meta.className = "q-meta";
+
+        meta.innerHTML = `
+          <div class="q-tags-group">
+            <span class="q-tag tag-theory">Theory Questions</span>
+            <span class="q-tag tag-chapter">${item.chapter}</span>
+          </div>
+          <span>Question ${index + 1} of ${activePhysQuestions.length}</span>
+        `;
+
+        const qText = document.createElement("div");
+        qText.className = "q-text";
+        qText.textContent = item.q;
+
+        const optsDiv = document.createElement("div");
+        optsDiv.className = "options";
+
+        const fb = document.createElement("div");
+        fb.className = "feedback";
+        fb.innerHTML = `<strong>Explanation:</strong> ${item.exp}`;
+
+        const letters = ["A", "B", "C", "D"];
+        item.opts.forEach((optText, optIndex) => {
+          const btn = document.createElement("button");
+          btn.className = "opt-btn";
+          btn.textContent = `${letters[optIndex] || ''}. ${optText}`;
+          btn.onclick = () => selectPhysicsAnswer(btn, optIndex, item.ans, optsDiv, fb);
+          optsDiv.appendChild(btn);
+        });
+
+        card.appendChild(meta);
+        card.appendChild(qText);
+        card.appendChild(optsDiv);
+        card.appendChild(fb);
+        container.appendChild(card);
+      });
+    }
+
+    function selectPhysicsAnswer(clickedBtn, chosenIdx, correctIdx, optsDiv, fb) {
+      const allBtns = optsDiv.querySelectorAll(".opt-btn");
+      allBtns.forEach((b, i) => {
+        b.disabled = true;
+        if (i === correctIdx) b.classList.add("correct");
+      });
+
+      if (chosenIdx === correctIdx) {
+        physScore++;
+      } else {
+        clickedBtn.classList.add("wrong");
+      }
+      physAnswered++;
+      fb.style.display = "block";
+      updatePhysicsScore();
+    }
+
+    function updatePhysicsScore() {
+      const pct = physAnswered === 0 ? 0 : Math.round((physScore / physAnswered) * 100);
+      document.getElementById("physicsScoreDisplay").textContent = `Score: ${physScore} / ${physAnswered} (${pct}%)`;
+    }
+
+    function filterPhysics(filterType, btnEl) {
+      physFilter = filterType;
+      document.querySelectorAll("#view-physics .ctrl-btn").forEach(b => b.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+
+      const subHeader = document.getElementById("physicsSub");
+      if (filterType === "all") {
+        activePhysQuestions = [...physicsQuestionsData];
+        subHeader.textContent = "Category: Theory Questions (41 Questions Total)";
+      } else if (filterType === "ch2") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 2"));
+        subHeader.textContent = "Theory Questions • Chapter 2: 1D Motion & Free Fall (8 Questions)";
+      } else if (filterType === "ch3") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 3"));
+        subHeader.textContent = "Theory Questions • Chapter 3: 2D/3D Motion & Circular Motion (13 Questions)";
+      } else if (filterType === "ch4") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 4"));
+        subHeader.textContent = "Theory Questions • Chapter 4: Newton's Laws of Motion (7 Questions)";
+      } else if (filterType === "ch5") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 5"));
+        subHeader.textContent = "Theory Questions • Chapter 5: Applications of Newton's Laws (13 Questions)";
+      }
+      renderPhysicsQuiz();
+    }
+
+    function shufflePhysics() {
+      for (let i = activePhysQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [activePhysQuestions[i], activePhysQuestions[j]] = [activePhysQuestions[j], activePhysQuestions[i]];
+      }
+      renderPhysicsQuiz();
+    }
+
+    function resetPhysics() {
+      if (physFilter === "all") {
+        activePhysQuestions = [...physicsQuestionsData];
+      } else if (physFilter === "ch2") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 2"));
+      } else if (physFilter === "ch3") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 3"));
+      } else if (physFilter === "ch4") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 4"));
+      } else if (physFilter === "ch5") {
+        activePhysQuestions = physicsQuestionsData.filter(q => q.chapter.includes("Chapter 5"));
+      }
+      renderPhysicsQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Initialize both quizzes and check routing
+    renderEmiratesQuiz();
+    renderPhysicsQuiz();
     checkHashRoute();
   </script>
 </body>
