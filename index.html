@@ -8,6 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for pristine math formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="initKaTeX()"></script>
+
   <style>
     :root {
       --bg: #090e17;
@@ -501,7 +507,7 @@
       font-size: 1.08rem;
       font-weight: 600;
       margin-bottom: 16px;
-      line-height: 1.5;
+      line-height: 1.6;
       color: #f1f5f9;
     }
 
@@ -520,7 +526,7 @@
       border-radius: 9px;
       cursor: pointer;
       font-size: 0.95rem;
-      line-height: 1.45;
+      line-height: 1.5;
       transition: all 0.15s ease;
     }
 
@@ -556,12 +562,12 @@
       margin-top: 14px;
       padding: 12px 16px;
       border-radius: 9px;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       background: #090e17;
       border-left: 4px solid var(--accent);
       color: #cbd5e1;
       display: none;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .physics-view .feedback {
@@ -574,6 +580,15 @@
 
     .physics-view .feedback strong {
       color: var(--physics-color);
+    }
+
+    /* KaTeX Dark Mode Tuning */
+    .katex {
+      font-size: 1.05em;
+      color: inherit;
+    }
+    .katex-display {
+      margin: 0.6em 0;
     }
 
     @media (max-width: 640px) {
@@ -1494,7 +1509,7 @@
     "label": "Q1.1 (Direct Variant of Quiz Q3)",
     "chapter": "Chapter 2: 1D Motion & Free Fall",
     "cat": "Theory Questions",
-    "q": "[Q1.1] The position of a particle is given by x(t)=10-12t+2t². At t=2 s, which statement is correct?",
+    "q": "[Q1.1] The position of a particle is given by $x(t) = 10 - 12t + 2t^2$. At $t = 2\\text{ s}$, which statement is correct?",
     "opts": [
       "It moves in the positive direction and speeds up.",
       "It moves in the positive direction and slows down.",
@@ -1502,7 +1517,7 @@
       "It moves in the negative direction and speeds up."
     ],
     "ans": 2,
-    "exp": "Take the derivatives: v(t)=-12+4t and a(t)=+4 m/s². At t=2 s, v(2)=-12+8=-4 m/s (negative, so it moves in the negative direction), and a(2)=+4 m/s² (positive). Because v and a have opposite signs (- and +), it slows down."
+    "exp": "Take the derivatives: $v(t) = -12 + 4t$ and $a(t) = +4\\text{ m/s}^2$. At $t = 2\\text{ s}$, $v(2) = -12 + 8 = -4\\text{ m/s}$ (negative, so it moves in the negative direction), and $a(2) = +4\\text{ m/s}^2$ (positive). Because $v$ and $a$ have opposite signs ($-$ and $+$), it slows down."
   },
   {
     "id": 2,
@@ -1510,7 +1525,7 @@
     "label": "Q1.2 (Another Variant of Quiz Q3)",
     "chapter": "Chapter 2: 1D Motion & Free Fall",
     "cat": "Theory Questions",
-    "q": "[Q1.2] A particle's velocity is given by v(t)=12-3t². At t=1 s, which statement is correct?",
+    "q": "[Q1.2] A particle's velocity is given by $v(t) = 12 - 3t^2$. At $t = 1\\text{ s}$, which statement is correct?",
     "opts": [
       "It moves in the positive direction and speeds up.",
       "It moves in the positive direction and slows down.",
@@ -1518,7 +1533,7 @@
       "It moves in the negative direction and speeds up."
     ],
     "ans": 1,
-    "exp": "At t=1 s, v(1)=12-3(1)²=+9 m/s (positive direction). The acceleration is a(t)=v'(t)=-6t, so a(1)=-6 m/s² (negative). Since v>0 and a<0 (opposite signs), it moves in the positive direction and slows down."
+    "exp": "At $t = 1\\text{ s}$, $v(1) = 12 - 3(1)^2 = +9\\text{ m/s}$ (positive direction). The acceleration is $a(t) = v'(t) = -6t$, so $a(1) = -6\\text{ m/s}^2$ (negative). Since $v > 0$ and $a < 0$ (opposite signs), it moves in the positive direction and slows down."
   },
   {
     "id": 3,
@@ -1526,15 +1541,15 @@
     "label": "Q1.3 (Turning Point / Maximum Position Theory)",
     "chapter": "Chapter 2: 1D Motion & Free Fall",
     "cat": "Theory Questions",
-    "q": "[Q1.3] If a particle's position is x(t)=t³-6t²+9t, how do you find the time when the particle reverses its direction of motion (turns around)?",
+    "q": "[Q1.3] If a particle's position is $x(t) = t^3 - 6t^2 + 9t$, how do you find the time when the particle reverses its direction of motion (turns around)?",
     "opts": [
-      "Set x(t)=0",
-      "Set v(t)=0 (and check that v changes sign)",
-      "Set a(t)=0",
-      "Set v(t)=a(t)"
+      "Set $x(t) = 0$",
+      "Set $v(t) = 0$ (and check that $v$ changes sign)",
+      "Set $a(t) = 0$",
+      "Set $v(t) = a(t)$"
     ],
     "ans": 1,
-    "exp": "An object turns around (reverses direction) or reaches its maximum/minimum position when its instantaneous velocity v(t)=0 (here, v(t)=3t²-12t+9=0⟹t=1 s and t=3 s). Setting a(t)=0 only finds the point of maximum/minimum velocity (inflection point of x), not where it turns around!"
+    "exp": "An object turns around (reverses direction) or reaches its maximum/minimum position when its instantaneous velocity $v(t) = 0$ (here, $v(t) = 3t^2 - 12t + 9 = 0 \\implies t = 1\\text{ s}$ and $t = 3\\text{ s}$). Setting $a(t) = 0$ only finds the point of maximum/minimum velocity (inflection point of $x$), not where it turns around!"
   },
   {
     "id": 4,
@@ -1542,15 +1557,15 @@
     "label": "Q1.4 (Average Speed vs. Average Velocity)",
     "chapter": "Chapter 2: 1D Motion & Free Fall",
     "cat": "Theory Questions",
-    "q": "[Q1.4] A runner sprints 100 m East in 10 s, then jogs 100 m West back to the starting point in 30 s. Which statement is true for the total 40 s trip?",
+    "q": "[Q1.4] A runner sprints $100\\text{ m}$ East in $10\\text{ s}$, then jogs $100\\text{ m}$ West back to the starting point in $30\\text{ s}$. Which statement is true for the total $40\\text{ s}$ trip?",
     "opts": [
-      "Average speed is 0 m/s and average velocity is 0 m/s.",
-      "Average speed is 5.0 m/s and average velocity is 0 m/s.",
-      "Average speed is 0 m/s and average velocity is 5.0 m/s.",
+      "Average speed is $0\\text{ m/s}$ and average velocity is $0\\text{ m/s}$.",
+      "Average speed is $5.0\\text{ m/s}$ and average velocity is $0\\text{ m/s}$.",
+      "Average speed is $0\\text{ m/s}$ and average velocity is $5.0\\text{ m/s}$.",
       "Average speed and average velocity are always equal in 1D motion."
     ],
     "ans": 1,
-    "exp": "Average velocity is (net displacement/Δt)=(0 m/40 s)=0 m/s. Average speed is (total distance/Δt)=(200 m/40 s)=5.0 m/s. Average velocity only equals average speed if the object moves in one direction without ever turning around."
+    "exp": "Average velocity is $\\frac{\\text{net displacement}}{\\Delta t} = \\frac{0\\text{ m}}{40\\text{ s}} = 0\\text{ m/s}$. Average speed is $\\frac{\\text{total distance}}{\\Delta t} = \\frac{200\\text{ m}}{40\\text{ s}} = 5.0\\text{ m/s}$. Average velocity only equals average speed if the object moves in one direction without ever turning around."
   },
   {
     "id": 5,
@@ -1561,12 +1576,12 @@
     "q": "[Q1.5] Can an object have zero velocity and non-zero acceleration at the same instant? Can it have non-zero velocity and zero acceleration?",
     "opts": [
       "Neither is possible.",
-      "v=0,a≠0 happens at the peak of a ball thrown straight up; v≠0,a=0 happens when a car cruises at a constant velocity.",
-      "v=0,a≠0 is impossible because if velocity is zero, dv/dt must be zero.",
+      "$v = 0, a \\neq 0$ happens at the peak of a ball thrown straight up; $v \\neq 0, a = 0$ happens when a car cruises at a constant velocity.",
+      "$v = 0, a \\neq 0$ is impossible because if velocity is zero, $dv/dt$ must be zero.",
       "Both only happen in free fall."
     ],
     "ans": 1,
-    "exp": "At the highest point of vertical free fall, vᵧ=0 momentarily, but aᵧ=-g=-9.81 m/s²≠0. Conversely, any object moving at constant velocity has v≠0 and a=0."
+    "exp": "At the highest point of vertical free fall, $v_y = 0$ momentarily, but $a_y = -g = -9.81\\text{ m/s}^2 \\neq 0$. Conversely, any object moving at constant velocity has $v \\neq 0$ and $a = 0$."
   },
   {
     "id": 6,
@@ -1574,15 +1589,15 @@
     "label": "Q1.6 (Quiz Q5 Concept Variant — Upward vs. Downward Throw)",
     "chapter": "Chapter 2: 1D Motion & Free Fall",
     "cat": "Theory Questions",
-    "q": "[Q1.6] Stone A is thrown vertically upward with speed v₀=8.0 m/s from the roof of a 50 m building. Stone B is thrown vertically downward with the same initial speed v₀=8.0 m/s from the same roof (as in Quiz Q5). Neglecting air resistance, how do their speeds compare just before hitting the ground?",
+    "q": "[Q1.6] Stone A is thrown vertically upward with speed $v_0 = 8.0\\text{ m/s}$ from the roof of a $50\\text{ m}$ building. Stone B is thrown vertically downward with the same initial speed $v_0 = 8.0\\text{ m/s}$ from the same roof (as in Quiz Q5). Neglecting air resistance, how do their speeds compare just before hitting the ground?",
     "opts": [
       "Stone A hits with a greater speed.",
       "Stone B hits with a greater speed.",
-      "Both stones hit the ground with the exact same speed (32.3 m/s).",
+      "Both stones hit the ground with the exact same speed ($32.3\\text{ m/s}$).",
       "It depends on the masses of the stones."
     ],
     "ans": 2,
-    "exp": "By v_{y}^{2}=v_{0y}^{2}-2gΔy, since (-8.0)²=(+8.0)²=64, both stones hit the ground with the exact same final speed! Stone A simply goes up and passes the roof edge on its way down at 8.0 m/s, identical to Stone B. (Note: Stone A has a longer flight time and greater total distance, but the exact same displacement Δy=-50 m and final speed.)"
+    "exp": "By $v_y^2 = v_{0y}^2 - 2g\\Delta y$, since $(-8.0)^2 = (+8.0)^2 = 64$, both stones hit the ground with the exact same final speed! Stone A simply travels upward and returns past the roof edge moving downward at $8.0\\text{ m/s}$, identical to Stone B. (Note: Stone A has a longer flight time, but the exact same displacement $\\Delta y = -50\\text{ m}$ and final speed)."
   },
   {
     "id": 7,
@@ -1590,15 +1605,15 @@
     "label": "Q1.7 (Quiz Q4 Concept Variant — Braking Distance Scaling)",
     "chapter": "Chapter 2: 1D Motion & Free Fall",
     "cat": "Theory Questions",
-    "q": "[Q1.7] A car traveling at speed v₀ slams on its brakes and skids to a stop (v_{f}=0) with constant deceleration a. If the car's initial speed were doubled (2v₀) with the same braking deceleration a, what happens to the stopping time and the stopping distance?",
+    "q": "[Q1.7] A car traveling at speed $v_0$ slams on its brakes and skids to a stop ($v_f = 0$) with constant deceleration $a$. If the car's initial speed were doubled ($2v_0$) with the same braking deceleration $a$, what happens to the stopping time and the stopping distance?",
     "opts": [
       "Stopping time doubles; stopping distance doubles.",
-      "Stopping time doubles; stopping distance quadruples (4×).",
+      "Stopping time doubles; stopping distance quadruples ($4\\times$).",
       "Stopping time quadruples; stopping distance doubles.",
       "Both quadruple."
     ],
     "ans": 1,
-    "exp": "From 0=v₀+at⟹t=(v₀/|a|), doubling v₀ doubles the stopping time. From 0=v_{0}^{2}+2aΔx⟹Δx=(v_{0}^{2}/2|a|), because v₀ is squared, doubling v₀ quadruples (4×) the stopping distance!"
+    "exp": "From $0 = v_0 + at \\implies t = \\frac{v_0}{|a|}$, doubling $v_0$ doubles the stopping time. From $0 = v_0^2 + 2a\\Delta x \\implies \\Delta x = \\frac{v_0^2}{2|a|}$, because $v_0$ is squared, doubling $v_0$ quadruples ($4\\times$) the stopping distance!"
   },
   {
     "id": 8,
@@ -1606,15 +1621,15 @@
     "label": "Q1.8 (Graph Reading — x-t and v-t Graphs)",
     "chapter": "Chapter 2: 1D Motion & Free Fall",
     "cat": "Theory Questions",
-    "q": "[Q1.8] On a position-time (x-t) graph and a velocity-time (v-t) graph, what do the slopes, concavity, and areas under the curves represent?",
+    "q": "[Q1.8] On a position-time ($x-t$) graph and a velocity-time ($v-t$) graph, what do the slopes, concavity, and areas under the curves represent?",
     "opts": [
-      "x-t slope = velocity, x-t curvature = acceleration; v-t slope = acceleration, v-t area = displacement",
-      "x-t slope = acceleration, x-t area = velocity; v-t slope = velocity, v-t area = acceleration",
-      "x-t slope = displacement; v-t slope = position, v-t area = acceleration",
+      "$x-t$ slope = velocity, $x-t$ curvature = acceleration; $v-t$ slope = acceleration, $v-t$ area = displacement",
+      "$x-t$ slope = acceleration, $x-t$ area = velocity; $v-t$ slope = velocity, $v-t$ area = acceleration",
+      "$x-t$ slope = displacement; $v-t$ slope = position, $v-t$ area = acceleration",
       "Both slopes represent acceleration, and both areas represent velocity"
     ],
     "ans": 0,
-    "exp": "x-t graph: Slope = instantaneous velocity v. Concave up (∪, smiling) = positive acceleration (a > 0); Concave down (∩, frowning) = negative acceleration (a < 0); Straight line = zero acceleration (a = 0). v-t graph: Slope = instantaneous acceleration a. Area under the curve = displacement Δx."
+    "exp": "$x-t$ graph: Slope = instantaneous velocity $v$. Concave up ($\\cup$) = positive acceleration ($a > 0$); Concave down ($\\cap$) = negative acceleration ($a < 0$); Straight line = zero acceleration ($a = 0$). $v-t$ graph: Slope = instantaneous acceleration $a$. Area under the curve = displacement $\\Delta x$."
   },
   {
     "id": 9,
@@ -1622,36 +1637,36 @@
     "label": "Q2.1 (Slide \"Average Velocity\" & Fig 3.2)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.1] The average velocity vₐᵥ_g of a particle moving along a curved path between two points always points in the same direction as:",
+    "q": "[Q2.1] The average velocity $\\vec{v}_{\\text{avg}}$ of a particle moving along a curved path between two points always points in the same direction as:",
     "opts": [
       "The instantaneous velocity at the starting point.",
       "The instantaneous acceleration.",
-      "The displacement Δr between the two points.",
+      "The displacement $\\Delta\\vec{r}$ between the two points.",
       "The tangent to the curve at the endpoint."
     ],
     "ans": 2,
-    "exp": "As your Chapter 3 slides state: \"The average velocity between two points will have the same direction as the displacement.\" Instantaneous velocity v is always tangent to the curved path."
+    "exp": "The average velocity between two points has the exact same direction as the displacement vector $\\Delta\\vec{r}$. In contrast, instantaneous velocity $\\vec{v}$ is always tangent to the path."
   },
   {
     "id": 10,
     "code": "Q2.2",
-    "label": "Q2.2 (Slides \"The acceleration vector - Fig 3.6\" & \"Parallel and perpendicular components of acceleration\")",
+    "label": "Q2.2 (Components of Acceleration: a_parallel & a_perp)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.2] When a race car drives around a curved track, its acceleration can be split into a parallel component (a_{∥}, tangent to the path) and a perpendicular component (a_{⊥}, pointing inward toward the center of the curve). What does each component do?",
+    "q": "[Q2.2] When a race car drives around a curved track, its acceleration can be split into a parallel component ($a_\\parallel$, tangent to the path) and a perpendicular component ($a_\\perp$, pointing inward toward the center of the curve). What does each component do?",
     "opts": [
-      "a_{∥} changes the direction of motion; a_{⊥} changes the speed.",
-      "a_{∥} changes the speed (magnitude of velocity); a_{⊥} changes the direction of velocity.",
-      "a_{⊥} is zero when speed is constant.",
-      "a_{∥} is always greater than a_{⊥}."
+      "$a_\\parallel$ changes the direction of motion; $a_\\perp$ changes the speed.",
+      "$a_\\parallel$ changes the speed (magnitude of velocity); $a_\\perp$ changes the direction of velocity.",
+      "$a_\\perp$ is zero when speed is constant.",
+      "$a_\\parallel$ is always greater than $a_\\perp$."
     ],
     "ans": 1,
-    "exp": "If the car curves at constant speed: a_{∥}=0, a_{⊥}=(v²/R) (total acceleration points purely inward, 90^{∘} to v). If the car curves while speeding up: a_{∥}>0, so total acceleration points inward and forward (angle <90^{∘} from v). If the car curves while slowing down: a_{∥}<0, so total acceleration points inward and backward (angle >90^{∘} from v)."
+    "exp": "If the car curves at constant speed: $a_\\parallel = 0$ and $a_\\perp = \\frac{v^2}{R}$ (total acceleration points purely inward, $90^\\circ$ to $\\vec{v}$). If the car curves while speeding up: $a_\\parallel > 0$, so total acceleration points inward and forward (angle $< 90^\\circ$). If the car curves while slowing down: $a_\\parallel < 0$, so total acceleration points inward and backward (angle $> 90^\\circ$)."
   },
   {
     "id": 11,
     "code": "Q2.3",
-    "label": "Q2.3 (Slide \"Skiing through a valley - Conceptual Example 3.4 & Fig 3.14\")",
+    "label": "Q2.3 (Skiing Through a Valley — Bottom Point)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
     "q": "[Q2.3] A skier glides down a frictionless hill, goes through the bottom of a circular valley, and starts up the next hill. What is the direction of the skier's acceleration at the lowest point of the valley?",
@@ -1662,7 +1677,7 @@
       "Straight downward."
     ],
     "ans": 2,
-    "exp": "At the bottom of the valley, the skier's speed is momentarily at its maximum (dv/dt=a_{∥}=0), so there is no tangential acceleration. However, the skier is moving along a curved path, so there is a perpendicular (centripetal) acceleration a_{⊥}=v²/R pointing straight upward toward the center of curvature! 2B. Projectile Motion (Slides 3.15–3.25 & Quiz Q6 Style)"
+    "exp": "At the bottom of the valley, the skier's speed is momentarily at its maximum ($dv/dt = a_\\parallel = 0$), so there is no tangential acceleration. However, the skier is moving along a curved circular path, so there is a centripetal acceleration $a_\\perp = \\frac{v^2}{R}$ pointing straight upward toward the center of curvature!"
   },
   {
     "id": 12,
@@ -1678,23 +1693,23 @@
       "Both hit at the same time with the same speed."
     ],
     "ans": 2,
-    "exp": "Horizontal and vertical motions are independent. Both balls have v_{0y}=0 and fall the same vertical distance y, so they hit the ground at the exact same instant (t=√(2h/g)), as shown by the horizontal lines in the strobe photograph on Slide Figure 3.16. The yellow ball hits with a greater speed because v=√(v_{0x}^{2}+v_{y}^{2})."
+    "exp": "Horizontal and vertical motions are independent. Both balls have $v_{0y} = 0$ and fall the same vertical height $h$, so they hit the ground at the exact same time ($t = \\sqrt{\\frac{2h}{g}}$). The yellow ball hits with a greater speed because it has both horizontal and vertical components: $v = \\sqrt{v_{0x}^2 + v_y^2}$."
   },
   {
     "id": 13,
     "code": "Q2.5",
-    "label": "Q2.5 (Classic Mid-Term Trap — Top of the Trajectory)",
+    "label": "Q2.5 (Top of Trajectory in Projectile Motion)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.5] A projectile is launched at an angle θ=50^{∘} above the horizontal with initial speed v₀=45 m/s (as in Quiz Q6). At the highest point (peak) of its trajectory, what are its speed v and acceleration a?",
+    "q": "[Q2.5] A projectile is launched at an angle $\\theta = 50^\\circ$ above the horizontal with initial speed $v_0 = 45\\text{ m/s}$ (as in Quiz Q6). At the highest point (peak) of its trajectory, what are its speed $v$ and acceleration $a$?",
     "opts": [
-      "v=0 m/s and a=0 m/s²",
-      "v=0 m/s and a=9.81 m/s² downward",
-      "v=v₀cos50^{∘} (horizontal) and a=9.81 m/s² downward",
-      "v=v₀sin50^{∘} and a=9.81 m/s² downward"
+      "$v = 0\\text{ m/s}$ and $a = 0\\text{ m/s}^2$",
+      "$v = 0\\text{ m/s}$ and $a = 9.81\\text{ m/s}^2$ downward",
+      "$v = v_0\\cos 50^\\circ$ (horizontal) and $a = 9.81\\text{ m/s}^2$ downward",
+      "$v = v_0\\sin 50^\\circ$ and $a = 9.81\\text{ m/s}^2$ downward"
     ],
     "ans": 2,
-    "exp": "At the highest point, only the vertical velocity is zero (vᵧ=0). The horizontal velocity vₓ=v₀cosθ never changes! Thus, the speed at the peak is minimum (equal to v₀cosθ), NOT zero. And the acceleration is constant everywhere during the flight: a=g=9.81 m/s² downward."
+    "exp": "At the highest point, only the vertical velocity is zero ($v_y = 0$). The horizontal velocity $v_x = v_0\\cos\\theta$ remains constant throughout! Thus, the speed at the peak is at a non-zero minimum ($v_0\\cos 50^\\circ$). The acceleration is constant everywhere during flight: $a = g = 9.81\\text{ m/s}^2$ directed downward."
   },
   {
     "id": 14,
@@ -1702,7 +1717,7 @@
     "label": "Q2.6 (Angles Between v and a in Projectile Motion)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.6] During a projectile's flight on level ground from launch to impact, at what point are the velocity vector v and acceleration vector a perpendicular (θ = 90°)?",
+    "q": "[Q2.6] During a projectile's flight on level ground from launch to impact, at what point are the velocity vector $\\vec{v}$ and acceleration vector $\\vec{a}$ perpendicular ($\\theta = 90^\\circ$)?",
     "opts": [
       "At the initial launch point",
       "Only at the highest point (peak) of the trajectory",
@@ -1710,28 +1725,28 @@
       "Velocity and acceleration are never perpendicular in projectile motion"
     ],
     "ans": 1,
-    "exp": "Perpendicular (90°): Only at the peak, where velocity is purely horizontal (v_y = 0) and acceleration (gravity) is purely vertical downward. On the way up, the angle between v and a is obtuse (>90°, slowing down). On the way down, it is acute (<90°, speeding up). They are never parallel in 2D projectile motion."
+    "exp": "Perpendicular ($90^\\circ$): Only at the peak, where velocity is purely horizontal ($v_y = 0$) and acceleration (gravity) is purely vertical downward. On the way up, the angle between $\\vec{v}$ and $\\vec{a}$ is obtuse ($>90^\\circ$, slowing down). On the way down, it is acute ($<90^\\circ$, speeding up). They are never parallel in 2D projectile motion."
   },
   {
     "id": 15,
     "code": "Q2.7",
-    "label": "Q2.7 (Quiz Q6 Range & Angle Theory)",
+    "label": "Q2.7 (Range & Complementary Angles Theory)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.7] In projectile motion on level ground, which launch angle yields the maximum horizontal range, and which other angle produces the exact same range as a 50° launch at the same initial speed?",
+    "q": "[Q2.7] In projectile motion on level ground, which launch angle yields the maximum horizontal range, and which other angle produces the exact same range as a $50^\\circ$ launch at the same initial speed?",
     "opts": [
-      "45° produces maximum range; 40° yields the same range as 50°",
-      "60° produces maximum range; 30° yields the same range as 50°",
-      "45° produces maximum range; 25° yields the same range as 50°",
-      "90° produces maximum range; 40° yields the same range as 50°"
+      "$45^\\circ$ produces maximum range; $40^\\circ$ yields the same range as $50^\\circ$",
+      "$60^\\circ$ produces maximum range; $30^\\circ$ yields the same range as $50^\\circ$",
+      "$45^\\circ$ produces maximum range; $25^\\circ$ yields the same range as $50^\\circ$",
+      "$90^\\circ$ produces maximum range; $40^\\circ$ yields the same range as $50^\\circ$"
     ],
     "ans": 0,
-    "exp": "45° gives maximum horizontal range because sin(2×45°) = sin(90°) = 1. Complementary launch angles (θ and 90° - θ, such as 50° and 40°) always yield the exact same horizontal range on level ground because sin(2×50°) = sin(100°) = sin(80°) = sin(2×40°). However, the 50° launch reaches a higher peak and stays in the air longer."
+    "exp": "$45^\\circ$ gives maximum horizontal range because $\\sin(2 \\times 45^\\circ) = \\sin(90^\\circ) = 1$. Complementary launch angles ($\\theta$ and $90^\\circ - \\theta$, such as $50^\\circ$ and $40^\\circ$) always yield the exact same horizontal range on level ground because $\\sin(2 \\times 50^\\circ) = \\sin(100^\\circ) = \\sin(80^\\circ) = \\sin(2 \\times 40^\\circ)$. However, the $50^\\circ$ launch reaches a higher peak and stays in the air longer."
   },
   {
     "id": 16,
     "code": "Q2.8",
-    "label": "Q2.8 (Slide \"The effects of wind/air resistance - Fig 3.20\")",
+    "label": "Q2.8 (Effects of Air Resistance on Projectiles)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
     "q": "[Q2.8] How does air resistance change the trajectory of a baseball compared to an ideal vacuum trajectory?",
@@ -1742,12 +1757,12 @@
       "Only horizontal velocity is affected."
     ],
     "ans": 0,
-    "exp": "As your Chapter 3 slides state: \"Peak heights and distance fall. Trajectories cease to be parabolic.\""
+    "exp": "Peak height and horizontal range both decrease significantly, and the trajectory ceases to be a symmetric parabola (the descent is steeper than the ascent)."
   },
   {
     "id": 17,
     "code": "Q2.9",
-    "label": "Q2.9 (Slide \"Tranquilizing the falling monkey - Example 3.10\")",
+    "label": "Q2.9 (The Falling Monkey Problem)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
     "q": "[Q2.9] A zookeeper aims a tranquilizer dart directly at a monkey hanging from a branch. At the exact moment the dart is fired, the monkey lets go and drops from the branch. Neglecting air resistance, where should the zookeeper aim to hit the monkey?",
@@ -1758,391 +1773,391 @@
       "Ahead of the monkey horizontally."
     ],
     "ans": 2,
-    "exp": "Gravity pulls both the dart and the monkey downward by the exact same vertical distance (1/2)gt² below their straight-line gravity-free paths in time t. Therefore, aiming directly at the monkey hits it every time (as long as the dart is fast enough to reach the tree before hitting the ground). 2C. Uniform & Non-Uniform Circular Motion (Slides 3.27–3.30 & Quiz Q7 Style)"
+    "exp": "Gravity pulls both the dart and the monkey downward by the exact same vertical distance $\\frac{1}{2}gt^2$ below their straight-line paths in time $t$. Therefore, aiming directly at the monkey hits it every time (provided the dart reaches the tree before hitting the ground)."
   },
   {
     "id": 18,
     "code": "Q2.10",
-    "label": "Q2.10 (Slide \"Uniform circular motion and projectile motion compared\")",
+    "label": "Q2.10 (Uniform Circular Motion vs. Projectile Motion)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
     "q": "[Q2.10] For a particle in uniform circular motion (like in Quiz Q7), which of the following quantities are constant, and which are changing?",
     "opts": [
       "Speed, velocity, and acceleration are all constant.",
-      "Speed and the magnitude of acceleration (a_{rad}=v²/R) are constant, but the velocity and acceleration change continuously because their directions rotate.",
+      "Speed and the magnitude of acceleration ($a_{\\text{rad}} = \\frac{v^2}{R}$) are constant, but velocity and acceleration change continuously because their directions rotate.",
       "Velocity is constant, and acceleration is zero.",
       "Speed is constant, and acceleration is constant in both magnitude and direction."
     ],
     "ans": 1,
-    "exp": "In uniform circular motion, speed v=(2πR/T) is constant, so tangential acceleration a_{tan}=0. However, velocity is a directional quantity, and because its direction is constantly turning, there is a nonzero centripetal acceleration a_{rad}=(v²/R)=(4π²R/T²) pointing toward the center of the circle. Because \"toward the center\" changes direction as the particle moves around the circle, a is not a constant vector (unlike projectile motion, where a=g is constant in both magnitude and direction)."
+    "exp": "In uniform circular motion, speed $v = \\frac{2\\pi R}{T}$ is constant, so tangential acceleration $a_{\\text{tan}} = 0$. However, velocity is a vector, and because its direction is constantly turning, there is a nonzero centripetal acceleration $a_{\\text{rad}} = \\frac{v^2}{R} = \\frac{4\\pi^2 R}{T^2}$ pointing toward the center. Because 'toward the center' rotates continuously as the particle moves, $\\vec{a}$ is NOT a constant vector (unlike projectile motion where $\\vec{a} = \\vec{g}$ is constant in both magnitude and direction)."
   },
   {
     "id": 19,
     "code": "Q2.11",
-    "label": "Q2.11 (Quiz Q7 Scaling Trap)",
+    "label": "Q2.11 (Quiz Q7 Scaling Trap — Circular Motion)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.11] Car A and Car B round the same circular track of radius R. If Car B travels at twice the speed (2v) of Car A, what is the ratio of Car B's centripetal acceleration to Car A's?",
+    "q": "[Q2.11] Car A and Car B round the same circular track of radius $R$. If Car B travels at twice the speed ($2v$) of Car A, what is the ratio of Car B's centripetal acceleration to Car A's?",
     "opts": [
-      "2× larger",
-      "4× larger",
+      "$2\\times$ larger",
+      "$4\\times$ larger",
       "The same",
-      "1/2 as large"
+      "$1/2$ as large"
     ],
     "ans": 1,
-    "exp": "Using a_c = v²/R (with constant radius R), doubling speed v makes the centripetal acceleration (2)² = 4× larger. (Note: if period T were constant instead, a_c = 4π²R/T² would scale linearly with R. Always check whether v or T is held constant!)"
+    "exp": "Using $a_c = \\frac{v^2}{R}$ (with constant radius $R$), doubling speed $v$ makes the centripetal acceleration $(2)^2 = 4\\times$ larger. (Note: if period $T$ were constant instead, $a_c = \\frac{4\\pi^2 R}{T^2}$ would scale linearly with $R$. Always check whether $v$ or $T$ is held constant!)"
   },
   {
     "id": 20,
     "code": "Q2.12",
-    "label": "Q2.12 (Slides \"Relative velocity on a straight road - Fig 3.33\" & \"Conductor on a train - Fig 3.34\")",
+    "label": "Q2.12 (Relative Velocity — Train and Car)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.12] A train moves East at 25 m/s relative to the ground. A conductor walks West at 2 m/s relative to the train. A car on a parallel road drives West at 15 m/s relative to the ground. What are the conductor's velocity relative to the ground and the train's speed relative to the car driver?",
+    "q": "[Q2.12] A train moves East at $25\\text{ m/s}$ relative to the ground. A conductor walks West at $2\\text{ m/s}$ relative to the train. A car on a parallel road drives West at $15\\text{ m/s}$ relative to the ground. What are the conductor's velocity relative to the ground and the train's speed relative to the car driver?",
     "opts": [
-      "Conductor: 23 m/s East; Train relative to car: 40 m/s",
-      "Conductor: 27 m/s East; Train relative to car: 10 m/s",
-      "Conductor: 23 m/s West; Train relative to car: 40 m/s",
-      "Conductor: 25 m/s East; Train relative to car: 25 m/s"
+      "Conductor: $23\\text{ m/s}$ East; Train relative to car: $40\\text{ m/s}$",
+      "Conductor: $27\\text{ m/s}$ East; Train relative to car: $10\\text{ m/s}$",
+      "Conductor: $23\\text{ m/s}$ West; Train relative to car: $40\\text{ m/s}$",
+      "Conductor: $25\\text{ m/s}$ East; Train relative to car: $25\\text{ m/s}$"
     ],
     "ans": 0,
-    "exp": "v_{C/G} = v_{C/T} + v_{T/G} = -2 + 25 = +23 m/s (23 m/s East). For the train relative to the car: v_{T/Car} = v_{T/G} - v_{Car/G} = (+25) - (-15) = +40 m/s. When two vehicles move in opposite directions, their relative speed is the sum of their speeds."
+    "exp": "$v_{C/G} = v_{C/T} + v_{T/G} = -2 + 25 = +23\\text{ m/s}$ ($23\\text{ m/s}$ East). For the train relative to the car: $v_{T/\\text{Car}} = v_{T/G} - v_{\\text{Car}/G} = (+25) - (-15) = +40\\text{ m/s}$. When two vehicles move in opposite directions, their relative speed is the sum of their speeds."
   },
   {
     "id": 21,
     "code": "Q2.13",
-    "label": "Q2.13 (Slide \"Flying to the right or wrong airport\")",
+    "label": "Q2.13 (Airplane in Crosswind — Relative Velocity)",
     "chapter": "Chapter 3: 2D/3D Motion, Projectiles & Circular Motion",
     "cat": "Theory Questions",
-    "q": "[Q2.13] An airplane with airspeed v_{P/A} wants to fly due North relative to the ground while a crosswind blows due East with speed v_{A/G}. In what direction must the pilot aim the plane, and how does the ground speed compare to airspeed?",
+    "q": "[Q2.13] An airplane with airspeed $v_{P/A}$ wants to fly due North relative to the ground while a crosswind blows due East with speed $v_{A/G}$. In what direction must the pilot aim the plane, and how does the ground speed compare to airspeed?",
     "opts": [
-      "Aim West of North; ground speed is less than airspeed (v_{P/G} < v_{P/A})",
-      "Aim East of North; ground speed is greater than airspeed (v_{P/G} > v_{P/A})",
-      "Aim directly North; ground speed equals airspeed (v_{P/G} = v_{P/A})",
-      "Aim West of North; ground speed is greater than airspeed (v_{P/G} > v_{P/A})"
+      "Aim West of North; ground speed is less than airspeed ($v_{P/G} < v_{P/A}$)",
+      "Aim East of North; ground speed is greater than airspeed ($v_{P/G} > v_{P/A}$)",
+      "Aim directly North; ground speed equals airspeed ($v_{P/G} = v_{P/A}$)",
+      "Aim West of North; ground speed is greater than airspeed ($v_{P/G} > v_{P/A}$)"
     ],
     "ans": 0,
-    "exp": "The pilot must aim West of North (into the wind) so the westward component of airspeed cancels the eastward crosswind. Because airspeed v_{P/A} is the hypotenuse of the velocity triangle and ground speed v_{P/G} is one leg (v_{P/G} = √(v_{P/A}² - v_{A/G}²)), ground speed is strictly less than airspeed."
+    "exp": "The pilot must aim West of North (into the wind) so the westward component of airspeed cancels the eastward crosswind. Because airspeed $v_{P/A}$ is the hypotenuse of the velocity right triangle and ground speed $v_{P/G}$ is one leg ($v_{P/G} = \\sqrt{v_{P/A}^2 - v_{A/G}^2}$), ground speed is strictly less than airspeed ($v_{P/G} < v_{P/A}$)."
   },
   {
     "id": 22,
     "code": "Q3.1",
-    "label": "Q3.1 (Slides \"Four common types of forces\" & \"Typical sizes - Table 4.1\")",
+    "label": "Q3.1 (Types and Properties of Forces)",
     "chapter": "Chapter 4: Newton's Laws of Motion",
     "cat": "Theory Questions",
     "q": "[Q3.1] Which of the following statements about common forces is false?",
     "opts": [
       "Normal force, friction, and tension are contact forces, whereas weight (gravity) is a long-range force.",
-      "The Normal force (n) always acts perpendicular to the surface of contact.",
-      "Friction (f) always acts parallel to the surface of contact.",
-      "The magnitude of the Normal force (n) is always equal to the weight (mg) of the object."
+      "The Normal force ($n$) always acts perpendicular to the surface of contact.",
+      "Friction ($f$) always acts parallel to the surface of contact.",
+      "The magnitude of the Normal force ($n$) is always equal to the weight ($mg$) of the object."
     ],
     "ans": 3,
-    "exp": "The normal force is not always equal to mg! On an inclined plane, n=mgcosθ. In an accelerating elevator, n=m(g+aᵧ). If you push diagonally on a lawnmower, n includes the vertical component of your push."
+    "exp": "The normal force is NOT always equal to $mg$! On an inclined plane, $n = mg\\cos\\theta$. In an accelerating elevator, $n = m(g + a_y)$. If you push diagonally on an object, $n$ includes the vertical component of your push."
   },
   {
     "id": 23,
     "code": "Q3.2",
-    "label": "Q3.2 (Slides \"Newton's First Law - Figs 4.9 & 4.10\")",
+    "label": "Q3.2 (Newton's First Law — Constant Velocity)",
     "chapter": "Chapter 4: Newton's Laws of Motion",
     "cat": "Theory Questions",
-    "q": "[Q3.2] A hockey puck slides across frictionless ice at a constant velocity of 15 m/s East. What horizontal force is required to keep the puck moving at 15 m/s East?",
+    "q": "[Q3.2] A hockey puck slides across frictionless ice at a constant velocity of $15\\text{ m/s}$ East. What horizontal force is required to keep the puck moving at $15\\text{ m/s}$ East?",
     "opts": [
-      "A constant eastward force proportional to 15 m/s.",
-      "Zero net horizontal force (Fₓ=0).",
-      "A force equal to its weight mg.",
+      "A constant eastward force proportional to $15\\text{ m/s}$.",
+      "Zero net horizontal force ($F_x = 0$).",
+      "A force equal to its weight $mg$.",
       "A gradually decreasing eastward force."
     ],
     "ans": 1,
-    "exp": "By Newton's First Law, an object in motion continues in a straight line at constant speed with zero net force. Force is only required to change velocity (accelerate), not to maintain velocity!"
+    "exp": "By Newton's First Law, an object in motion continues in a straight line at constant velocity with zero net force. Force is only required to change velocity (accelerate), not to maintain velocity!"
   },
   {
     "id": 24,
     "code": "Q3.3",
-    "label": "Q3.3 (Slide \"Inertial frames of reference - Fig 4.11\")",
+    "label": "Q3.3 (Inertial Frames of Reference)",
     "chapter": "Chapter 4: Newton's Laws of Motion",
     "cat": "Theory Questions",
     "q": "[Q3.3] Which of the following is an inertial frame of reference (a frame in which Newton's First and Second Laws are valid)?",
     "opts": [
       "A train speeding up as it leaves a station.",
       "A train slowing down as it enters a station.",
-      "A car driving around a circular roundabout at a steady speed of 40 km/h.",
-      "A train moving in a straight line at a constant speed of 120 km/h."
+      "A car driving around a circular roundabout at a steady speed of $40\\text{ km/h}$.",
+      "A train moving in a straight line at a constant speed of $120\\text{ km/h}$."
     ],
     "ans": 3,
-    "exp": "An inertial frame is any frame with zero acceleration (a=0, which means constant speed and straight-line direction). Option C is not inertial because circular motion has centripetal acceleration v²/R≠0."
+    "exp": "An inertial frame is any frame with zero acceleration ($a = 0$, meaning constant speed and straight-line direction). Circular motion has centripetal acceleration $v^2/R \\neq 0$, making it non-inertial."
   },
   {
     "id": 25,
     "code": "Q3.4",
-    "label": "Q3.4 (Slides \"The relationship of F, m, and a\" & \"Newtons, kilograms, pounds, and slugs - Table 4.2\")",
+    "label": "Q3.4 (Mass, Weight, and Physical Units)",
     "chapter": "Chapter 4: Newton's Laws of Motion",
     "cat": "Theory Questions",
     "q": "[Q3.4] Which statement about mass, weight, and their units is correct?",
     "opts": [
       "A slug is a unit of force, and a pound (lb) is a unit of mass.",
       "A pound (lb) and a dyne are units of force, whereas a kilogram (kg) and a slug are units of mass.",
-      "If you take a 10 kg block to the Moon (where g_{Moon}≈(1/6)g_{Earth}), both its mass and its weight become (1/6) as large.",
-      "In free fall, an object's mass and weight (mg) both become zero."
+      "If you take a $10\\text{ kg}$ block to the Moon (where $g_{\\text{Moon}} \\approx \\frac{1}{6}g_{\\text{Earth}}$), both its mass and its weight become $1/6$ as large.",
+      "In free fall, an object's mass and weight ($mg$) both become zero."
     ],
     "ans": 1,
-    "exp": "As your Chapter 4 slides emphasize on Table 4.2: \"The pound is a force. The popular culture refers to it as a weight (mass is actually a slug). The Dyne is a cgs version of the Newton.\" Furthermore, mass (m) measures inertia and never changes with location, while weight (w=mg) depends on local g."
+    "exp": "The pound is a unit of force (the British engineering mass unit is the slug). The Dyne is the cgs unit of force. Furthermore, mass ($m$) measures inertia and never changes with location, whereas weight ($w = mg$) depends on local gravitational acceleration $g$."
   },
   {
     "id": 26,
     "code": "Q3.5",
-    "label": "Q3.5 (Slide \"g, and hence weight, is only constant on earth, at sea level\")",
+    "label": "Q3.5 (Inertia vs. Gravitational Pull)",
     "chapter": "Chapter 4: Newton's Laws of Motion",
     "cat": "Theory Questions",
-    "q": "[Q3.5] Suppose two objects of different masses (M=10 kg and m=1 kg) are dropped in a vacuum near Earth's surface. Why do both objects accelerate downward at the exact same rate g=9.81 m/s², even though the Earth pulls on the 10 kg object with 10× more gravitational force?",
+    "q": "[Q3.5] Suppose two objects of different masses ($M = 10\\text{ kg}$ and $m = 1\\text{ kg}$) are dropped in a vacuum near Earth's surface. Why do both objects accelerate downward at the exact same rate $g = 9.81\\text{ m/s}^2$, even though the Earth pulls on the $10\\text{ kg}$ object with $10\\times$ more gravitational force?",
     "opts": [
       "Because gravitational force is actually the same on both objects.",
-      "Because the 10 kg object also has 10× more inertia (mass) resisting acceleration, so in a=(F_{grav}/m)=(mg/m)=g, the mass cancels out!",
+      "Because the $10\\text{ kg}$ object also has $10\\times$ more inertia (mass) resisting acceleration, so in $a = \\frac{F_{\\text{grav}}}{m} = \\frac{mg}{m} = g$, the mass cancels out!",
       "Because air resistance cancels the extra weight.",
       "Because heavier objects have less inertia."
     ],
     "ans": 1,
-    "exp": "The 10 kg block experiences 10× the gravitational force (W=Mg), but it also has 10× the inertia (M) in Newton's Second Law (a=W/M=Mg/M=g)."
+    "exp": "The $10\\text{ kg}$ block experiences $10\\times$ the gravitational force ($W = Mg$), but it also possesses $10\\times$ the inertia ($M$) in Newton's Second Law ($a = \\frac{W}{M} = \\frac{Mg}{M} = g$). Mass cancels completely."
   },
   {
     "id": 27,
     "code": "Q3.6",
-    "label": "Q3.6 (Slides \"Newton's Third Law",
+    "label": "Q3.6 (Newton's Third Law: Accelerating Train)",
     "chapter": "Chapter 4: Newton's Laws of Motion",
     "cat": "Theory Questions",
-    "q": "[Q3.6] Objects at rest & Objects in motion\"): A large locomotive engine pulls a lighter train car behind it, and the whole train is accelerating forward. How does the magnitude of the backward pull of the train car on the locomotive (F_{car on engine}) compare to the forward pull of the locomotive on the train car (F_{engine on car})?",
+    "q": "[Q3.6] A large locomotive engine pulls a lighter train car behind it, and the whole train is accelerating forward. How does the magnitude of the backward pull of the train car on the locomotive ($F_{\\text{car on engine}}$) compare to the forward pull of the locomotive on the train car ($F_{\\text{engine on car}}$)?",
     "opts": [
-      "F_{engine on car}>F_{car on engine} because the train is accelerating forward.",
-      "F_{engine on car}=F_{car on engine} only when moving at constant speed, not when accelerating.",
-      "F_{engine on car}=F_{car on engine} at all times, even while accelerating!",
-      "F_{car on engine}=0 if there is no friction."
+      "$F_{\\text{engine on car}} > F_{\\text{car on engine}}$ because the train is accelerating forward.",
+      "$F_{\\text{engine on car}} = F_{\\text{car on engine}}$ only when moving at constant speed, not when accelerating.",
+      "$F_{\\text{engine on car}} = F_{\\text{car on engine}}$ at all times, even while accelerating!",
+      "$F_{\\text{car on engine}} = 0$ if there is no friction."
     ],
     "ans": 2,
-    "exp": "Newton's Third Law holds 100% of the time—whether the objects are at rest, moving at constant speed, or accelerating! Why does the train accelerate forward if those two forces are equal? Because those two forces act on different objects! The locomotive accelerates forward because the forward friction of the tracks pushing on the locomotive's wheels is greater than the backward pull of the car on the locomotive."
+    "exp": "Newton's Third Law holds 100% of the time—whether objects are at rest, moving at constant speed, or accelerating! The two forces act on different objects. The locomotive accelerates forward because the forward friction from the tracks on the engine wheels exceeds the backward pull of the car."
   },
   {
     "id": 28,
     "code": "Q3.7",
-    "label": "Q3.7 (Slide \"Newton's Third Law",
+    "label": "Q3.7 (Newton's Third Law: Apple on a Table)",
     "chapter": "Chapter 4: Newton's Laws of Motion",
     "cat": "Theory Questions",
-    "q": "[Q3.7] Objects at rest\" — Apple on a Table): An apple sits at rest on a table. The Earth pulls downward on the apple with gravitational force w, and the table pushes upward on the apple with normal force n. Are w and n a Newton's Third Law action-reaction pair?",
+    "q": "[Q3.7] An apple sits at rest on a table. The Earth pulls downward on the apple with gravitational force $w$, and the table pushes upward on the apple with normal force $n$. Are $w$ and $n$ a Newton's Third Law action-reaction pair?",
     "opts": [
-      "Yes, because they are equal and opposite (n=-w).",
-      "No, because n and w both act on the same object (the apple) — they are a Newton's First Law equilibrium pair! The true Third Law partner to F_{Earth on Apple} (w) is F_{Apple on Earth} (the apple pulling upward on the Earth).",
+      "Yes, because they are equal and opposite ($n = -w$).",
+      "No, because $n$ and $w$ both act on the same object (the apple) — they are a Newton's First Law equilibrium pair! The true Third Law partner to $F_{\\text{Earth on Apple}}$ ($w$) is $F_{\\text{Apple on Earth}}$ (the apple pulling upward on the Earth).",
       "Yes, but only when the table is level.",
       "No, because normal force is larger than weight."
     ],
     "ans": 1,
-    "exp": "To find a true Newton's Third Law partner, simply swap the two nouns: Partner of \"Earth pulls down on apple\" ⟷ \"Apple pulls up on Earth.\" Partner of \"Table pushes up on apple\" (n) ⟷ \"Apple pushes down on table.\""
+    "exp": "To find a true Newton's Third Law partner, swap the two interacting bodies: Partner of 'Earth pulls down on apple' $\\longleftrightarrow$ 'Apple pulls up on Earth.' Partner of 'Table pushes up on apple' ($n$) $\\longleftrightarrow$ 'Apple pushes down on table.' Third Law pairs NEVER act on the same object."
   },
   {
     "id": 29,
     "code": "Q4.1",
-    "label": "Q4.1 (Slides \"1-D equilibrium - Fig 5.1\" & \"1-D equilibrium considering the rope - Fig 5.2\")",
+    "label": "Q4.1 (1D Equilibrium with Massive Rope)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.1] A 700 N gymnast hangs motionless from the bottom of a vertical rope of weight 100 N attached to the ceiling. What are the tension in the rope at the bottom (where the gymnast holds it) and at the top (where it attaches to the ceiling)?",
+    "q": "[Q4.1] A $700\\text{ N}$ gymnast hangs motionless from the bottom of a vertical rope of weight $100\\text{ N}$ attached to the ceiling. What are the tension in the rope at the bottom (where the gymnast holds it) and at the top (where it attaches to the ceiling)?",
     "opts": [
-      "700 N at the bottom; 700 N at the top.",
-      "700 N at the bottom; 800 N at the top.",
-      "800 N at the bottom; 700 N at the top.",
-      "400 N at both ends."
+      "$700\\text{ N}$ at the bottom; $700\\text{ N}$ at the top.",
+      "$700\\text{ N}$ at the bottom; $800\\text{ N}$ at the top.",
+      "$800\\text{ N}$ at the bottom; $700\\text{ N}$ at the top.",
+      "$400\\text{ N}$ at both ends."
     ],
     "ans": 1,
-    "exp": "When a rope has mass/weight (Example 5.2 in your slides), the bottom of the rope only supports the gymnast (T_{bottom}=700 N), while the top of the rope supports the combined system of gymnast + rope (T_{top}=700 N+100 N=800 N). Only when a rope is massless (Example 5.1) is the tension equal everywhere along the rope."
+    "exp": "When a rope has non-zero mass/weight, the bottom of the rope only supports the gymnast ($T_{\\text{bottom}} = 700\\text{ N}$), while the top of the rope supports the combined weight of gymnast + rope ($T_{\\text{top}} = 700\\text{ N} + 100\\text{ N} = 800\\text{ N}$). Only a massless rope has uniform tension everywhere."
   },
   {
     "id": 30,
     "code": "Q4.2",
-    "label": "Q4.2 (Slide \"Beware incorrect free-body diagrams - Fig 5.6\")",
+    "label": "Q4.2 (Free-Body Diagram for Block Sliding Up Ramp)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
     "q": "[Q4.2] A block is given a quick shove at the bottom of a rough inclined ramp and is now sliding up the ramp (after your hand has let go) and slowing down. What forces act on the block while it is sliding up the ramp?",
     "opts": [
-      "An upslope \"force of the push\", gravity, normal force, and downslope friction.",
-      "An upslope force ma, gravity, normal force, and downslope friction.",
-      "Only gravity (w downward), normal force (n perpendicular to the ramp), and kinetic friction (f_{k} pointing down the ramp).",
+      "An upslope 'force of the push', gravity, normal force, and downslope friction.",
+      "An upslope force $ma$, gravity, normal force, and downslope friction.",
+      "Only gravity ($w$ downward), normal force ($n$ perpendicular to the ramp), and kinetic friction ($f_k$ pointing down the ramp).",
       "Gravity, normal force, and upslope kinetic friction."
     ],
     "ans": 2,
-    "exp": "As Slide Figure 5.6 (\"Beware incorrect free-body diagrams\") emphasizes: Once your hand stops touching the block, there is no upslope pushing force! The block moves up the ramp purely by inertia (velocity), while all forces along the ramp (mgsinθ+f_{k}) point down the ramp to slow it down. Never include ma as a force on a free-body diagram. 4B. Apparent Weight in an Elevator (Slides 5.9–5.10)"
+    "exp": "Once your hand stops touching the block, there is no upslope pushing force! The block moves up the ramp purely due to inertia (velocity), while the parallel forces ($mg\\sin\\theta + f_k$) point down the ramp to slow it down. Never draw $ma$ as a force on a free-body diagram."
   },
   {
     "id": 31,
     "code": "Q4.3",
-    "label": "Q4.3 (Slides \"Calculation of tension in an elevator cable - Fig 5.9\" & \"More adventures in the elevator - Fig 5.10\")",
+    "label": "Q4.3 (Apparent Weight in an Elevator)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.3] A passenger of mass m stands on a scale inside an elevator. In which of the following cases does the scale read MORE than the passenger's true weight (n>mg), and in which case does the cable have the greatest tension?",
+    "q": "[Q4.3] A passenger of mass $m$ stands on a scale inside an elevator. In which of the following cases does the scale read MORE than the passenger's true weight ($n > mg$), and in which case does the cable have the greatest tension?",
     "opts": [
       "Moving upward and slowing down.",
-      "Moving upward at a constant speed of 8 m/s.",
-      "Either moving upward while speeding up, OR moving downward while slowing down (both have upward acceleration aᵧ>0).",
+      "Moving upward at a constant speed of $8\\text{ m/s}$.",
+      "Either moving upward while speeding up, OR moving downward while slowing down (both have upward acceleration $a_y > 0$).",
       "Moving downward and speeding up."
     ],
     "ans": 2,
-    "exp": "From Fᵧ=n-mg=maᵧ⟹n=m(g+aᵧ), apparent weight n (and cable tension T=M(g+aᵧ)) depends only on the sign of aᵧ, not on the direction of velocity vᵧ: aᵧ>0 (Upward acceleration): Moving UP & speeding up, OR moving DOWN & slowing down ⟹n>mg (feels heavier). aᵧ<0 (Downward acceleration): Moving DOWN & speeding up, OR moving UP & slowing down ⟹n<mg (feels lighter). aᵧ=0 (Constant velocity or at rest): ⟹n=mg. aᵧ=-g (Free fall): ⟹n=0 (apparent weightlessness). 4C. Inclined Planes & Multi-Body Systems (Slides 5.12–5.15)"
+    "exp": "From $\\Sigma F_y = n - mg = ma_y \\implies n = m(g + a_y)$, apparent weight $n$ depends purely on the sign of acceleration $a_y$: $a_y > 0$ (Upward acceleration): Moving UP & speeding up, OR moving DOWN & slowing down $\\implies n > mg$ (feels heavier). $a_y < 0$ (Downward acceleration): Moving DOWN & speeding up, OR moving UP & slowing down $\\implies n < mg$ (feels lighter). $a_y = 0$: $n = mg$."
   },
   {
     "id": 32,
     "code": "Q4.4",
-    "label": "Q4.4 (Slides \"Acceleration down a hill - Fig 5.12\" & \"Watch for this common error - Fig 5.13\")",
+    "label": "Q4.4 (Forces on an Incline as Angle Increases)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.4] As the angle θ of an inclined plane is increased from 0^{∘} toward 90^{∘} (before the block tips), what happens to the normal force (n) and the downslope component of gravity (w_{∥})?",
+    "q": "[Q4.4] As the angle $\\theta$ of an inclined plane is increased from $0^\\circ$ toward $90^\\circ$ (before the block tips), what happens to the normal force ($n$) and the downslope component of gravity ($w_\\parallel$)?",
     "opts": [
-      "Both n and w_{∥} increase.",
-      "n=mgcosθ decreases, while w_{∥}=mgsinθ increases.",
-      "n=mgsinθ increases, while w_{∥}=mgcosθ decreases.",
-      "n remains constant at mg."
+      "Both $n$ and $w_\\parallel$ increase.",
+      "$n = mg\\cos\\theta$ decreases, while $w_\\parallel = mg\\sin\\theta$ increases.",
+      "$n = mg\\sin\\theta$ increases, while $w_\\parallel = mg\\cos\\theta$ decreases.",
+      "$n$ remains constant at $mg$."
     ],
     "ans": 1,
-    "exp": "As θ increases from 0^{∘} to 90^{∘}, cosθ decreases from 1 to 0 (so the normal force n=mgcosθ decreases), and sinθ increases from 0 to 1 (so the downslope pull mgsinθ increases)."
+    "exp": "As $\\theta$ increases from $0^\\circ$ to $90^\\circ$, $\\cos\\theta$ decreases from $1$ to $0$ (so normal force $n = mg\\cos\\theta$ decreases), and $\\sin\\theta$ increases from $0$ to $1$ (so downslope pull $w_\\parallel = mg\\sin\\theta$ increases)."
   },
   {
     "id": 33,
     "code": "Q4.5",
-    "label": "Q4.5 (Slide \"Multiple items in motion - Example 5.11 & Fig 5.14\")",
+    "label": "Q4.5 (Multi-Body Acceleration — Tray and Milk Carton)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.5] A waitress pushes a 1.0 kg lunch tray across a frictionless counter with a horizontal force of 9.0 N. On the tray sits a 0.50 kg carton of milk (total mass =1.5 kg, so a=(9.0 N/1.5 kg)=6.0 m/s²). What is the net horizontal force acting on the milk carton alone?",
+    "q": "[Q4.5] A waitress pushes a $1.0\\text{ kg}$ lunch tray across a frictionless counter with a horizontal force of $9.0\\text{ N}$. On the tray sits a $0.50\\text{ kg}$ carton of milk (total mass $= 1.5\\text{ kg}$, so $a = \\frac{9.0\\text{ N}}{1.5\\text{ kg}} = 6.0\\text{ m/s}^2$). What is the net horizontal force acting on the milk carton alone?",
     "opts": [
-      "9.0 N",
-      "6.0 N",
-      "3.0 N (m_{milk}⋅a=0.50 kg×6.0 m/s²)",
-      "0 N"
+      "$9.0\\text{ N}$",
+      "$6.0\\text{ N}$",
+      "$3.0\\text{ N}$ ($m_{\\text{milk}} \\cdot a = 0.50\\text{ kg} \\times 6.0\\text{ m/s}^2$)",
+      "$0\\text{ N}$"
     ],
     "ans": 2,
-    "exp": "As your Chapter 5 slide states: \"The same acceleration acts on every surface of your lunch tray (Example 5.11).\" Once you find the common acceleration a=(F_{total}/m_{total}) of a multi-body system, the net force on any individual piece m_{i} is simply F_{net,i}=m_{i}a. 4D. Static & Kinetic Friction, Angled Tension & Terminal Speed (Slides 5.17–5.27)"
+    "exp": "Once you find the common acceleration $a = \\frac{F_{\\text{total}}}{m_{\\text{total}}} = 6.0\\text{ m/s}^2$, the net force on any individual component $m_i$ is simply $F_{\\text{net},i} = m_i a = (0.50\\text{ kg})(6.0\\text{ m/s}^2) = 3.0\\text{ N}$."
   },
   {
     "id": 34,
     "code": "Q4.6",
-    "label": "Q4.6 (Slides \"Coefficients of friction\" & \"Applied force is proportional until the object moves - Fig 5.19\")",
+    "label": "Q4.6 (Static vs. Kinetic Friction on Level Floor)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.6] A crate of weight W = 500 N sits at rest on a level floor where μ_s = 0.50 and μ_k = 0.40. What horizontal force is required to start it moving, and what is the friction force if you push horizontally with only 100 N?",
+    "q": "[Q4.6] A crate of weight $W = 500\\text{ N}$ sits at rest on a level floor where $\\mu_s = 0.50$ and $\\mu_k = 0.40$. What horizontal force is required to start it moving, and what is the friction force if you push horizontally with only $100\\text{ N}$?",
     "opts": [
-      "250 N to start moving; friction force is 100 N",
-      "200 N to start moving; friction force is 250 N",
-      "250 N to start moving; friction force is 250 N",
-      "200 N to start moving; friction force is 200 N"
+      "$250\\text{ N}$ to start moving; friction force is $100\\text{ N}$",
+      "$200\\text{ N}$ to start moving; friction force is $250\\text{ N}$",
+      "$250\\text{ N}$ to start moving; friction force is $250\\text{ N}$",
+      "$200\\text{ N}$ to start moving; friction force is $200\\text{ N}$"
     ],
     "ans": 0,
-    "exp": "Maximum static friction is f_{s,max} = μ_s × n = 0.50(500 N) = 250 N, so at least 250 N is required to overcome static friction and initiate motion. When you push with only 100 N, since 100 N < 250 N, the crate stays at rest (a = 0) and static friction exactly balances your push: f_s = 100 N (not 250 N!)."
+    "exp": "Maximum static friction is $f_{s,\\text{max}} = \\mu_s n = 0.50(500\\text{ N}) = 250\\text{ N}$, so at least $250\\text{ N}$ is required to start moving. When you push with only $100\\text{ N}$, since $100\\text{ N} < 250\\text{ N}$, the crate stays at rest ($a = 0$) and static friction exactly balances your applied force: $f_s = 100\\text{ N}$ (NOT $250\\text{ N}$!)."
   },
   {
     "id": 35,
     "code": "Q4.7",
-    "label": "Q4.7 (Block at Rest on an Incline — Static Friction)",
+    "label": "Q4.7 (Block at Rest on an Incline — Critical Angle)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.7] A block of mass m rests without slipping on a rough inclined plane of angle θ with static coefficient μ_s. What is the static friction force while at rest, and at what critical angle θ_c does it begin to slide?",
+    "q": "[Q4.7] A block of mass $m$ rests without slipping on a rough inclined plane of angle $\\theta$ with static coefficient $\\mu_s$. What is the static friction force while at rest, and at what critical angle $\\theta_c$ does it begin to slide?",
     "opts": [
-      "f_s = mg sinθ; slips when tanθ_c = μ_s",
-      "f_s = μ_s mg cosθ; slips when sinθ_c = μ_s",
-      "f_s = mg cosθ; slips when tanθ_c = μ_s",
-      "f_s = μ_s mg; slips when cosθ_c = μ_s"
+      "$f_s = mg\\sin\\theta$; slips when $\\tan\\theta_c = \\mu_s$",
+      "$f_s = \\mu_s mg\\cos\\theta$; slips when $\\sin\\theta_c = \\mu_s$",
+      "$f_s = mg\\cos\\theta$; slips when $\\tan\\theta_c = \\mu_s$",
+      "$f_s = \\mu_s mg$; slips when $\\cos\\theta_c = \\mu_s$"
     ],
     "ans": 0,
-    "exp": "While at rest (a = 0), static friction simply balances the downslope component of gravity: f_s = mg sinθ. The block begins to slip when mg sinθ_c = f_{s,max} = μ_s mg cosθ_c ⟹ tanθ_c = μ_s. Notice that mass m and gravity g cancel completely!"
+    "exp": "While at rest ($a = 0$), static friction balances the downslope gravitational component: $f_s = mg\\sin\\theta$. Slipping begins when $mg\\sin\\theta_c = f_{s,\\text{max}} = \\mu_s mg\\cos\\theta_c \\implies \\tan\\theta_c = \\mu_s$. Mass $m$ and $g$ cancel out completely."
   },
   {
     "id": 36,
     "code": "Q4.8",
-    "label": "Q4.8 (Slides \"Consider the toboggan ride two more times - Examples 5.16 & 5.17, Figs 5.22 & 5.23\")",
+    "label": "Q4.8 (Toboggan on an Incline with Kinetic Friction)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.8] A toboggan slides down a rough incline of angle θ with kinetic friction coefficient μ_k. What angle θ produces constant speed (a = 0), and what is the toboggan's acceleration down a steeper hill?",
+    "q": "[Q4.8] A toboggan slides down a rough incline of angle $\\theta$ with kinetic friction coefficient $\\mu_k$. What angle $\\theta$ produces constant speed ($a = 0$), and what is the toboggan's acceleration down a steeper hill?",
     "opts": [
-      "Constant speed when tanθ = μ_k; acceleration is a = g(sinθ - μ_k cosθ)",
-      "Constant speed when sinθ = μ_k; acceleration is a = g(cosθ - μ_k sinθ)",
-      "Constant speed when tanθ = μ_k; acceleration is a = g(sinθ + μ_k cosθ)",
-      "Constant speed when cosθ = μ_k; acceleration is a = g sinθ"
+      "Constant speed when $\\tan\\theta = \\mu_k$; acceleration is $a = g(\\sin\\theta - \\mu_k\\cos\\theta)$",
+      "Constant speed when $\\sin\\theta = \\mu_k$; acceleration is $a = g(\\cos\\theta - \\mu_k\\sin\\theta)$",
+      "Constant speed when $\\tan\\theta = \\mu_k$; acceleration is $a = g(\\sin\\theta + \\mu_k\\cos\\theta)$",
+      "Constant speed when $\\cos\\theta = \\mu_k$; acceleration is $a = g\\sin\\theta$"
     ],
     "ans": 0,
-    "exp": "At constant speed (a = 0): mg sinθ - μ_k mg cosθ = 0 ⟹ tanθ = μ_k. When accelerating down the incline: a = g(sinθ - μ_k cosθ). If the toboggan is sliding UP the rough incline while slowing down, both gravity and friction act downslope, giving |a| = g(sinθ + μ_k cosθ)."
+    "exp": "At constant speed ($a = 0$): $mg\\sin\\theta - \\mu_k mg\\cos\\theta = 0 \\implies \\tan\\theta = \\mu_k$. Accelerating down: $a = g(\\sin\\theta - \\mu_k\\cos\\theta)$. If sliding UP while slowing down, both gravity and friction act downslope, giving $|a| = g(\\sin\\theta + \\mu_k\\cos\\theta)$."
   },
   {
     "id": 37,
     "code": "Q4.9",
-    "label": "Q4.9 (Slide \"The angle at which tension is applied matters - Example 5.21 & Fig 5.20\")",
+    "label": "Q4.9 (Angled Tension on a Horizontal Floor)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.9] You pull a crate of weight W across a rough horizontal floor at constant speed using a rope angled at θ above the horizontal with tension T. What is the normal force n on the crate?",
+    "q": "[Q4.9] You pull a crate of weight $W$ across a rough horizontal floor at constant speed using a rope angled at $\\theta$ above the horizontal with tension $T$. What is the normal force $n$ on the crate?",
     "opts": [
-      "n=W",
-      "n=W+Tsinθ",
-      "n=W-Tsinθ",
-      "n=Wcosθ"
+      "$n = W$",
+      "$n = W + T\\sin\\theta$",
+      "$n = W - T\\sin\\theta$",
+      "$n = W\\cos\\theta$"
     ],
     "ans": 2,
-    "exp": "From vertical equilibrium (Fᵧ=n+Tsinθ-W=0), the upward component of rope tension (Tsinθ) helps support the crate, reducing the normal force to n=W-Tsinθ and therefore reducing the friction force f_{k}=μ_{k}(W-Tsinθ)."
+    "exp": "From vertical equilibrium ($\\Sigma F_y = n + T\\sin\\theta - W = 0$), the upward component of tension ($T\\sin\\theta$) supports part of the crate's weight, reducing the normal force to $n = W - T\\sin\\theta$ (which also decreases friction $f_k = \\mu_k(W - T\\sin\\theta)$)."
   },
   {
     "id": 38,
     "code": "Q4.10",
-    "label": "Q4.10 (Slide \"For the sport of skydiving, terminal speed is vital - Example 5.19 & Figs 5.26–5.27\")",
+    "label": "Q4.10 (Terminal Speed with Air Drag)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.10] Two skydivers of identical shape and size jump from a plane, so they have the same drag coefficient D (where air drag is f=Dv²), but Skydiver A is twice as heavy (2m) as Skydiver B (m). Who reaches the higher terminal speed (v_{t})?",
+    "q": "[Q4.10] Two skydivers of identical shape and size jump from a plane, so they have the same drag coefficient $D$ (where air drag is $f = Dv^2$), but Skydiver A is twice as heavy ($2m$) as Skydiver B ($m$). Who reaches the higher terminal speed ($v_t$)?",
     "opts": [
       "Both have the exact same terminal speed, just like in a vacuum.",
-      "Skydiver A (the heavier one) reaches a higher terminal speed (v_{t}=√((mg/D)), so √(2) times faster).",
+      "Skydiver A (the heavier one) reaches a higher terminal speed ($v_t = \\sqrt{\\frac{mg}{D}}$, so $\\sqrt{2}$ times faster).",
       "Skydiver B (the lighter one) reaches a higher terminal speed.",
       "Terminal speed does not depend on weight."
     ],
     "ans": 1,
-    "exp": "In a vacuum, mass cancels out (a=g). With air resistance, terminal speed occurs when upward drag balances weight (Dv_{t}^{2}=mg⟹v_{t}=√((mg/D))). A heavier skydiver requires a larger drag force—and therefore a higher speed v_{t}—before drag equals their weight! 4E. Dynamics of Uniform Circular Motion (Slides 5.28–5.30)"
+    "exp": "In a vacuum, mass cancels ($a = g$). With air drag, terminal speed occurs when upward drag equals downward weight ($Dv_t^2 = mg \\implies v_t = \\sqrt{\\frac{mg}{D}}$). A heavier skydiver requires a greater drag force—and hence a higher speed $v_t$—before drag balances weight."
   },
   {
     "id": 39,
     "code": "Q4.11",
-    "label": "Q4.11 (Slide \"Examining a misnomer - Fig 5.30\")",
+    "label": "Q4.11 (Centripetal Force on Free-Body Diagrams)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.11] Why do physicists call \"centrifugal force\" a misnomer (fictitious force), and why should you never draw \"centripetal force (mv²/R)\" as a separate arrow on a Free-Body Diagram?",
+    "q": "[Q4.11] Why do physicists call 'centrifugal force' a misnomer (fictitious force), and why should you never draw 'centripetal force ($mv^2/R$)' as a separate arrow on a Free-Body Diagram?",
     "opts": [
-      "Because objects in circular motion are in equilibrium (F=0).",
-      "Because only real physical interactions (gravity, tension, normal force, friction) go on a Free-Body Diagram, and their net inward sum equals F_{rad}=m(v²/R).",
+      "Because objects in circular motion are in equilibrium ($F = 0$).",
+      "Because only real physical interactions (gravity, tension, normal force, friction) go on a Free-Body Diagram, and their net inward sum equals $F_{\\text{rad}} = m\\frac{v^2}{R}$.",
       "Because the net force in circular motion points tangent to the circle.",
       "Because centripetal force points outward away from the center."
     ],
     "ans": 1,
-    "exp": "As shown on Slide Figure 5.30 (\"Examining a misnomer\"), drawing m(v²/R) on a free-body diagram double-counts the force! You only draw real forces (like tension T, normal force n, weight w, or static friction f_{s}), and then set F_{inward}=m(v²/R)."
+    "exp": "Drawing $m\\frac{v^2}{R}$ as a separate force double-counts it! You only draw actual physical forces (tension $T$, normal force $n$, gravity $w$, friction $f_s$), and their resultant inward component provides the required centripetal acceleration: $\\Sigma F_{\\text{inward}} = m\\frac{v^2}{R}$."
   },
   {
     "id": 40,
     "code": "Q4.12",
-    "label": "Q4.12 (Flat vs. Banked Curves — Car Rounding a Turn)",
+    "label": "Q4.12 (Flat vs. Banked Curves Dynamics)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.12] What force provides centripetal acceleration for a car rounding a flat (unbanked) curve versus an icy (frictionless) banked curve of angle β?",
+    "q": "[Q4.12] What force provides centripetal acceleration for a car rounding a flat (unbanked) curve versus an icy (frictionless) banked curve of angle $\\beta$?",
     "opts": [
-      "Flat: static friction (v_max = √(μ_s g R)); Banked: horizontal component of normal force (v = √(g R tanβ))",
+      "Flat: static friction ($v_{\\text{max}} = \\sqrt{\\mu_s g R}$); Banked: horizontal component of normal force ($v = \\sqrt{g R \\tan\\beta}$)",
       "Flat: kinetic friction; Banked: gravity component along the surface",
       "Flat: normal force; Banked: static friction force",
       "Flat: centrifugal force; Banked: vertical component of normal force"
     ],
     "ans": 0,
-    "exp": "On a flat curve, static friction pointing inward provides centripetal acceleration: f_{s,max} = μ_s mg = mv²/R ⟹ v_max = √(μ_s g R) (mass cancels out!). On an icy banked curve, the horizontal inward component of the normal force (n sinβ = mv²/R, while n cosβ = mg) provides centripetal acceleration, yielding tanβ = v²/(g R) ⟹ v = √(g R tanβ)."
+    "exp": "On a flat curve, static friction pointing inward provides centripetal acceleration: $f_{s,\\text{max}} = \\mu_s mg = \\frac{mv^2}{R} \\implies v_{\\text{max}} = \\sqrt{\\mu_s g R}$ (mass cancels out!). On an icy banked curve, the horizontal inward component of the normal force ($n\\sin\\beta = \\frac{mv^2}{R}$, while $n\\cos\\beta = mg$) provides centripetal acceleration, giving $\\tan\\beta = \\frac{v^2}{gR} \\implies v = \\sqrt{g R \\tan\\beta}$."
   },
   {
     "id": 41,
     "code": "Q4.13",
-    "label": "Q4.13 (Vertical Circles — Ferris Wheel / Roller Coaster)",
+    "label": "Q4.13 (Vertical Circles — Ferris Wheel Dynamics)",
     "chapter": "Chapter 5: Applications of Newton's Laws",
     "cat": "Theory Questions",
-    "q": "[Q4.13] A passenger of mass m rides a Ferris wheel of radius R rotating at constant speed v. Where does the passenger feel heaviest (largest normal force n from the seat) and lightest (smallest normal force n)?",
+    "q": "[Q4.13] A passenger of mass $m$ rides a Ferris wheel of radius $R$ rotating at constant speed $v$. Where does the passenger feel heaviest (largest normal force $n$ from the seat) and lightest (smallest normal force $n$)?",
     "opts": [
       "Heaviest at the top; lightest at the bottom.",
-      "Heaviest at the bottom (n_{bottom}=mg+(mv²/R)); lightest at the top (n_{top}=mg-(mv²/R)).",
-      "Apparent weight is mg everywhere because speed is constant.",
+      "Heaviest at the bottom ($n_{\\text{bottom}} = mg + \\frac{mv^2}{R}$); lightest at the top ($n_{\\text{top}} = mg - \\frac{mv^2}{R}$).",
+      "Apparent weight is $mg$ everywhere because speed is constant.",
       "Heaviest on the left and right sides."
     ],
     "ans": 1,
-    "exp": "At the top, the center of the circle is below the rider, so net force points downward: mg-n_{top}=(mv²/R)⟹n_{top}=mg-(mv²/R) (feels lighter!). At the bottom, the center of the circle is above the rider, so net force points upward: n_{bottom}-mg=(mv²/R)⟹n_{bottom}=mg+(mv²/R) (feels heavier!). Quick Summary of the 10 Most Common Midterm \"Trick\" Statements (True/False Check) \"Negative acceleration always means an object is slowing down.\" → FALSE (If v<0 and a<0, it speeds up—Quiz Q3!). \"At the highest point of a 2D projectile's path, its velocity and acceleration are both zero.\" → FALSE (v=v_{0x}=v₀cosθ≠0, and a=g=9.81 m/s² downward). \"In uniform circular motion, acceleration is constant.\" → FALSE (The magnitude v²/R is constant, but the direction of the acceleration vector changes continuously). \"An object moving at constant speed has zero acceleration.\" → FALSE (Only if it moves at constant speed in a straight line; if it curves, a_{c}=v²/R≠0). \"The normal force n is always equal to mg.\" → FALSE (n=mgcosθ on an incline; n=m(g+aᵧ) in an elevator; n=mg-Tsinθ with an angled rope). \"Static friction is always equal to μ_{s}n.\" → FALSE (f_{s}≤μ_{s}n; it equals the applied force up until the object is on the verge of slipping). \"Normal force n and weight w on a resting book are a Newton's Third Law action-reaction pair.\" → FALSE (They act on the same object; Third Law pairs always act on two different objects). \"In a head-on collision between a heavy truck and a small car, the truck exerts a larger force on the car than the car exerts on the truck.\" → FALSE (By Newton's 3rd Law, the forces are 100% equal in magnitude; the car just has a larger acceleration a=F/m). \"When an elevator moves downward and slows down, you feel lighter (n<mg).\" → FALSE (Moving down while slowing down means acceleration points upward, so n>mg—you feel heavier!). \"When drawing a Free-Body Diagram for circular motion, you should include an inward arrow for the centripetal force mv²/R.\" → FALSE (mv²/R is the net force F, not a separate force—Slide Fig 5.30)."
+    "exp": "At the top, the circle center is below the rider: $mg - n_{\\text{top}} = \\frac{mv^2}{R} \\implies n_{\\text{top}} = mg - \\frac{mv^2}{R}$ (feels lighter!). At the bottom, the circle center is above the rider: $n_{\\text{bottom}} - mg = \\frac{mv^2}{R} \\implies n_{\\text{bottom}} = mg + \\frac{mv^2}{R}$ (feels heavier!)."
   }
 ];
 
@@ -2158,6 +2173,29 @@
     let physScore = 0;
     let physAnswered = 0;
 
+    /* KaTeX Math Auto-Render Helper */
+    function renderMathIn(element) {
+      if (!element || typeof renderMathInElement !== "function") return;
+      try {
+        renderMathInElement(element, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true }
+          ],
+          throwOnError: false
+        });
+      } catch (err) {
+        console.warn("KaTeX render error:", err);
+      }
+    }
+
+    function initKaTeX() {
+      const container = document.getElementById("physicsQuizContainer");
+      if (container) renderMathIn(container);
+    }
+
     /* Routing / Navigation */
     function navigateTo(viewName) {
       document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
@@ -2170,6 +2208,10 @@
         document.getElementById('view-physics').classList.add('active');
         window.location.hash = 'engineering-physics-1';
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Ensure formulas are rendered when switching to physics view
+        setTimeout(() => {
+          renderMathIn(document.getElementById("physicsQuizContainer"));
+        }, 50);
       } else {
         document.getElementById('view-portal').classList.add('active');
         window.location.hash = '';
@@ -2363,6 +2405,9 @@
         card.appendChild(fb);
         container.appendChild(card);
       });
+
+      // Render math formulas in all questions
+      renderMathIn(container);
     }
 
     function selectPhysicsAnswer(clickedBtn, chosenIdx, correctIdx, optsDiv, fb) {
@@ -2379,6 +2424,7 @@
       }
       physAnswered++;
       fb.style.display = "block";
+      renderMathIn(fb);
       updatePhysicsScore();
     }
 
