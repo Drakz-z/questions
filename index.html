@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Study Portal • Emirates Studies & Engineering Physics 1</title>
-  <meta name="description" content="Comprehensive university study portal for Emirates Studies (Midterm & Blooket Practice) and Engineering Physics 1 (Master Bank of Midterm Theory Questions)." />
+  <title>Study Portal • Emirates Studies, Physics 1 & Artificial Intelligence</title>
+  <meta name="description" content="Comprehensive university study portal for Emirates Studies, Engineering Physics 1, and Artificial Intelligence (AIT111 Acronyms & Quiz)." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,6 +28,8 @@
       --blooket-color: #fbbf24;
       --physics-color: #818cf8;
       --physics-glow: rgba(129, 140, 248, 0.25);
+      --ai-color: #34d399;
+      --ai-glow: rgba(52, 211, 153, 0.25);
       --correct: #22c55e;
       --wrong: #ef4444;
       --border: #1e293b;
@@ -45,7 +47,8 @@
       background: var(--bg);
       background-image: 
         radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.08) 0px, transparent 50%);
+        radial-gradient(at 100% 0%, rgba(52, 211, 153, 0.07) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(129, 140, 248, 0.08) 0px, transparent 50%);
       background-attachment: fixed;
       color: var(--text);
       min-height: 100vh;
@@ -57,7 +60,7 @@
 
     .app-wrapper {
       width: 100%;
-      max-width: 880px;
+      max-width: 900px;
     }
 
     /* Views container */
@@ -109,15 +112,15 @@
     .portal-subtitle {
       font-size: 1rem;
       color: var(--muted);
-      max-width: 540px;
+      max-width: 560px;
       margin: 0 auto;
       line-height: 1.5;
     }
 
     .subjects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
       margin-top: 10px;
     }
 
@@ -125,7 +128,7 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 28px 24px;
+      padding: 26px 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -167,21 +170,28 @@
       background: linear-gradient(90deg, #818cf8, #c084fc);
     }
 
+    .subject-card.ai-card:hover {
+      border-color: rgba(52, 211, 153, 0.45);
+    }
+    .subject-card.ai-card:hover::before {
+      background: linear-gradient(90deg, #34d399, #38bdf8);
+    }
+
     .card-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
     }
 
     .emirates-card .card-icon {
@@ -194,6 +204,12 @@
       background: rgba(129, 140, 248, 0.12);
       border: 1px solid rgba(129, 140, 248, 0.25);
       color: var(--physics-color);
+    }
+
+    .ai-card .card-icon {
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      color: var(--ai-color);
     }
 
     .card-status-badge {
@@ -211,41 +227,53 @@
       border: 1px solid rgba(34, 197, 94, 0.3);
     }
 
+    .badge-ai {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--ai-color);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+    }
+
     .card-title {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #fff;
       margin-bottom: 8px;
     }
 
     .card-desc {
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       color: var(--muted);
       line-height: 1.5;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .card-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .chip {
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      padding: 3px 9px;
+      padding: 3px 8px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
       color: #cbd5e1;
     }
 
-    .chip-accent {
-      background: rgba(129, 140, 248, 0.12);
-      border-color: rgba(129, 140, 248, 0.3);
+    .chip-physics {
+      background: rgba(129, 140, 248, 0.1);
+      border-color: rgba(129, 140, 248, 0.25);
       color: #a5b4fc;
+    }
+
+    .chip-ai {
+      background: rgba(52, 211, 153, 0.1);
+      border-color: rgba(52, 211, 153, 0.25);
+      color: #6ee7b7;
     }
 
     .enter-btn {
@@ -254,9 +282,9 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 12px 18px;
+      padding: 11px 16px;
       border-radius: 10px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 700;
       border: 1px solid transparent;
       cursor: pointer;
@@ -268,7 +296,6 @@
       color: var(--accent);
       border-color: rgba(56, 189, 248, 0.3);
     }
-
     .emirates-card:hover .enter-btn {
       background: var(--accent);
       color: #04101d;
@@ -280,11 +307,21 @@
       color: var(--physics-color);
       border-color: rgba(129, 140, 248, 0.3);
     }
-
     .physics-card:hover .enter-btn {
       background: var(--physics-color);
       color: #090e17;
       box-shadow: 0 4px 16px var(--physics-glow);
+    }
+
+    .ai-card .enter-btn {
+      background: rgba(52, 211, 153, 0.14);
+      color: var(--ai-color);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+    .ai-card:hover .enter-btn {
+      background: var(--ai-color);
+      color: #06241a;
+      box-shadow: 0 4px 16px var(--ai-glow);
     }
 
     /* Course / Quiz Header */
@@ -341,9 +378,8 @@
       letter-spacing: -0.01em;
     }
 
-    .stats-physics {
-      color: var(--physics-color) !important;
-    }
+    .stats-physics { color: var(--physics-color) !important; }
+    .stats-ai { color: var(--ai-color) !important; }
 
     .header-content {
       display: flex;
@@ -358,9 +394,8 @@
       letter-spacing: -0.01em;
     }
 
-    .course-title-physics {
-      color: var(--physics-color) !important;
-    }
+    .course-title-physics { color: var(--physics-color) !important; }
+    .course-title-ai { color: var(--ai-color) !important; }
 
     .sub-header {
       font-size: 0.85rem;
@@ -382,7 +417,7 @@
       padding: 8px 14px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 600;
       transition: all 0.18s ease;
       display: inline-flex;
@@ -410,22 +445,153 @@
       box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
     }
 
-    button.ctrl-btn.btn-blooket:hover {
-      border-color: var(--blooket-color);
-      color: var(--blooket-color);
-    }
-
-    /* Physics Filter Controls */
-    .physics-controls button.ctrl-btn:hover {
-      border-color: var(--physics-color);
-      color: var(--physics-color);
-    }
-
+    /* Physics & AI Controls */
+    .physics-controls button.ctrl-btn:hover { border-color: var(--physics-color); color: var(--physics-color); }
     .physics-controls button.ctrl-btn.active {
       background: rgba(129, 140, 248, 0.14);
       border-color: var(--physics-color);
       color: var(--physics-color);
       box-shadow: 0 0 12px rgba(129, 140, 248, 0.25);
+    }
+
+    .ai-controls button.ctrl-btn:hover { border-color: var(--ai-color); color: var(--ai-color); }
+    .ai-controls button.ctrl-btn.active {
+      background: rgba(52, 211, 153, 0.14);
+      border-color: var(--ai-color);
+      color: var(--ai-color);
+      box-shadow: 0 0 12px rgba(52, 211, 153, 0.25);
+    }
+
+    /* AI Mode Switch Tabs */
+    .mode-switch-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      background: #090e17;
+      padding: 5px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      width: fit-content;
+    }
+
+    .mode-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 7px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mode-tab-btn.active {
+      background: rgba(52, 211, 153, 0.18);
+      color: var(--ai-color);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    /* AI Search Input */
+    .search-box-wrap {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px 14px 44px;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--ai-color);
+      box-shadow: 0 0 14px rgba(52, 211, 153, 0.25);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 1rem;
+      pointer-events: none;
+    }
+
+    /* AI Acronym Card Grid */
+    .acronyms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .acronym-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .acronym-card:hover {
+      border-color: rgba(52, 211, 153, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .acronym-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .acronym-badge {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--ai-color);
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      padding: 3px 12px;
+      border-radius: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .acronym-cat-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .acronym-full {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .acronym-def {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      line-height: 1.5;
     }
 
     /* Quiz Card Styles */
@@ -497,6 +663,12 @@
       border: 1px solid rgba(129, 140, 248, 0.35);
     }
 
+    .tag-ai {
+      background: rgba(52, 211, 153, 0.14);
+      color: var(--ai-color);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+    }
+
     .tag-chapter {
       background: rgba(255, 255, 255, 0.06);
       color: #cbd5e1;
@@ -541,6 +713,11 @@
       background: #14182e;
     }
 
+    .ai-view .opt-btn:hover:not(:disabled) {
+      border-color: var(--ai-color);
+      background: #0e201c;
+    }
+
     .opt-btn:disabled {
       cursor: default;
     }
@@ -570,17 +747,12 @@
       line-height: 1.6;
     }
 
-    .physics-view .feedback {
-      border-left-color: var(--physics-color);
-    }
+    .physics-view .feedback { border-left-color: var(--physics-color); }
+    .ai-view .feedback { border-left-color: var(--ai-color); }
 
-    .feedback strong {
-      color: var(--accent);
-    }
-
-    .physics-view .feedback strong {
-      color: var(--physics-color);
-    }
+    .feedback strong { color: var(--accent); }
+    .physics-view .feedback strong { color: var(--physics-color); }
+    .ai-view .feedback strong { color: var(--ai-color); }
 
     /* KaTeX Dark Mode Tuning */
     .katex {
@@ -599,6 +771,7 @@
       .controls { gap: 6px; }
       button.ctrl-btn { font-size: 0.78rem; padding: 7px 10px; }
       .subjects-grid { grid-template-columns: 1fr; }
+      .acronyms-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -610,7 +783,7 @@
       <header class="portal-header">
         <div class="portal-badge">Academic Study Portal</div>
         <h1 class="portal-title">Select a Subject</h1>
-        <p class="portal-subtitle">Choose a course to practice interactive midterm quizzes, questions, and master banks.</p>
+        <p class="portal-subtitle">Choose a course to practice interactive midterm quizzes, questions, and master acronyms.</p>
       </header>
 
       <div class="subjects-grid">
@@ -643,7 +816,7 @@
             <h2 class="card-title">Engineering Physics 1</h2>
             <p class="card-desc">Master bank of midterm theory questions covering 1D Motion, 2D/3D Projectiles, Circular Motion, Newton's Laws, and Applications.</p>
             <div class="card-chips">
-              <span class="chip chip-accent">Theory Questions (41)</span>
+              <span class="chip chip-physics">Theory Questions (41)</span>
               <span class="chip">Ch 2: 1D Motion (8)</span>
               <span class="chip">Ch 3: 2D Motion (13)</span>
               <span class="chip">Ch 4: Newton's Laws (7)</span>
@@ -651,6 +824,25 @@
             </div>
           </div>
           <button class="enter-btn">Start Practice →</button>
+        </div>
+
+        <!-- Subject: Artificial Intelligence (AIT111) -->
+        <div class="subject-card ai-card" onclick="navigateTo('artificial-intelligence')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon">🤖</div>
+              <span class="card-status-badge badge-ai">Active • 35 Acronyms</span>
+            </div>
+            <h2 class="card-title">Artificial Intelligence</h2>
+            <p class="card-desc">AIT111 master list of essential exam acronyms, short forms, and definitions from pages 2 & 3 of the study guide.</p>
+            <div class="card-chips">
+              <span class="chip chip-ai">35 Exam Acronyms</span>
+              <span class="chip chip-ai">Practice Quiz (35)</span>
+              <span class="chip">Core AI & ML</span>
+              <span class="chip">Prompt Frameworks</span>
+            </div>
+          </div>
+          <button class="enter-btn">Open AI Section →</button>
         </div>
       </div>
     </section>
@@ -704,10 +896,59 @@
       <div id="physicsQuizContainer"></div>
     </section>
 
+    <!-- VIEW 4: ARTIFICIAL INTELLIGENCE (AIT111) VIEW -->
+    <section id="view-ai" class="view-section ai-view">
+      <header class="course-header">
+        <div class="header-nav-row">
+          <button class="back-btn" onclick="navigateTo('portal')">← All Subjects</button>
+          <div class="stats stats-ai" id="aiStatsDisplay">35 Acronyms</div>
+        </div>
+        <div class="header-content">
+          <h1 class="course-title course-title-ai">Artificial Intelligence (AIT111)</h1>
+          <div class="sub-header" id="aiSubHeader">Master List of Abbreviations & Shorts (Pages 2–3 Study Guide)</div>
+        </div>
+
+        <div class="mode-switch-group" style="margin-top: 14px;">
+          <button class="mode-tab-btn active" id="btn-ai-mode-dict" onclick="setAIMode('dict')">📖 Acronyms Glossary (35)</button>
+          <button class="mode-tab-btn" id="btn-ai-mode-quiz" onclick="setAIMode('quiz')">🎯 Practice Quiz (35 Questions)</button>
+        </div>
+
+        <!-- Filter controls for AI -->
+        <div class="controls ai-controls" id="aiFiltersRow">
+          <button class="ctrl-btn active" onclick="filterAI('all', this)">All (35)</button>
+          <button class="ctrl-btn" onclick="filterAI('Core AI', this)">Core AI (5)</button>
+          <button class="ctrl-btn" onclick="filterAI('Machine Learning', this)">Machine Learning (10)</button>
+          <button class="ctrl-btn" onclick="filterAI('NLP & Gen AI', this)">NLP & Gen AI (6)</button>
+          <button class="ctrl-btn" onclick="filterAI('Prompt Engineering', this)">Prompt Engineering (5)</button>
+          <button class="ctrl-btn" onclick="filterAI('Hardware & Compute', this)">Hardware (3)</button>
+          <button class="ctrl-btn" onclick="filterAI('Metrics & Evaluation', this)">Metrics (3)</button>
+          <button class="ctrl-btn" onclick="filterAI('AI Applications', this)">Applications (4)</button>
+        </div>
+
+        <!-- Quiz controls (shuffle/reset) shown in quiz mode -->
+        <div class="controls ai-controls" id="aiQuizControlsRow" style="display: none;">
+          <button class="ctrl-btn" onclick="shuffleAIQuiz()">🔀 Shuffle</button>
+          <button class="ctrl-btn" onclick="resetAIQuiz()">🔄 Reset Quiz</button>
+        </div>
+      </header>
+
+      <!-- Subview 1: Acronyms Dictionary / Cards Grid -->
+      <div id="aiDictContainer">
+        <div class="search-box-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="aiSearchInput" class="search-input" placeholder="Search acronyms or definitions (e.g. BERT, GPT, RLHF, prompt, learning...)" oninput="handleAISearch(this.value)">
+        </div>
+        <div class="acronyms-grid" id="acronymsCardGrid"></div>
+      </div>
+
+      <!-- Subview 2: Acronyms Practice Quiz -->
+      <div id="aiQuizContainer" style="display: none;"></div>
+    </section>
+
   </div>
 
   <script>
-    /* Question Datasets */
+    /* Question & Acronym Datasets */
     const emiratesQuestionsData = [
   {
     "id": 1,
@@ -2160,6 +2401,745 @@
     "exp": "At the top, the circle center is below the rider: $mg - n_{\\text{top}} = \\frac{mv^2}{R} \\implies n_{\\text{top}} = mg - \\frac{mv^2}{R}$ (feels lighter!). At the bottom, the circle center is above the rider: $n_{\\text{bottom}} - mg = \\frac{mv^2}{R} \\implies n_{\\text{bottom}} = mg + \\frac{mv^2}{R}$ (feels heavier!)."
   }
 ];
+    const aiAcronymsData = [
+  {
+    "id": 1,
+    "short": "AI",
+    "full": "Artificial Intelligence",
+    "category": "Core AI",
+    "def": "Simulation of human intelligence in machines programmed to think, reason, and learn like humans."
+  },
+  {
+    "id": 2,
+    "short": "ML",
+    "full": "Machine Learning",
+    "category": "Machine Learning",
+    "def": "A subset of AI where algorithms learn patterns from data and improve from experience without being explicitly programmed."
+  },
+  {
+    "id": 3,
+    "short": "DL",
+    "full": "Deep Learning",
+    "category": "Machine Learning",
+    "def": "A specialized subset of ML based on multi-layered artificial neural networks that learn representations from massive datasets."
+  },
+  {
+    "id": 4,
+    "short": "NLP",
+    "full": "Natural Language Processing",
+    "category": "Core AI",
+    "def": "A branch of AI that enables computers to understand, interpret, process, and generate human language."
+  },
+  {
+    "id": 5,
+    "short": "AGI",
+    "full": "Artificial General Intelligence",
+    "category": "Core AI",
+    "def": "Theoretical 'General AI' possessing human-like cognitive abilities across diverse domains (does not currently exist; a future research goal)."
+  },
+  {
+    "id": 6,
+    "short": "BERT",
+    "full": "Bidirectional Encoder Representations from Transformers",
+    "category": "NLP & Gen AI",
+    "def": "A 2018 Transformer-based NLP model developed by Google for deep contextual language understanding across both left and right context."
+  },
+  {
+    "id": 7,
+    "short": "GPT",
+    "full": "Generative Pre-trained Transformer",
+    "category": "NLP & Gen AI",
+    "def": "A family of autoregressive AI models by OpenAI that generate coherent text one token at a time using the Transformer decoder architecture."
+  },
+  {
+    "id": 8,
+    "short": "LLM",
+    "full": "Large Language Model",
+    "category": "NLP & Gen AI",
+    "def": "An AI model trained on massive text corpora to recognize language patterns and generate human-like token-by-token responses."
+  },
+  {
+    "id": 9,
+    "short": "Gen AI",
+    "full": "Generative AI",
+    "category": "NLP & Gen AI",
+    "def": "A subset of AI that creates new, synthetic content (text, images, audio, video, code) by learning underlying patterns from training data."
+  },
+  {
+    "id": 10,
+    "short": "SSL",
+    "full": "Self-Supervised Learning",
+    "category": "Machine Learning",
+    "def": "A training paradigm where the model creates its own supervisory labels directly from unlabelled data (e.g. masking next words and predicting them)."
+  },
+  {
+    "id": 11,
+    "short": "RLHF",
+    "full": "Reinforcement Learning from Human Feedback",
+    "category": "Machine Learning",
+    "def": "An alignment technique that fine-tunes generative models using human preference ratings to ensure outputs are helpful, honest, and harmless."
+  },
+  {
+    "id": 12,
+    "short": "GAN",
+    "full": "Generative Adversarial Network",
+    "category": "NLP & Gen AI",
+    "def": "An AI architecture where two neural networks—a Generator (produces candidate fakes) and a Discriminator (evaluates real vs. fake)—compete in a zero-sum game."
+  },
+  {
+    "id": 13,
+    "short": "CPU",
+    "full": "Central Processing Unit",
+    "category": "Hardware & Compute",
+    "def": "Flexible, general-purpose computer processor optimized for sequential execution, operating systems, and everyday software control."
+  },
+  {
+    "id": 14,
+    "short": "GPU",
+    "full": "Graphics Processing Unit",
+    "category": "Hardware & Compute",
+    "def": "High-throughput parallel processor designed for matrix math, 3D graphics rendering, and accelerating deep learning model training."
+  },
+  {
+    "id": 15,
+    "short": "TPU",
+    "full": "Tensor Processing Unit",
+    "category": "Hardware & Compute",
+    "def": "A custom Application-Specific Integrated Circuit (ASIC) engineered by Google specifically for accelerating tensor calculations in deep neural networks."
+  },
+  {
+    "id": 16,
+    "short": "TP",
+    "full": "Traditional Programming",
+    "category": "Core AI",
+    "def": "Programming paradigm where human software engineers write explicit deterministic rules and logic: Data + Rules -> Output."
+  },
+  {
+    "id": 17,
+    "short": "RL",
+    "full": "Reinforcement Learning",
+    "category": "Machine Learning",
+    "def": "Machine learning paradigm where an autonomous agent learns optimal actions via trial-and-error by maximizing cumulative rewards from an environment."
+  },
+  {
+    "id": 18,
+    "short": "DRL",
+    "full": "Deep Reinforcement Learning",
+    "category": "Machine Learning",
+    "def": "Advanced reinforcement learning that integrates multi-layered deep neural networks as function approximators for complex state-action spaces."
+  },
+  {
+    "id": 19,
+    "short": "SARSA",
+    "full": "State-Action-Reward-State-Action",
+    "category": "Machine Learning",
+    "def": "An on-policy reinforcement learning algorithm that iteratively learns action-value policies based on the current action taken by the agent."
+  },
+  {
+    "id": 20,
+    "short": "SVR",
+    "full": "Support Vector Regression",
+    "category": "Machine Learning",
+    "def": "Supervised learning algorithm that applies support vector principles to predict continuous numerical values with an epsilon-insensitive loss tube."
+  },
+  {
+    "id": 21,
+    "short": "SVM",
+    "full": "Support Vector Machine",
+    "category": "Machine Learning",
+    "def": "Supervised machine learning algorithm that finds an optimal separating hyperplane to classify data points into distinct categorical classes."
+  },
+  {
+    "id": 22,
+    "short": "KNN",
+    "full": "K-Nearest Neighbors",
+    "category": "Machine Learning",
+    "def": "Non-parametric supervised algorithm that assigns a label based on the majority vote of the K closest neighboring data points in feature space."
+  },
+  {
+    "id": 23,
+    "short": "TP / TN / FP / FN",
+    "full": "True Positive / True Negative / False Positive / False Negative",
+    "category": "Metrics & Evaluation",
+    "def": "The four fundamental quadrant cells of a Confusion Matrix comparing ground truth actual classes against model predicted classifications."
+  },
+  {
+    "id": 24,
+    "short": "MSE",
+    "full": "Mean Squared Error",
+    "category": "Metrics & Evaluation",
+    "def": "Standard regression loss metric that measures the average of squared differences between predicted values and actual ground truth values."
+  },
+  {
+    "id": 25,
+    "short": "R²",
+    "full": "R-squared (Coefficient of Determination)",
+    "category": "Metrics & Evaluation",
+    "def": "Statistical regression metric (0 <= R^2 <= 1) representing the proportion of variance in the dependent variable predictable from independent variables."
+  },
+  {
+    "id": 26,
+    "short": "L1 / L2",
+    "full": "Lasso (L1) / Ridge (L2) Regularization",
+    "category": "Machine Learning",
+    "def": "Penalization techniques added to the loss function that shrink model weights to reduce model complexity and prevent overfitting."
+  },
+  {
+    "id": 27,
+    "short": "CRM",
+    "full": "Customer Relationship Management",
+    "category": "AI Applications",
+    "def": "Enterprise customer management software (e.g. Salesforce Einstein, HubSpot) that leverages AI to analyze interaction data and predict outcomes."
+  },
+  {
+    "id": 28,
+    "short": "HR",
+    "full": "Human Resources",
+    "category": "AI Applications",
+    "def": "Corporate department leveraging AI tools (e.g. LinkedIn Recruiter, HireVue) for candidate screening, resume matching, and workforce analytics."
+  },
+  {
+    "id": 29,
+    "short": "IoT",
+    "full": "Internet of Things",
+    "category": "AI Applications",
+    "def": "Interconnected network of physical sensors, vehicles, and smart appliances integrated with AI for edge computing and autonomous telemetry."
+  },
+  {
+    "id": 30,
+    "short": "IDE",
+    "full": "Integrated Development Environment",
+    "category": "AI Applications",
+    "def": "Software development application (e.g. VS Code, PyCharm) augmented with AI pair programmers (e.g. GitHub Copilot) for real-time code generation."
+  },
+  {
+    "id": 31,
+    "short": "JSON",
+    "full": "JavaScript Object Notation",
+    "category": "Prompt Engineering",
+    "def": "Lightweight, human-readable structured data interchange format frequently requested in prompt instructions to enforce structured model outputs."
+  },
+  {
+    "id": 32,
+    "short": "CSV",
+    "full": "Comma-Separated Values",
+    "category": "Prompt Engineering",
+    "def": "Plaintext tabular data format widely utilized in data manipulation, spreadsheet processing, and workflow automation prompts."
+  },
+  {
+    "id": 33,
+    "short": "CO-STAR",
+    "full": "Context, Objective, Style, Tone, Audience, Response",
+    "category": "Prompt Engineering",
+    "def": "Comprehensive prompt engineering framework designed by GovTech Singapore, widely adopted for marketing, communications, and copywriting."
+  },
+  {
+    "id": 34,
+    "short": "RTF",
+    "full": "Role, Task, Format",
+    "category": "Prompt Engineering",
+    "def": "High-speed, intuitive 3-part prompt engineering framework ideal for structured executive summaries, standard reports, and tabular outputs."
+  },
+  {
+    "id": 35,
+    "short": "CLEAR",
+    "full": "Concise, Logical, Explicit, Adaptive, Reflective",
+    "category": "Prompt Engineering",
+    "def": "Systematic 5-point prompt evaluation rubric and checklist (formulated by Lo, 2023) utilized for auditing and optimizing AI prompt effectiveness."
+  }
+];
+    const aiQuizQuestionsData = [
+  {
+    "id": 1,
+    "acronym": "AI",
+    "category": "Core AI",
+    "q": "What is the full expansion and meaning of the acronym 'AI' in Artificial Intelligence?",
+    "opts": [
+      "Human Resources",
+      "Artificial Intelligence",
+      "Lasso (L1) / Ridge (L2) Regularization",
+      "Natural Language Processing"
+    ],
+    "ans": 1,
+    "exp": "<strong>AI</strong> stands for <strong>Artificial Intelligence</strong>.<br><em>Exam Definition:</em> Simulation of human intelligence in machines programmed to think, reason, and learn like humans."
+  },
+  {
+    "id": 2,
+    "acronym": "ML",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'ML' in Artificial Intelligence?",
+    "opts": [
+      "State-Action-Reward-State-Action",
+      "Generative AI",
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "ans": 2,
+    "exp": "<strong>ML</strong> stands for <strong>Machine Learning</strong>.<br><em>Exam Definition:</em> A subset of AI where algorithms learn patterns from data and improve from experience without being explicitly programmed."
+  },
+  {
+    "id": 3,
+    "acronym": "DL",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'DL' in Artificial Intelligence?",
+    "opts": [
+      "Support Vector Regression",
+      "Context, Objective, Style, Tone, Audience, Response",
+      "Natural Language Processing",
+      "Deep Learning"
+    ],
+    "ans": 3,
+    "exp": "<strong>DL</strong> stands for <strong>Deep Learning</strong>.<br><em>Exam Definition:</em> A specialized subset of ML based on multi-layered artificial neural networks that learn representations from massive datasets."
+  },
+  {
+    "id": 4,
+    "acronym": "NLP",
+    "category": "Core AI",
+    "q": "What is the full expansion and meaning of the acronym 'NLP' in Artificial Intelligence?",
+    "opts": [
+      "Natural Language Processing",
+      "JavaScript Object Notation",
+      "Reinforcement Learning",
+      "Artificial General Intelligence"
+    ],
+    "ans": 0,
+    "exp": "<strong>NLP</strong> stands for <strong>Natural Language Processing</strong>.<br><em>Exam Definition:</em> A branch of AI that enables computers to understand, interpret, process, and generate human language."
+  },
+  {
+    "id": 5,
+    "acronym": "AGI",
+    "category": "Core AI",
+    "q": "What is the full expansion and meaning of the acronym 'AGI' in Artificial Intelligence?",
+    "opts": [
+      "Generative AI",
+      "R-squared (Coefficient of Determination)",
+      "Concise, Logical, Explicit, Adaptive, Reflective",
+      "Artificial General Intelligence"
+    ],
+    "ans": 3,
+    "exp": "<strong>AGI</strong> stands for <strong>Artificial General Intelligence</strong>.<br><em>Exam Definition:</em> Theoretical 'General AI' possessing human-like cognitive abilities across diverse domains (does not currently exist; a future research goal)."
+  },
+  {
+    "id": 6,
+    "acronym": "BERT",
+    "category": "NLP & Gen AI",
+    "q": "What is the full expansion and meaning of the acronym 'BERT' in Artificial Intelligence?",
+    "opts": [
+      "Customer Relationship Management",
+      "Lasso (L1) / Ridge (L2) Regularization",
+      "Bidirectional Encoder Representations from Transformers",
+      "Artificial Intelligence"
+    ],
+    "ans": 2,
+    "exp": "<strong>BERT</strong> stands for <strong>Bidirectional Encoder Representations from Transformers</strong>.<br><em>Exam Definition:</em> A 2018 Transformer-based NLP model developed by Google for deep contextual language understanding across both left and right context."
+  },
+  {
+    "id": 7,
+    "acronym": "GPT",
+    "category": "NLP & Gen AI",
+    "q": "What is the full expansion and meaning of the acronym 'GPT' in Artificial Intelligence?",
+    "opts": [
+      "Support Vector Regression",
+      "Machine Learning",
+      "Reinforcement Learning from Human Feedback",
+      "Generative Pre-trained Transformer"
+    ],
+    "ans": 3,
+    "exp": "<strong>GPT</strong> stands for <strong>Generative Pre-trained Transformer</strong>.<br><em>Exam Definition:</em> A family of autoregressive AI models by OpenAI that generate coherent text one token at a time using the Transformer decoder architecture."
+  },
+  {
+    "id": 8,
+    "acronym": "LLM",
+    "category": "NLP & Gen AI",
+    "q": "What is the full expansion and meaning of the acronym 'LLM' in Artificial Intelligence?",
+    "opts": [
+      "Comma-Separated Values",
+      "Deep Learning",
+      "Central Processing Unit",
+      "Large Language Model"
+    ],
+    "ans": 3,
+    "exp": "<strong>LLM</strong> stands for <strong>Large Language Model</strong>.<br><em>Exam Definition:</em> An AI model trained on massive text corpora to recognize language patterns and generate human-like token-by-token responses."
+  },
+  {
+    "id": 9,
+    "acronym": "Gen AI",
+    "category": "NLP & Gen AI",
+    "q": "What is the full expansion and meaning of the acronym 'Gen AI' in Artificial Intelligence?",
+    "opts": [
+      "Reinforcement Learning from Human Feedback",
+      "Graphics Processing Unit",
+      "Artificial Intelligence",
+      "Generative AI"
+    ],
+    "ans": 3,
+    "exp": "<strong>Gen AI</strong> stands for <strong>Generative AI</strong>.<br><em>Exam Definition:</em> A subset of AI that creates new, synthetic content (text, images, audio, video, code) by learning underlying patterns from training data."
+  },
+  {
+    "id": 10,
+    "acronym": "SSL",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'SSL' in Artificial Intelligence?",
+    "opts": [
+      "Self-Supervised Learning",
+      "Support Vector Regression",
+      "Machine Learning",
+      "Customer Relationship Management"
+    ],
+    "ans": 0,
+    "exp": "<strong>SSL</strong> stands for <strong>Self-Supervised Learning</strong>.<br><em>Exam Definition:</em> A training paradigm where the model creates its own supervisory labels directly from unlabelled data (e.g. masking next words and predicting them)."
+  },
+  {
+    "id": 11,
+    "acronym": "RLHF",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'RLHF' in Artificial Intelligence?",
+    "opts": [
+      "State-Action-Reward-State-Action",
+      "R-squared (Coefficient of Determination)",
+      "Machine Learning",
+      "Reinforcement Learning from Human Feedback"
+    ],
+    "ans": 3,
+    "exp": "<strong>RLHF</strong> stands for <strong>Reinforcement Learning from Human Feedback</strong>.<br><em>Exam Definition:</em> An alignment technique that fine-tunes generative models using human preference ratings to ensure outputs are helpful, honest, and harmless."
+  },
+  {
+    "id": 12,
+    "acronym": "GAN",
+    "category": "NLP & Gen AI",
+    "q": "What is the full expansion and meaning of the acronym 'GAN' in Artificial Intelligence?",
+    "opts": [
+      "Central Processing Unit",
+      "Generative Adversarial Network",
+      "Artificial General Intelligence",
+      "Lasso (L1) / Ridge (L2) Regularization"
+    ],
+    "ans": 1,
+    "exp": "<strong>GAN</strong> stands for <strong>Generative Adversarial Network</strong>.<br><em>Exam Definition:</em> An AI architecture where two neural networks—a Generator (produces candidate fakes) and a Discriminator (evaluates real vs. fake)—compete in a zero-sum game."
+  },
+  {
+    "id": 13,
+    "acronym": "CPU",
+    "category": "Hardware & Compute",
+    "q": "What is the full expansion and meaning of the acronym 'CPU' in Artificial Intelligence?",
+    "opts": [
+      "Artificial Intelligence",
+      "JavaScript Object Notation",
+      "Central Processing Unit",
+      "R-squared (Coefficient of Determination)"
+    ],
+    "ans": 2,
+    "exp": "<strong>CPU</strong> stands for <strong>Central Processing Unit</strong>.<br><em>Exam Definition:</em> Flexible, general-purpose computer processor optimized for sequential execution, operating systems, and everyday software control."
+  },
+  {
+    "id": 14,
+    "acronym": "GPU",
+    "category": "Hardware & Compute",
+    "q": "What is the full expansion and meaning of the acronym 'GPU' in Artificial Intelligence?",
+    "opts": [
+      "Artificial Intelligence",
+      "Customer Relationship Management",
+      "State-Action-Reward-State-Action",
+      "Graphics Processing Unit"
+    ],
+    "ans": 3,
+    "exp": "<strong>GPU</strong> stands for <strong>Graphics Processing Unit</strong>.<br><em>Exam Definition:</em> High-throughput parallel processor designed for matrix math, 3D graphics rendering, and accelerating deep learning model training."
+  },
+  {
+    "id": 15,
+    "acronym": "TPU",
+    "category": "Hardware & Compute",
+    "q": "What is the full expansion and meaning of the acronym 'TPU' in Artificial Intelligence?",
+    "opts": [
+      "Customer Relationship Management",
+      "Tensor Processing Unit",
+      "Traditional Programming",
+      "Support Vector Regression"
+    ],
+    "ans": 1,
+    "exp": "<strong>TPU</strong> stands for <strong>Tensor Processing Unit</strong>.<br><em>Exam Definition:</em> A custom Application-Specific Integrated Circuit (ASIC) engineered by Google specifically for accelerating tensor calculations in deep neural networks."
+  },
+  {
+    "id": 16,
+    "acronym": "TP",
+    "category": "Core AI",
+    "q": "What is the full expansion and meaning of the acronym 'TP' in Artificial Intelligence?",
+    "opts": [
+      "JavaScript Object Notation",
+      "Traditional Programming",
+      "Role, Task, Format",
+      "Self-Supervised Learning"
+    ],
+    "ans": 1,
+    "exp": "<strong>TP</strong> stands for <strong>Traditional Programming</strong>.<br><em>Exam Definition:</em> Programming paradigm where human software engineers write explicit deterministic rules and logic: Data + Rules -> Output."
+  },
+  {
+    "id": 17,
+    "acronym": "RL",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'RL' in Artificial Intelligence?",
+    "opts": [
+      "Reinforcement Learning",
+      "Machine Learning",
+      "Generative Pre-trained Transformer",
+      "Graphics Processing Unit"
+    ],
+    "ans": 0,
+    "exp": "<strong>RL</strong> stands for <strong>Reinforcement Learning</strong>.<br><em>Exam Definition:</em> Machine learning paradigm where an autonomous agent learns optimal actions via trial-and-error by maximizing cumulative rewards from an environment."
+  },
+  {
+    "id": 18,
+    "acronym": "DRL",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'DRL' in Artificial Intelligence?",
+    "opts": [
+      "K-Nearest Neighbors",
+      "Large Language Model",
+      "Deep Reinforcement Learning",
+      "Artificial General Intelligence"
+    ],
+    "ans": 2,
+    "exp": "<strong>DRL</strong> stands for <strong>Deep Reinforcement Learning</strong>.<br><em>Exam Definition:</em> Advanced reinforcement learning that integrates multi-layered deep neural networks as function approximators for complex state-action spaces."
+  },
+  {
+    "id": 19,
+    "acronym": "SARSA",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'SARSA' in Artificial Intelligence?",
+    "opts": [
+      "R-squared (Coefficient of Determination)",
+      "JavaScript Object Notation",
+      "Deep Reinforcement Learning",
+      "State-Action-Reward-State-Action"
+    ],
+    "ans": 3,
+    "exp": "<strong>SARSA</strong> stands for <strong>State-Action-Reward-State-Action</strong>.<br><em>Exam Definition:</em> An on-policy reinforcement learning algorithm that iteratively learns action-value policies based on the current action taken by the agent."
+  },
+  {
+    "id": 20,
+    "acronym": "SVR",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'SVR' in Artificial Intelligence?",
+    "opts": [
+      "Support Vector Regression",
+      "Deep Reinforcement Learning",
+      "Human Resources",
+      "Internet of Things"
+    ],
+    "ans": 0,
+    "exp": "<strong>SVR</strong> stands for <strong>Support Vector Regression</strong>.<br><em>Exam Definition:</em> Supervised learning algorithm that applies support vector principles to predict continuous numerical values with an epsilon-insensitive loss tube."
+  },
+  {
+    "id": 21,
+    "acronym": "SVM",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'SVM' in Artificial Intelligence?",
+    "opts": [
+      "Human Resources",
+      "Graphics Processing Unit",
+      "JavaScript Object Notation",
+      "Support Vector Machine"
+    ],
+    "ans": 3,
+    "exp": "<strong>SVM</strong> stands for <strong>Support Vector Machine</strong>.<br><em>Exam Definition:</em> Supervised machine learning algorithm that finds an optimal separating hyperplane to classify data points into distinct categorical classes."
+  },
+  {
+    "id": 22,
+    "acronym": "KNN",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'KNN' in Artificial Intelligence?",
+    "opts": [
+      "K-Nearest Neighbors",
+      "Support Vector Machine",
+      "Generative AI",
+      "Artificial Intelligence"
+    ],
+    "ans": 0,
+    "exp": "<strong>KNN</strong> stands for <strong>K-Nearest Neighbors</strong>.<br><em>Exam Definition:</em> Non-parametric supervised algorithm that assigns a label based on the majority vote of the K closest neighboring data points in feature space."
+  },
+  {
+    "id": 23,
+    "acronym": "TP / TN / FP / FN",
+    "category": "Metrics & Evaluation",
+    "q": "What is the full expansion and meaning of the acronym 'TP / TN / FP / FN' in Artificial Intelligence?",
+    "opts": [
+      "True Positive / True Negative / False Positive / False Negative",
+      "JavaScript Object Notation",
+      "Artificial General Intelligence",
+      "K-Nearest Neighbors"
+    ],
+    "ans": 0,
+    "exp": "<strong>TP / TN / FP / FN</strong> stands for <strong>True Positive / True Negative / False Positive / False Negative</strong>.<br><em>Exam Definition:</em> The four fundamental quadrant cells of a Confusion Matrix comparing ground truth actual classes against model predicted classifications."
+  },
+  {
+    "id": 24,
+    "acronym": "MSE",
+    "category": "Metrics & Evaluation",
+    "q": "What is the full expansion and meaning of the acronym 'MSE' in Artificial Intelligence?",
+    "opts": [
+      "Context, Objective, Style, Tone, Audience, Response",
+      "Mean Squared Error",
+      "K-Nearest Neighbors",
+      "Deep Learning"
+    ],
+    "ans": 1,
+    "exp": "<strong>MSE</strong> stands for <strong>Mean Squared Error</strong>.<br><em>Exam Definition:</em> Standard regression loss metric that measures the average of squared differences between predicted values and actual ground truth values."
+  },
+  {
+    "id": 25,
+    "acronym": "R²",
+    "category": "Metrics & Evaluation",
+    "q": "What is the full expansion and meaning of the acronym 'R²' in Artificial Intelligence?",
+    "opts": [
+      "K-Nearest Neighbors",
+      "Concise, Logical, Explicit, Adaptive, Reflective",
+      "Integrated Development Environment",
+      "R-squared (Coefficient of Determination)"
+    ],
+    "ans": 3,
+    "exp": "<strong>R²</strong> stands for <strong>R-squared (Coefficient of Determination)</strong>.<br><em>Exam Definition:</em> Statistical regression metric (0 <= R^2 <= 1) representing the proportion of variance in the dependent variable predictable from independent variables."
+  },
+  {
+    "id": 26,
+    "acronym": "L1 / L2",
+    "category": "Machine Learning",
+    "q": "What is the full expansion and meaning of the acronym 'L1 / L2' in Artificial Intelligence?",
+    "opts": [
+      "Support Vector Machine",
+      "Human Resources",
+      "Lasso (L1) / Ridge (L2) Regularization",
+      "Integrated Development Environment"
+    ],
+    "ans": 2,
+    "exp": "<strong>L1 / L2</strong> stands for <strong>Lasso (L1) / Ridge (L2) Regularization</strong>.<br><em>Exam Definition:</em> Penalization techniques added to the loss function that shrink model weights to reduce model complexity and prevent overfitting."
+  },
+  {
+    "id": 27,
+    "acronym": "CRM",
+    "category": "AI Applications",
+    "q": "What is the full expansion and meaning of the acronym 'CRM' in Artificial Intelligence?",
+    "opts": [
+      "Comma-Separated Values",
+      "Customer Relationship Management",
+      "Role, Task, Format",
+      "Reinforcement Learning"
+    ],
+    "ans": 1,
+    "exp": "<strong>CRM</strong> stands for <strong>Customer Relationship Management</strong>.<br><em>Exam Definition:</em> Enterprise customer management software (e.g. Salesforce Einstein, HubSpot) that leverages AI to analyze interaction data and predict outcomes."
+  },
+  {
+    "id": 28,
+    "acronym": "HR",
+    "category": "AI Applications",
+    "q": "What is the full expansion and meaning of the acronym 'HR' in Artificial Intelligence?",
+    "opts": [
+      "Human Resources",
+      "Deep Learning",
+      "Traditional Programming",
+      "Mean Squared Error"
+    ],
+    "ans": 0,
+    "exp": "<strong>HR</strong> stands for <strong>Human Resources</strong>.<br><em>Exam Definition:</em> Corporate department leveraging AI tools (e.g. LinkedIn Recruiter, HireVue) for candidate screening, resume matching, and workforce analytics."
+  },
+  {
+    "id": 29,
+    "acronym": "IoT",
+    "category": "AI Applications",
+    "q": "What is the full expansion and meaning of the acronym 'IoT' in Artificial Intelligence?",
+    "opts": [
+      "Generative AI",
+      "Tensor Processing Unit",
+      "Bidirectional Encoder Representations from Transformers",
+      "Internet of Things"
+    ],
+    "ans": 3,
+    "exp": "<strong>IoT</strong> stands for <strong>Internet of Things</strong>.<br><em>Exam Definition:</em> Interconnected network of physical sensors, vehicles, and smart appliances integrated with AI for edge computing and autonomous telemetry."
+  },
+  {
+    "id": 30,
+    "acronym": "IDE",
+    "category": "AI Applications",
+    "q": "What is the full expansion and meaning of the acronym 'IDE' in Artificial Intelligence?",
+    "opts": [
+      "Large Language Model",
+      "Self-Supervised Learning",
+      "Role, Task, Format",
+      "Integrated Development Environment"
+    ],
+    "ans": 3,
+    "exp": "<strong>IDE</strong> stands for <strong>Integrated Development Environment</strong>.<br><em>Exam Definition:</em> Software development application (e.g. VS Code, PyCharm) augmented with AI pair programmers (e.g. GitHub Copilot) for real-time code generation."
+  },
+  {
+    "id": 31,
+    "acronym": "JSON",
+    "category": "Prompt Engineering",
+    "q": "What is the full expansion and meaning of the acronym 'JSON' in Artificial Intelligence?",
+    "opts": [
+      "Self-Supervised Learning",
+      "Bidirectional Encoder Representations from Transformers",
+      "JavaScript Object Notation",
+      "Support Vector Machine"
+    ],
+    "ans": 2,
+    "exp": "<strong>JSON</strong> stands for <strong>JavaScript Object Notation</strong>.<br><em>Exam Definition:</em> Lightweight, human-readable structured data interchange format frequently requested in prompt instructions to enforce structured model outputs."
+  },
+  {
+    "id": 32,
+    "acronym": "CSV",
+    "category": "Prompt Engineering",
+    "q": "What is the full expansion and meaning of the acronym 'CSV' in Artificial Intelligence?",
+    "opts": [
+      "JavaScript Object Notation",
+      "Role, Task, Format",
+      "Comma-Separated Values",
+      "Large Language Model"
+    ],
+    "ans": 2,
+    "exp": "<strong>CSV</strong> stands for <strong>Comma-Separated Values</strong>.<br><em>Exam Definition:</em> Plaintext tabular data format widely utilized in data manipulation, spreadsheet processing, and workflow automation prompts."
+  },
+  {
+    "id": 33,
+    "acronym": "CO-STAR",
+    "category": "Prompt Engineering",
+    "q": "What is the full expansion and meaning of the acronym 'CO-STAR' in Artificial Intelligence?",
+    "opts": [
+      "Comma-Separated Values",
+      "Customer Relationship Management",
+      "R-squared (Coefficient of Determination)",
+      "Context, Objective, Style, Tone, Audience, Response"
+    ],
+    "ans": 3,
+    "exp": "<strong>CO-STAR</strong> stands for <strong>Context, Objective, Style, Tone, Audience, Response</strong>.<br><em>Exam Definition:</em> Comprehensive prompt engineering framework designed by GovTech Singapore, widely adopted for marketing, communications, and copywriting."
+  },
+  {
+    "id": 34,
+    "acronym": "RTF",
+    "category": "Prompt Engineering",
+    "q": "What is the full expansion and meaning of the acronym 'RTF' in Artificial Intelligence?",
+    "opts": [
+      "K-Nearest Neighbors",
+      "Generative Adversarial Network",
+      "Natural Language Processing",
+      "Role, Task, Format"
+    ],
+    "ans": 3,
+    "exp": "<strong>RTF</strong> stands for <strong>Role, Task, Format</strong>.<br><em>Exam Definition:</em> High-speed, intuitive 3-part prompt engineering framework ideal for structured executive summaries, standard reports, and tabular outputs."
+  },
+  {
+    "id": 35,
+    "acronym": "CLEAR",
+    "category": "Prompt Engineering",
+    "q": "What is the full expansion and meaning of the acronym 'CLEAR' in Artificial Intelligence?",
+    "opts": [
+      "Reinforcement Learning from Human Feedback",
+      "Role, Task, Format",
+      "Concise, Logical, Explicit, Adaptive, Reflective",
+      "Context, Objective, Style, Tone, Audience, Response"
+    ],
+    "ans": 2,
+    "exp": "<strong>CLEAR</strong> stands for <strong>Concise, Logical, Explicit, Adaptive, Reflective</strong>.<br><em>Exam Definition:</em> Systematic 5-point prompt evaluation rubric and checklist (formulated by Lo, 2023) utilized for auditing and optimizing AI prompt effectiveness."
+  }
+];
 
     /* Emirates Studies Quiz State */
     let emFilter = "all";
@@ -2172,6 +3152,15 @@
     let activePhysQuestions = [...physicsQuestionsData];
     let physScore = 0;
     let physAnswered = 0;
+
+    /* Artificial Intelligence (AIT111) State */
+    let aiMode = "dict"; // 'dict' or 'quiz'
+    let aiFilter = "all";
+    let aiSearchQuery = "";
+    let activeAIAcronyms = [...aiAcronymsData];
+    let activeAIQuizQuestions = [...aiQuizQuestionsData];
+    let aiScore = 0;
+    let aiAnswered = 0;
 
     /* KaTeX Math Auto-Render Helper */
     function renderMathIn(element) {
@@ -2208,10 +3197,13 @@
         document.getElementById('view-physics').classList.add('active');
         window.location.hash = 'engineering-physics-1';
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Ensure formulas are rendered when switching to physics view
         setTimeout(() => {
           renderMathIn(document.getElementById("physicsQuizContainer"));
         }, 50);
+      } else if (viewName === 'artificial-intelligence' || viewName === 'ait111' || viewName === 'ai') {
+        document.getElementById('view-ai').classList.add('active');
+        window.location.hash = 'artificial-intelligence';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         document.getElementById('view-portal').classList.add('active');
         window.location.hash = '';
@@ -2225,6 +3217,8 @@
         navigateTo('emirates-studies');
       } else if (hash === 'engineering-physics-1' || hash === 'physics-1') {
         navigateTo('engineering-physics-1');
+      } else if (hash === 'artificial-intelligence' || hash === 'ait111' || hash === 'ai') {
+        navigateTo('artificial-intelligence');
       } else {
         navigateTo('portal');
       }
@@ -2406,7 +3400,6 @@
         container.appendChild(card);
       });
 
-      // Render math formulas in all questions
       renderMathIn(container);
     }
 
@@ -2482,9 +3475,186 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // Initialize both quizzes and check routing
+    /* =========================================
+       ARTIFICIAL INTELLIGENCE (AIT111) FUNCTIONS
+       ========================================= */
+    function setAIMode(mode) {
+      aiMode = mode;
+      document.getElementById('btn-ai-mode-dict').classList.toggle('active', mode === 'dict');
+      document.getElementById('btn-ai-mode-quiz').classList.toggle('active', mode === 'quiz');
+
+      if (mode === 'dict') {
+        document.getElementById('aiDictContainer').style.display = 'block';
+        document.getElementById('aiQuizContainer').style.display = 'none';
+        document.getElementById('aiQuizControlsRow').style.display = 'none';
+        document.getElementById('aiStatsDisplay').textContent = `${activeAIAcronyms.length} Acronyms`;
+        renderAIDictionary();
+      } else {
+        document.getElementById('aiDictContainer').style.display = 'none';
+        document.getElementById('aiQuizContainer').style.display = 'block';
+        document.getElementById('aiQuizControlsRow').style.display = 'flex';
+        updateAIQuizScore();
+        renderAIQuiz();
+      }
+    }
+
+    function renderAIDictionary() {
+      const grid = document.getElementById("acronymsCardGrid");
+      grid.innerHTML = "";
+
+      let items = activeAIAcronyms;
+      if (aiSearchQuery) {
+        const q = aiSearchQuery.toLowerCase();
+        items = items.filter(a => 
+          a.short.toLowerCase().includes(q) || 
+          a.full.toLowerCase().includes(q) || 
+          a.def.toLowerCase().includes(q) ||
+          a.category.toLowerCase().includes(q)
+        );
+      }
+
+      document.getElementById('aiStatsDisplay').textContent = `${items.length} Acronyms`;
+
+      if (items.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--muted);">No matching acronyms found for "${aiSearchQuery}".</div>`;
+        return;
+      }
+
+      items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "acronym-card";
+        card.innerHTML = `
+          <div>
+            <div class="acronym-header">
+              <span class="acronym-badge">${item.short}</span>
+              <span class="acronym-cat-tag">${item.category}</span>
+            </div>
+            <div class="acronym-full">${item.full}</div>
+            <div class="acronym-def">${item.def}</div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function handleAISearch(val) {
+      aiSearchQuery = val.trim();
+      renderAIDictionary();
+    }
+
+    function filterAI(category, btnEl) {
+      aiFilter = category;
+      document.querySelectorAll("#aiFiltersRow .ctrl-btn").forEach(b => b.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+
+      if (category === "all") {
+        activeAIAcronyms = [...aiAcronymsData];
+        activeAIQuizQuestions = [...aiQuizQuestionsData];
+      } else {
+        activeAIAcronyms = aiAcronymsData.filter(a => a.category === category);
+        activeAIQuizQuestions = aiQuizQuestionsData.filter(q => q.category === category);
+      }
+
+      if (aiMode === 'dict') {
+        renderAIDictionary();
+      } else {
+        renderAIQuiz();
+      }
+    }
+
+    function renderAIQuiz() {
+      const container = document.getElementById("aiQuizContainer");
+      container.innerHTML = "";
+      aiScore = 0;
+      aiAnswered = 0;
+      updateAIQuizScore();
+
+      activeAIQuizQuestions.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "q-card";
+
+        const meta = document.createElement("div");
+        meta.className = "q-meta";
+        meta.innerHTML = `
+          <div class="q-tags-group">
+            <span class="q-tag tag-ai">${item.acronym}</span>
+            <span class="q-tag tag-chapter">${item.category}</span>
+          </div>
+          <span>Question ${index + 1} of ${activeAIQuizQuestions.length}</span>
+        `;
+
+        const qText = document.createElement("div");
+        qText.className = "q-text";
+        qText.textContent = item.q;
+
+        const optsDiv = document.createElement("div");
+        optsDiv.className = "options";
+
+        const fb = document.createElement("div");
+        fb.className = "feedback";
+        fb.innerHTML = item.exp;
+
+        const letters = ["A", "B", "C", "D"];
+        item.opts.forEach((optText, optIndex) => {
+          const btn = document.createElement("button");
+          btn.className = "opt-btn";
+          btn.textContent = `${letters[optIndex] || ''}. ${optText}`;
+          btn.onclick = () => selectAIAnswer(btn, optIndex, item.ans, optsDiv, fb);
+          optsDiv.appendChild(btn);
+        });
+
+        card.appendChild(meta);
+        card.appendChild(qText);
+        card.appendChild(optsDiv);
+        card.appendChild(fb);
+        container.appendChild(card);
+      });
+    }
+
+    function selectAIAnswer(clickedBtn, chosenIdx, correctIdx, optsDiv, fb) {
+      const allBtns = optsDiv.querySelectorAll(".opt-btn");
+      allBtns.forEach((b, i) => {
+        b.disabled = true;
+        if (i === correctIdx) b.classList.add("correct");
+      });
+
+      if (chosenIdx === correctIdx) {
+        aiScore++;
+      } else {
+        clickedBtn.classList.add("wrong");
+      }
+      aiAnswered++;
+      fb.style.display = "block";
+      updateAIQuizScore();
+    }
+
+    function updateAIQuizScore() {
+      const pct = aiAnswered === 0 ? 0 : Math.round((aiScore / aiAnswered) * 100);
+      document.getElementById("aiStatsDisplay").textContent = `Score: ${aiScore} / ${aiAnswered} (${pct}%)`;
+    }
+
+    function shuffleAIQuiz() {
+      for (let i = activeAIQuizQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [activeAIQuizQuestions[i], activeAIQuizQuestions[j]] = [activeAIQuizQuestions[j], activeAIQuizQuestions[i]];
+      }
+      renderAIQuiz();
+    }
+
+    function resetAIQuiz() {
+      if (aiFilter === "all") {
+        activeAIQuizQuestions = [...aiQuizQuestionsData];
+      } else {
+        activeAIQuizQuestions = aiQuizQuestionsData.filter(q => q.category === aiFilter);
+      }
+      renderAIQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Initialize all sections
     renderEmiratesQuiz();
     renderPhysicsQuiz();
+    renderAIDictionary();
     checkHashRoute();
   </script>
 </body>
