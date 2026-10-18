@@ -1,34 +1,39 @@
-# UAE Studies Midterm Practice Quiz (Lectures 3 & 4 + Blooket)
+# Study Portal • Emirates Studies & Physics 1
 
-An interactive, responsive practice quiz covering UAE Studies with 62 questions, instant feedback, and detailed explanations.
+An interactive study portal designed for university practice quizzes and subject materials.
 
 ## 🚀 Live Demo
 
-Access the live quiz on GitHub Pages:
+Access the live site on GitHub Pages:  
 **[https://drakz-z.github.io/uae-studies-quiz/](https://drakz-z.github.io/uae-studies-quiz/)**
 
 ---
 
-## 🎯 Features
+## 📚 Available Subjects
 
-- **62 Multiple Choice & True/False Questions**:
-  - **Lecture 3**: International Politics, Archaeology, Ancient Civilizations, & Modern History (20 questions)
-  - **Lecture 4**: Core Values, Sociology, Heritage, & Societal Dynamics (20 questions)
-  - **Blooket Practice**: Comprehensive practice review set covering key history, visionary leadership, women's empowerment, and modern development (22 questions)
-- **Interactive Filtering**: Filter by "All (62)", "Lecture 3 (20)", "Lecture 4 (20)", or "Blooket (22)".
-- **Immediate Feedback**: Correct / wrong highlights with detailed reference explanations.
-- **Shuffle & Reset**: Randomize question order anytime for retrying.
-- **Live Score Tracker**: Tracks correct answers and percentage in real-time.
-- **Modern Dark Mode UI**: Clean, responsive, mobile-friendly design with category badges.
+### 1. 🏛️ Emirates Studies
+Comprehensive interactive practice quiz with **62 questions**, immediate scoring, and detailed reference explanations:
+- **Lecture 3**: International Politics, Archaeology, Ancient Civilizations, & Modern History (20 questions)
+- **Lecture 4**: Core Values, Sociology, Heritage, & Societal Dynamics (20 questions)
+- **Blooket Practice**: Curated review set covering leadership, women's empowerment, and modern development (22 questions)
+- **Features**:
+  - Filter by "All (62)", "Lecture 3 (20)", "Lecture 4 (20)", or "⚡ Blooket (22)"
+  - 🔀 Shuffle questions
+  - 🔄 Reset quiz
+  - Real-time score & accuracy percentage tracking
+  - Return to subjects portal anytime
+
+### 2. ⚛️ Physics 1
+- General Physics 1 portal section (currently empty / coming soon for upcoming problem sets and quizzes).
 
 ---
 
 ## 💻 Local Usage
 
-Simply clone the repository and open `index.html` in any web browser:
+Open `index.html` directly in any modern browser:
 
 ```bash
 git clone https://github.com/Drakz-z/uae-studies-quiz.git
 cd uae-studies-quiz
-# Open index.html in your preferred browser
+# Open index.html in your browser
 ```

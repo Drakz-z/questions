@@ -3,162 +3,691 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UAE Studies Practice Quiz (62 Questions - Midterm & Blooket)</title>
-  <meta name="description" content="Comprehensive interactive practice quiz for UAE Studies covering Lecture 3, Lecture 4, and Blooket questions with instant answers and explanations." />
+  <title>Study Portal • Emirates Studies & Physics 1</title>
+  <meta name="description" content="Interactive university study portal for Emirates Studies (Midterm & Blooket Practice) and Physics 1." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1120;
-      --card: #1e293b;
-      --card-hover: #24344d;
+      --bg: #090e17;
+      --card: #111a2e;
+      --card-hover: #17233d;
       --text: #f8fafc;
       --muted: #94a3b8;
       --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
       --l3-color: #38bdf8;
       --l4-color: #c084fc;
       --blooket-color: #fbbf24;
+      --physics-color: #818cf8;
       --correct: #22c55e;
       --wrong: #ef4444;
-      --border: #334155;
+      --border: #1e293b;
+      --border-highlight: #334155;
     }
-    * { box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
     body {
-      margin: 0; padding: 24px 16px;
-      background: var(--bg); color: var(--text);
-      display: flex; justify-content: center;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.06) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 48px;
     }
-    .container { width: 100%; max-width: 860px; }
-    header {
-      background: var(--card); border: 1px solid var(--border);
-      padding: 22px 24px; border-radius: 14px; margin-bottom: 22px;
-      position: sticky; top: 12px; z-index: 100;
+
+    .app-wrapper {
+      width: 100%;
+      max-width: 880px;
+    }
+
+    /* Views container */
+    .view-section {
+      display: none;
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Portal View Styles */
+    .portal-header {
+      text-align: center;
+      margin: 24px 0 36px;
+    }
+
+    .portal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      margin-bottom: 14px;
+    }
+
+    .portal-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .portal-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .subject-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .subject-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: transparent;
+      transition: background 0.25s ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-highlight);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    .subject-card.emirates-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .subject-card.emirates-card:hover::before {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+    }
+
+    .subject-card.physics-card:hover {
+      border-color: rgba(129, 140, 248, 0.4);
+    }
+    .subject-card.physics-card:hover::before {
+      background: linear-gradient(90deg, #818cf8, #c084fc);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .emirates-card .card-icon {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent);
+    }
+
+    .physics-card .card-icon {
+      background: rgba(129, 140, 248, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.25);
+      color: var(--physics-color);
+    }
+
+    .card-status-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .badge-active {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .badge-empty {
+      background: rgba(148, 163, 184, 0.12);
+      color: var(--muted);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .card-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .chip {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+    }
+
+    .enter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .emirates-card .enter-btn {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .emirates-card:hover .enter-btn {
+      background: var(--accent);
+      color: #04101d;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+
+    .physics-card .enter-btn {
+      background: rgba(129, 140, 248, 0.12);
+      color: var(--physics-color);
+      border-color: rgba(129, 140, 248, 0.3);
+    }
+
+    .physics-card:hover .enter-btn {
+      background: var(--physics-color);
+      color: #090e17;
+      box-shadow: 0 4px 16px rgba(129, 140, 248, 0.3);
+    }
+
+    /* Course / Quiz Header */
+    .course-header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      border-radius: 16px;
+      margin-bottom: 22px;
+      position: sticky;
+      top: 14px;
+      z-index: 100;
       box-shadow: 0 14px 30px rgba(0,0,0,0.5);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
-    .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-    .title-group { display: flex; flex-direction: column; gap: 4px; }
-    h1 { margin: 0; font-size: 1.35rem; color: var(--accent); font-weight: 700; letter-spacing: -0.01em; }
-    .sub-header { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+
+    .header-nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
     .stats {
-      font-weight: 700; font-size: 0.95rem;
-      background: #0b1120; padding: 9px 16px;
-      border-radius: 10px; border: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 0.92rem;
+      background: #090e17;
+      padding: 8px 16px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
       color: #38bdf8;
+      letter-spacing: -0.01em;
     }
-    .controls { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .course-title {
+      font-size: 1.35rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .sub-header {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
     button.ctrl-btn {
-      background: #0b1120; color: var(--text); border: 1px solid var(--border);
-      padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
-      transition: all 0.18s ease; display: inline-flex; align-items: center; gap: 6px;
+      background: #090e17;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    button.ctrl-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    button.ctrl-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
     button.ctrl-btn.active {
       background: rgba(56, 189, 248, 0.12);
       border-color: var(--accent);
       color: var(--accent);
       box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
     }
+
     button.ctrl-btn.btn-blooket.active {
       background: rgba(251, 191, 36, 0.12);
       border-color: var(--blooket-color);
       color: var(--blooket-color);
       box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
     }
+
     button.ctrl-btn.btn-blooket:hover {
       border-color: var(--blooket-color);
       color: var(--blooket-color);
     }
-    .action-btn {
-      margin-left: auto;
-    }
+
+    /* Quiz Card Styles */
     .q-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 22px 24px; margin-bottom: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 26px;
+      margin-bottom: 18px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.25);
       transition: border-color 0.2s ease;
     }
-    .q-card:hover { border-color: #475569; }
+
+    .q-card:hover {
+      border-color: var(--border-highlight);
+    }
+
     .q-meta {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 12px; font-size: 0.82rem; color: var(--muted);
-      flex-wrap: wrap; gap: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 8px;
     }
+
     .q-tag {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 3px 10px; border-radius: 999px;
-      font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
     }
+
     .tag-l3 {
-      background: rgba(56, 189, 248, 0.14); color: var(--l3-color);
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--l3-color);
       border: 1px solid rgba(56, 189, 248, 0.35);
     }
+
     .tag-l4 {
-      background: rgba(192, 132, 252, 0.14); color: var(--l4-color);
+      background: rgba(192, 132, 252, 0.14);
+      color: var(--l4-color);
       border: 1px solid rgba(192, 132, 252, 0.35);
     }
+
     .tag-blooket {
-      background: rgba(251, 191, 36, 0.14); color: var(--blooket-color);
+      background: rgba(251, 191, 36, 0.14);
+      color: var(--blooket-color);
       border: 1px solid rgba(251, 191, 36, 0.35);
     }
-    .q-text { font-size: 1.08rem; font-weight: 600; margin-bottom: 16px; line-height: 1.5; color: #f1f5f9; }
-    .options { display: flex; flex-direction: column; gap: 9px; }
+
+    .q-text {
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      line-height: 1.5;
+      color: #f1f5f9;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
     .opt-btn {
-      text-align: left; background: #0b1120; color: var(--text);
-      border: 1px solid var(--border); padding: 13px 18px;
-      border-radius: 9px; cursor: pointer; font-size: 0.95rem; line-height: 1.45;
+      text-align: left;
+      background: #090e17;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 13px 18px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      line-height: 1.45;
       transition: all 0.15s ease;
     }
+
     .opt-btn:hover:not(:disabled) {
-      border-color: var(--accent); background: #16243d;
-      transform: translateX(2px);
+      border-color: var(--accent);
+      background: #141f33;
+      transform: translateX(3px);
     }
-    .opt-btn:disabled { cursor: default; }
+
+    .opt-btn:disabled {
+      cursor: default;
+    }
+
     .opt-btn.correct {
       background: rgba(34, 197, 94, 0.18) !important;
       border-color: var(--correct) !important;
-      color: #86efac !important; font-weight: 600;
+      color: #86efac !important;
+      font-weight: 600;
     }
+
     .opt-btn.wrong {
       background: rgba(239, 68, 68, 0.18) !important;
       border-color: var(--wrong) !important;
       color: #fca5a5 !important;
     }
+
     .feedback {
-      margin-top: 14px; padding: 12px 16px; border-radius: 9px;
-      font-size: 0.92rem; background: #0b1120; border-left: 4px solid var(--accent);
-      color: #cbd5e1; display: none; line-height: 1.5;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 9px;
+      font-size: 0.92rem;
+      background: #090e17;
+      border-left: 4px solid var(--accent);
+      color: #cbd5e1;
+      display: none;
+      line-height: 1.55;
     }
-    .feedback strong { color: var(--accent); }
+
+    .feedback strong {
+      color: var(--accent);
+    }
+
+    /* Empty state for Physics 1 */
+    .empty-state-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 60px 24px;
+      text-align: center;
+      margin-top: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .empty-icon-wrap {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      background: rgba(129, 140, 248, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.25);
+      color: var(--physics-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .empty-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .empty-desc {
+      font-size: 0.96rem;
+      color: var(--muted);
+      max-width: 440px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .btn-return {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(129, 140, 248, 0.15);
+      color: var(--physics-color);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-return:hover {
+      background: var(--physics-color);
+      color: #090e17;
+      box-shadow: 0 4px 16px rgba(129, 140, 248, 0.3);
+    }
+
     @media (max-width: 640px) {
-      header { padding: 16px 18px; }
+      .course-header { padding: 16px 18px; }
       .q-card { padding: 18px 18px; }
-      h1 { font-size: 1.15rem; }
+      .portal-title { font-size: 1.7rem; }
+      .course-title { font-size: 1.15rem; }
       .controls { gap: 6px; }
       button.ctrl-btn { font-size: 0.78rem; padding: 7px 10px; }
-      .action-btn { margin-left: 0; }
+      .subjects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="header-top">
-        <div class="title-group">
-          <h1>UAE Studies Midterm Practice Quiz</h1>
+  <div class="app-wrapper">
+
+    <!-- VIEW 1: SUBJECT SELECTION PORTAL -->
+    <section id="view-portal" class="view-section active">
+      <header class="portal-header">
+        <div class="portal-badge">Academic Study Portal</div>
+        <h1 class="portal-title">Select a Subject</h1>
+        <p class="portal-subtitle">Choose a course to practice interactive midterm quizzes, questions, and study materials.</p>
+      </header>
+
+      <div class="subjects-grid">
+        <!-- Subject: Emirates Studies -->
+        <div class="subject-card emirates-card" onclick="navigateTo('emirates-studies')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon">🏛️</div>
+              <span class="card-status-badge badge-active">Active • 62 Questions</span>
+            </div>
+            <h2 class="card-title">Emirates Studies</h2>
+            <p class="card-desc">Interactive midterm practice covering Lectures 3 & 4 plus Blooket practice review with instant answers and explanations.</p>
+            <div class="card-chips">
+              <span class="chip">Lecture 3 (20)</span>
+              <span class="chip">Lecture 4 (20)</span>
+              <span class="chip">Blooket (22)</span>
+              <span class="chip">Instant Explanations</span>
+            </div>
+          </div>
+          <button class="enter-btn">Start Practice →</button>
+        </div>
+
+        <!-- Subject: Physics 1 -->
+        <div class="subject-card physics-card" onclick="navigateTo('physics-1')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon">⚛️</div>
+              <span class="card-status-badge badge-empty">Empty Subject</span>
+            </div>
+            <h2 class="card-title">Physics 1</h2>
+            <p class="card-desc">General Physics 1 practice questions, formula reviews, and problem sets will be available here.</p>
+            <div class="card-chips">
+              <span class="chip">Coming Soon</span>
+              <span class="chip">No Questions Yet</span>
+            </div>
+          </div>
+          <button class="enter-btn">Open Subject →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: EMIRATES STUDIES QUIZ VIEW -->
+    <section id="view-emirates" class="view-section">
+      <header class="course-header">
+        <div class="header-nav-row">
+          <button class="back-btn" onclick="navigateTo('portal')">← All Subjects</button>
+          <div class="stats" id="scoreDisplay">Score: 0 / 0 (0%)</div>
+        </div>
+        <div class="header-content">
+          <h1 class="course-title">Emirates Studies Practice Quiz</h1>
           <div class="sub-header" id="quizSub">All Questions (62 Total)</div>
         </div>
-        <div class="stats" id="scoreDisplay">Score: 0 / 0 (0%)</div>
+        <div class="controls">
+          <button class="ctrl-btn active" id="btn-all" onclick="filterQuiz('all', this)">All (62)</button>
+          <button class="ctrl-btn" id="btn-l3" onclick="filterQuiz('L3', this)">Lecture 3 (20)</button>
+          <button class="ctrl-btn" id="btn-l4" onclick="filterQuiz('L4', this)">Lecture 4 (20)</button>
+          <button class="ctrl-btn btn-blooket" id="btn-blooket" onclick="filterQuiz('blooket', this)">⚡ Blooket (22)</button>
+          <button class="ctrl-btn" onclick="shuffleQuiz()">🔀 Shuffle</button>
+          <button class="ctrl-btn" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+      </header>
+
+      <div id="quizContainer"></div>
+    </section>
+
+    <!-- VIEW 3: PHYSICS 1 (EMPTY PLACEHOLDER) -->
+    <section id="view-physics" class="view-section">
+      <header class="course-header">
+        <div class="header-nav-row">
+          <button class="back-btn" onclick="navigateTo('portal')">← All Subjects</button>
+        </div>
+        <div class="header-content">
+          <h1 class="course-title" style="color: var(--physics-color);">Physics 1</h1>
+          <div class="sub-header">General Physics I Course Materials</div>
+        </div>
+      </header>
+
+      <div class="empty-state-card">
+        <div class="empty-icon-wrap">⚛️</div>
+        <h2 class="empty-title">Physics 1 is Empty</h2>
+        <p class="empty-desc">No study materials or quiz questions have been uploaded for Physics 1 yet. Check back once new content is added!</p>
+        <button class="btn-return" onclick="navigateTo('portal')">← Back to Subjects</button>
       </div>
-      <div class="controls">
-        <button class="ctrl-btn active" id="btn-all" onclick="filterQuiz('all', this)">All (62)</button>
-        <button class="ctrl-btn" id="btn-l3" onclick="filterQuiz('L3', this)">Lecture 3 (20)</button>
-        <button class="ctrl-btn" id="btn-l4" onclick="filterQuiz('L4', this)">Lecture 4 (20)</button>
-        <button class="ctrl-btn btn-blooket" id="btn-blooket" onclick="filterQuiz('blooket', this)">⚡ Blooket (22)</button>
-        <button class="ctrl-btn" onclick="shuffleQuiz()">🔀 Shuffle</button>
-        <button class="ctrl-btn" onclick="resetQuiz()">🔄 Reset</button>
-      </div>
-    </header>
-    <div id="quizContainer"></div>
+    </section>
+
   </div>
 
   <script>
@@ -174,7 +703,7 @@
       "$50 billion"
     ],
     "ans": 2,
-    "exp": "Lecture 3, Slide 4: COP28 (2023) launched a $30 billion climate fund (ALT\u00c9RRA)."
+    "exp": "Lecture 3, Slide 4: COP28 (2023) launched a $30 billion climate fund (ALTÉRRA)."
   },
   {
     "id": 2,
@@ -194,18 +723,18 @@
     "lec": "L3",
     "q": "Small, distinctive dome-shaped tombs and early copper mining in Al Ain are characteristic of the:",
     "opts": [
-      "Wadi Suq Period (2000\u20131300 BC)",
-      "Hafeet Period (3200\u20132500 BC)",
-      "Iron Age (1300\u2013300 BC)",
-      "Pre-Islamic Period (300 BC\u2013630 AD)"
+      "Wadi Suq Period (2000–1300 BC)",
+      "Hafeet Period (3200–2500 BC)",
+      "Iron Age (1300–300 BC)",
+      "Pre-Islamic Period (300 BC–630 AD)"
     ],
     "ans": 1,
-    "exp": "Lecture 3, Slide 7: The Hafeet Period (3200\u20132500 BC) features dome-shaped tombs at Jebel Hafeet and copper mining/smelting."
+    "exp": "Lecture 3, Slide 7: The Hafeet Period (3200–2500 BC) features dome-shaped tombs at Jebel Hafeet and copper mining/smelting."
   },
   {
     "id": 4,
     "lec": "L3",
-    "q": "Which ancient society (2500\u20132000 BC) is known for large circular stone tombs, textile production, and exporting copper to Mesopotamia?",
+    "q": "Which ancient society (2500–2000 BC) is known for large circular stone tombs, textile production, and exporting copper to Mesopotamia?",
     "opts": [
       "Hafeet Society",
       "Umm an-Nar Society",
@@ -213,7 +742,7 @@
       "Julphar Society"
     ],
     "ans": 1,
-    "exp": "Lecture 3, Slide 8: Umm an-Nar Society (2500\u20132000 BC) featured circular stone tombs, textiles, stone work, and Mesopotamian trade."
+    "exp": "Lecture 3, Slide 8: Umm an-Nar Society (2500–2000 BC) featured circular stone tombs, textiles, stone work, and Mesopotamian trade."
   },
   {
     "id": 5,
@@ -222,16 +751,16 @@
     "opts": [
       "Hafeet Period",
       "Umm an-Nar Period",
-      "Wadi Suq Period (2000\u20131300 BC)",
+      "Wadi Suq Period (2000–1300 BC)",
       "Late Islamic Period"
     ],
     "ans": 2,
-    "exp": "Lecture 3, Slide 9: The Wadi Suq Period (2000\u20131300 BC) shifted to individual burials, pearl diving, golden jewelry, and fortified settlements."
+    "exp": "Lecture 3, Slide 9: The Wadi Suq Period (2000–1300 BC) shifted to individual burials, pearl diving, golden jewelry, and fortified settlements."
   },
   {
     "id": 6,
     "lec": "L3",
-    "q": "Which two key developments revolutionized agriculture and desert trade during the Iron Age (1300\u2013300 BC)?",
+    "q": "Which two key developments revolutionized agriculture and desert trade during the Iron Age (1300–300 BC)?",
     "opts": [
       "Aflaj irrigation systems and domesticated camels",
       "Copper smelting and dhow building",
@@ -244,7 +773,7 @@
   {
     "id": 7,
     "lec": "L3",
-    "q": "Archaeological evidence of Christianity spreading to the Gulf during the Pre-Islamic Period (300 BC\u2013630 AD) was discovered at:",
+    "q": "Archaeological evidence of Christianity spreading to the Gulf during the Pre-Islamic Period (300 BC–630 AD) was discovered at:",
     "opts": [
       "Jebel Hafeet",
       "Qattara and Shimal",
@@ -382,12 +911,12 @@
       "Sheikh Zayed the First"
     ],
     "ans": 0,
-    "exp": "Lecture 3, Slide 26: Sheikh Shakhbut bin Dhiyab (1793\u20131816) established Abu Dhabi as the capital in 1795."
+    "exp": "Lecture 3, Slide 26: Sheikh Shakhbut bin Dhiyab (1793–1816) established Abu Dhabi as the capital in 1795."
   },
   {
     "id": 18,
     "lec": "L3",
-    "q": "Under Sheikh Zayed the First (1855\u20131909), Abu Dhabi built Al Jahili Fort in 1898 and expanded its pearl fleet to:",
+    "q": "Under Sheikh Zayed the First (1855–1909), Abu Dhabi built Al Jahili Fort in 1898 and expanded its pearl fleet to:",
     "opts": [
       "217 ships",
       "300 ships",
@@ -439,7 +968,7 @@
     "lec": "L4",
     "q": "Which scholar emphasized that family structures and upbringing serve as the primary mechanisms for transmitting values across generations?",
     "opts": [
-      "\u00c9mile Durkheim",
+      "Émile Durkheim",
       "Jean-Jacques Rousseau",
       "Ibn Khaldun",
       "Talcott Parsons"
@@ -466,7 +995,7 @@
     "q": "Which sociologist recognized that social change is natural and inevitable, but must be carefully directed to preserve core cultural elements?",
     "opts": [
       "Talcott Parsons",
-      "\u00c9mile Durkheim",
+      "Émile Durkheim",
       "Ibn Khaldun",
       "Max Weber"
     ],
@@ -697,7 +1226,7 @@
       "False"
     ],
     "ans": 1,
-    "exp": "False: The UAE actively champions 'rooted modernity'\u2014integrating authentic cultural heritage and Islamic traditions with cutting-edge technological and social modernization."
+    "exp": "False: The UAE actively champions 'rooted modernity'—integrating authentic cultural heritage and Islamic traditions with cutting-edge technological and social modernization."
   },
   {
     "id": 43,
@@ -710,7 +1239,7 @@
       "Encouraging tribal isolation and self-dependence."
     ],
     "ans": 1,
-    "exp": "Following the federation in 1971, Sheikh Zayed prioritized investing oil revenues directly into human capital\u2014building modern schools, free healthcare, housing, roads, and nationwide infrastructure."
+    "exp": "Following the federation in 1971, Sheikh Zayed prioritized investing oil revenues directly into human capital—building modern schools, free healthcare, housing, roads, and nationwide infrastructure."
   },
   {
     "id": 44,
@@ -962,6 +1491,40 @@
     let score = 0;
     let answeredCount = 0;
 
+    /* Routing / Navigation */
+    function navigateTo(viewName) {
+      document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
+
+      if (viewName === 'emirates-studies') {
+        document.getElementById('view-emirates').classList.add('active');
+        window.location.hash = 'emirates-studies';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (viewName === 'physics-1') {
+        document.getElementById('view-physics').classList.add('active');
+        window.location.hash = 'physics-1';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        document.getElementById('view-portal').classList.add('active');
+        window.location.hash = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Handle hash on page load and back/forward buttons
+    function checkHashRoute() {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'emirates-studies') {
+        navigateTo('emirates-studies');
+      } else if (hash === 'physics-1') {
+        navigateTo('physics-1');
+      } else {
+        navigateTo('portal');
+      }
+    }
+
+    window.addEventListener('hashchange', checkHashRoute);
+
+    /* Quiz Rendering & Logic */
     function renderQuiz() {
       const container = document.getElementById("quizContainer");
       container.innerHTML = "";
@@ -1081,7 +1644,9 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    // Initialize
     renderQuiz();
+    checkHashRoute();
   </script>
 </body>
 </html>
