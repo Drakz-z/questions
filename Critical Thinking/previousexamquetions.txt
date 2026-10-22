@@ -1,0 +1,205 @@
+Q1. If one premise in an argument made of independent premises turns out to be false, the entire argument automatically fails. (True / False)
+Answer: False. Independent premises each support the conclusion on their own, so one false premise doesn’t sink the argument. That only happens with linked premises.
+
+Q2. A deductive proof demonstrates that: (a) If the premises are true, the conclusion must be true; (b) New evidence is always needed; (c) The premises are probably false; (d) The conclusion might be true.
+Answer: a.
+
+Q3. What is an “extended argument”? (a) Only independent premises and no conclusion; (b) An argument where the final conclusion is supported by premises that are themselves intermediate conclusions; (c) One relying exclusively on empirical evidence from inductive research; (d) One that exceeds 1,000 words.
+Answer: b.
+
+Q4. Inductive reasoning is: (a) Always 100% certain; (b) Used only for spelling out assumptions; (c) The same as deductive proof; (d) A form of reasoning in which premises strongly support a conclusion, but we can never be certain it is true.
+Answer: d.
+
+Q5. What does “reconstructing an argument” mean according to the slides? (a) Identifying all its different parts and spelling them out clearly in standard form; (b) Adding new evidence to strengthen someone else’s claim; (c) Changing the conclusion to make it more persuasive; (d) Summarizing it in one short sentence.
+Answer: a.
+
+Q6. Inductive strength (inductive force) measures: (a) How likely we believe an inductive argument is to be true; (b) The number of premises; (c) Whether the argument is written in standard form; (d) How certain the conclusion must be.
+Answer: a. It’s about probability, not certainty. Option d describes deduction.
+
+Q7. Deductive reasoning is not directly concerned with truth, it is simply concerned with validity. (True / False)
+Answer: True. Validity is about structure: if the premises were true, the conclusion would have to be. The actual truth of the premises is a separate matter (soundness). This one is a bit ambiguous because the course also calls deduction “truth-preserving”, but I’d still say True.
+
+Q8. Inductive reasoning can provide absolute logical certainty if a sample size is sufficiently large and randomized. (True / False)
+Answer: False. Induction never gives absolute certainty, however large the sample.
+
+Q9. What distinguishes an extended argument from a simple argument? (a) It uses induction instead of deduction; (b) It contains linked rather than independent premises; (c) It relies entirely on implicit premises; (d) Its final conclusion is supported by one or more premises that act as intermediate conclusions.
+Answer: d.
+
+Q10. “If I am in Tokyo, I am in Japan. I am not in Tokyo. Therefore, I am not in Japan.” Which formal fallacy is this? (a) Denying the antecedent; (b) Affirming the antecedent; (c) Ampliative deduction; (d) Denying the consequent.
+Answer: a. It denies “I am in Tokyo”, the “if” part of the conditional.
+
+Q11. Reconstructing an argument in standard form involves spelling out its premises and conclusion clearly while eliminating extraneous material. (True / False)
+Answer: True.
+
+Q12. A premise is defined as: (a) The final proposition in any argument; (b) Something the speaker has taken for granted; (c) Information not relevant to the argument; (d) A claim presented by an argument in support of its conclusion.
+Answer: d.
+
+Q13. In “All humans are mortal. Socrates is a human,” the logical conclusion is: (a) Mortality is uncertain; (b) Socrates is immortal; (c) Socrates is mortal; (d) All humans like Socrates.
+Answer: c.
+
+Q14. Reconstructing an argument in standard form usually reveals flaws or gaps that would otherwise remain hidden. (True / False)
+Answer: True.
+
+Q15. In critical thinking and scientific inquiry, what is a “black swan event”? (a) A sample selection method using randomized algorithms; (b) A predictable seasonal trend; (c) An unexpected event that defies prior experience and expectations, demonstrating falsification of an accepted generalization; (d) A formal fallacy involving linked premises.
+Answer: c.
+
+Q16. Why is inductive reasoning referred to as “ampliative” reasoning? (a) It guarantees 100% mathematical certainty; (b) It amplifies voice volume during debate; (c) It refutes deductive proofs by doubling sample sizes; (d) The conclusion goes beyond what is contained in the premises, extrapolating to broader claims.
+Answer: d. “Ampliative” means “expanding”.
+
+Q17. One practical reason for reconstructing an argument in standard form is: (a) It allows you to add your own opinions freely; (b) It is one of the best ways of ensuring you understand it all the way through yourself; (c) It hides flaws in reasoning; (d) It makes the argument shorter and easier to ignore.
+Answer: b.
+
+Q18. Another name for inductive reasoning is: (a) Extraneous reasoning; (b) Ampliative reasoning; (c) Standard-form reasoning; (d) Truth-preserving reasoning.
+Answer: b.
+
+Q19. How do linked premises function within an argument? (a) They rely on each other to support a conclusion, so if one fails, the argument fails; independent premises support the conclusion individually; (b) They only appear in deductive reasoning; (c) They are implicit, whereas independent premises are always explicit; (d) They support the conclusion individually, while independent premises must all be true.
+Answer: a.
+
+Q20. Why is a sample size of “n = 1” considered extremely weak for inductive generalizations? (a) Sample sizes of one can only be evaluated using deductive proofs; (b) It violates Modus Ponens; (c) It automatically causes affirming the consequent; (d) It represents an anecdote rather than a reliable investigation.
+Answer: d.
+
+Q21. “All birds have feathers. A robin is a bird.” This is an example of: (a) Extraneous material; (b) An assumption that needs spelling out; (c) Inductive reasoning; (d) Truth-preserving deductive reasoning.
+Answer: d. Two premises that guarantee the conclusion “a robin has feathers”.
+
+Q22. Deductive reasoning involves: (a) Spelling out whatever conclusion follows logically from your premises, without reference to external information; (b) Ranking how strong an argument feels; (c) Using probability to guess the answer; (d) Adding outside information not in the premises.
+Answer: a.
+
+Q23. In inductive logic, what does it mean for an argument to be “inductively forceful”? (a) It uses emotional force to persuade; (b) It has a valid deductive proof with no assumptions; (c) It has a cogent structure AND true premises, giving good reason to accept its conclusion as probable; (d) It proves a claim with absolute logical certainty.
+Answer: c.
+
+Q24. Inductive reasoning is at its strongest when: (a) We have good reasons to believe we are seeing a well-established pattern with plenty of evidence; (b) The scenario is extremely specific; (c) There is little evidence and high unpredictability; (d) We ignore past patterns completely.
+Answer: a.
+
+Q25. Induction is something we use hundreds of times every day without noticing when we predict what will happen next based on past patterns. (True / False)
+Answer: True.
+
+Q26. A valid deductive argument whose premises are all factually true is classified as sound. (True / False)
+Answer: True. That is the definition of soundness.
+
+Q27. What is an “implicit premise”? (a) A claim explicitly stated in the first sentence; (b) A final conclusion that contradicts the main premise; (c) Irrelevant information that should be discarded; (d) An unstated assumption taken for granted by the arguer and needed to complete the logical reconstruction.
+Answer: d.
+
+Q28. “If it is raining, the street is wet. The street is wet. Therefore, it is raining.” Which fallacy? (a) Affirming the consequent; (b) Denying the antecedent; (c) Straw man; (d) Denying the consequent.
+Answer: a. The street could be wet for other reasons.
+
+Q29. Affirming the Consequent is a valid form of deductive reasoning. (True / False)
+Answer: False. It is a formal fallacy.
+
+Q30. An inductively forceful argument is exactly the same as a sound deductive argument in terms of certainty. (True / False)
+Answer: False. Sound deduction guarantees the conclusion; induction only makes it probable.
+
+Q31. Which form represents the valid rule Modus Ponens? (a) If P, then Q. P is false. Therefore Q is false; (b) If P, then Q. Q is true. Therefore P is true; (c) If P, then Q. P is true. Therefore Q is true; (d) If P, then Q. Q is false. Therefore P is true.
+Answer: c. (a) is denying the antecedent, (b) is affirming the consequent, and (d) is simply wrong.
+
+Q32. Extraneous material should be: (a) Kept because it makes the argument sound more natural; (b) Left out as we carefully clarify each premise and conclusion by rewriting them; (c) Used as the conclusion; (d) Added to make the argument longer.
+Answer: b.
+
+Q33. Getting into the habit of reconstructing arguments makes you: (a) More confident (and successful) at making convincing, reasonable arguments yourself; (b) Only good at criticizing others; (c) Less confident at making your own arguments; (d) Able to ignore logic completely.
+Answer: a.
+
+Q34. What is the key distinction between a “necessary condition” and a “sufficient condition”? (a) They are identical terms; (b) A necessary condition guarantees the outcome, while a sufficient one is required but doesn’t guarantee it; (c) Necessary applies only to induction, sufficient only to deduction; (d) A necessary condition must be met for something to be true but doesn’t guarantee it; a sufficient condition guarantees the truth if met.
+Answer: d. Option b has the two definitions swapped.
+
+Q35. Distorting or oversimplifying an opponent’s argument to make it easy to defeat is known as which fallacy? (a) Affirming the antecedent; (b) Begging the question; (c) Black swan fallacy; (d) Straw man fallacy.
+Answer: d.
+
+Q36. When reconstructing an argument into standard form, what should be done with extraneous material? (a) Identified as an implicit premise; (b) Converted; (c) Included; (d) Left out.
+Answer: d.
+
+Q37. A cogent inductive argument has: (a) True premises and 100% certainty; (b) No assumptions; (c) Only one premise; (d) Good structure but we should not necessarily accept the conclusion as true.
+Answer: d. It’s the best of the four. A cogent argument is strong and has true premises, which makes the conclusion probable, but never certain. Options a, b and c are all clearly wrong.
+
+Q38. Why is valid deductive reasoning described as “truth-preserving”? (a) It discovers brand-new empirical facts not in the original premises; (b) If the premises are true, the logical structure guarantees the conclusion must also be true; (c) It guarantees that all premises found in nature are scientifically true; (d) It relies on statistical probability to preserve accuracy.
+Answer: b.
+
+Q39. When we reason inductively, we are generalizing about future events from past ones and asking what is most likely to be true, rather than dealing in absolutes. (True / False)
+Answer: True.
+
+Q40. An assumption is: (a) A premise that is repeated twice; (b) The opposite of a conclusion; (c) Something relevant to an argument that has been taken for granted by the person presenting it, rather than spelled out; (d) Irrelevant information.
+Answer: c.
+
+I read these from low-resolution frames, so tell me if any question or option looks misread.
+
+____
+
+Q1: False. With independent premises, each one supports the conclusion separately. If one turns out false, the others still give some support. “The whole argument fails” is only true when the premises are linked.
+
+Q2: a. A deductive proof shows that if the premises are true, the conclusion has to be true. The other options describe things deduction doesn’t need: new evidence, false premises, or a merely possible conclusion.
+
+Q3: b. An extended argument has more than one stage. The premises supporting the final conclusion are themselves conclusions of smaller arguments. Option a is wrong because there’s no conclusion at all, c confuses it with induction, and d is about word count, which doesn’t matter.
+
+Q4: d. Induction gives strong support but never certainty. A new counterexample could always appear, which is why a (“always 100% certain”) and c (“the same as deduction”) are wrong.
+
+Q5: a. Reconstructing means breaking the argument into its parts (premises, conclusion, assumptions) and writing them out clearly. It doesn’t involve adding evidence, changing the conclusion, or summarizing.
+
+Q6: a. Inductive strength is about how probable the conclusion is, given the premises. Option d, “how certain the conclusion must be”, describes deduction instead.
+
+Q7: True. Validity is a question of form: if the premises were true, would the conclusion follow? Whether the premises really are true is a different question, called soundness. That’s why deduction is “not directly concerned with truth”. This is the one I flagged as debatable, since “truth-preserving” can be read as being about truth.
+
+Q8: False. Induction can’t give absolute certainty however big or random the sample is. Even a huge sample leaves open the chance of a counterexample (a black swan).
+
+Q9: d. What makes an argument “extended” is its layered structure: some premises are intermediate conclusions. It has nothing to do with whether the reasoning is inductive (a) or whether the premises are linked (b).
+
+Q10: a. The form is “If P then Q. Not P. So not Q.” That denies the antecedent (the “if” part), which is invalid. You could be in Osaka, so not being in Tokyo doesn’t mean you’re not in Japan.
+
+Q11: True. This is the definition of standard form. You state the premises and conclusion clearly and drop anything that isn’t doing logical work.
+
+Q12: d. A premise is a claim offered in support of a conclusion. The final proposition (a) is the conclusion, something taken for granted (b) is an assumption, and irrelevant information (c) is extraneous.
+
+Q13: c. This is a classic valid deduction. If all humans are mortal and Socrates is human, then Socrates is mortal.
+
+Q14: True. Writing an argument out step by step exposes hidden assumptions, missing steps, and weak links that are easy to miss in ordinary prose.
+
+Q15: c. A black swan event is an unexpected observation that falsifies a generalization we thought was solid. The name comes from “all swans are white” being refuted by the first black swan.
+
+Q16: d. “Ampliative” means expanding. An inductive conclusion goes beyond what the premises contain, as when you generalize from a sample to a whole population. The “voice volume” option in b is just a pun on “amplify”.
+
+Q17: b. Rebuilding an argument forces you to understand every step of it. Option a (adding your own opinions) and d (making it easier to ignore) work against the purpose, and c is the opposite of what happens, since reconstruction reveals flaws.
+
+Q18: b. “Ampliative reasoning” is simply another name for inductive reasoning, as explained in Q16.
+
+Q19: a. Linked premises depend on each other, so the argument collapses if one fails. Independent premises each support the conclusion alone. The other options invent claims that aren’t true: that linked premises only appear in deduction, or that they’re always implicit.
+
+Q20: d. One case (n = 1) is an anecdote. It can’t show a pattern, so generalizing from it is very weak. Options b and c use logic terms that have nothing to do with sample size.
+
+Q21: d. “All birds have feathers” and “a robin is a bird” are two premises. Together they guarantee “a robin has feathers”, which is a deduction.
+
+Q22: a. Deduction works out what follows from the premises alone, using no outside information. Ranking how strong an argument feels (b) and using probability (c) are inductive ideas, and adding outside information (d) goes beyond the premises.
+
+Q23: c. An inductively forceful argument has a cogent structure, meaning the premises make the conclusion likely, and the premises are true. Together these give good reason to accept the conclusion as probable, but not as certain (so d is wrong).
+
+Q24: a. Induction is strongest when there’s a well-established pattern backed by lots of evidence. It’s weakest when evidence is thin and the situation is unpredictable (c).
+
+Q25: True. We constantly predict from past patterns: the sun will rise tomorrow, a chair will hold our weight, a friend will reply. These are all inductive inferences.
+
+Q26: True. Soundness is defined as validity plus true premises. If both hold, the conclusion is guaranteed to be true.
+
+Q27: d. An implicit premise is an unstated assumption that the argument needs, so you spell it out when reconstructing. It isn’t explicit (a), and it isn’t irrelevant (c), since it’s needed.
+
+Q28: a. The form is “If P then Q. Q. So P.” That affirms the consequent, which is invalid because the street could be wet for another reason, such as a sprinkler or a burst pipe.
+
+Q29: False. Affirming the consequent is a classic invalid form. Affirming the antecedent (Modus Ponens) is the valid one, and the two names are easy to mix up.
+
+Q30: False. A sound deductive argument guarantees its conclusion. An inductively forceful one only makes it probable, so the certainty is not the same.
+
+Q31: c. Modus Ponens is “If P then Q. P. Therefore Q.” Option a denies the antecedent (invalid), b affirms the consequent (invalid), and d is not a valid pattern at all.
+
+Q32: b. Extraneous material is information that doesn’t affect the logic. We leave it out and rewrite each premise and the conclusion clearly. Keeping it (a), adding to it (d), or treating it as the conclusion (c) would muddy the argument.
+
+Q33: a. Practice taking arguments apart helps you build clear, reasonable ones of your own. It doesn’t make you worse at arguing (c) or only good at criticizing (b).
+
+Q34: d. A necessary condition is required, but meeting it doesn’t guarantee the outcome. A sufficient condition guarantees the outcome if met. For example, oxygen is necessary for fire but not sufficient. Option b swaps the two definitions.
+
+Q35: d. A straw man misrepresents or oversimplifies someone’s position so it’s easier to attack. The word “straw” suggests an easily knocked-down dummy.
+
+Q36: d. Extraneous material is left out. If it’s actually needed for the argument to work, then it’s an implicit premise, not extraneous.
+
+Q37: d. A cogent inductive argument has strong structure and true premises, so the conclusion is likely. But it’s still only probable, so we shouldn’t treat it as certain. The other options are clearly wrong: it never has 100% certainty (a), it can have assumptions (b), and it normally has several premises (c).
+
+Q38: b. “Truth-preserving” means that if you start with true premises and the form is valid, you can’t end up with a false conclusion. It doesn’t discover new facts (a), and it says nothing about premises being true in nature (c) or about probability (d).
+
+Q39: True. That’s what induction is: generalizing from past observations to what’s most likely, rather than proving something with certainty.
+
+Q40: c. An assumption is something the arguer takes for granted without stating it. Irrelevant information is extraneous material, a different thing, and a repeated premise (a) or the opposite of a conclusion (b) isn’t what the term means.
+
+

@@ -64,21 +64,22 @@ Essential acronyms and terminology from the AIT111 Midterm Study Guide (Pages 2�
 
 ---
 
-### 4. 💡 Critical Thinking • Chapters 2, 3, 4 (85 Questions)
-Master question and answer bank from `questionsandanswer.docx` and `newquestions.txt` merged seamlessly into chapters with detailed reasoning and answer key explanations:
-- **Comprehensive Chapter Breakdown (Sequential Q1–Q85)**:
+### 4. 💡 Critical Thinking • Chapters 2, 3, 4 + Previous Exam (125 Questions)
+Master question and answer bank from `questionsandanswer.docx`, `newquestions.txt`, and `previousexamquetions.txt` with detailed reasoning and answer key explanations:
+- **Comprehensive Section Breakdown**:
   - **Chapter 2**: Spelling out arguments and assumptions, standard form reconstruction, principle of charity, linked vs. independent premises, and challenge questions (**27 questions**: Q1–Q27)
   - **Chapter 3**: Reasoning with logic and certainty, deductive reasoning, truth-preservation, valid vs. sound arguments, affirming the antecedent / denying the consequent, and formal fallacies (**26 questions**: Q28–Q53)
   - **Chapter 4**: Reasoning with observation and uncertainty, inductive/ampliative reasoning, cogency, inductive force, sampling biases (self-selection, pre-screening, survivorship), margins of error, and black swan events (**32 questions**: Q54–Q85)
+  - **⚡ Previous Exam Questions**: Dedicated midterm exam question bank (**40 questions**: PE1–PE40) with True/False and multiple-choice questions
 - **Features**:
-  - Filter by "All (85)", "Ch 2: Assumptions (27)", "Ch 3: Logic (26)", or "Ch 4: Observation (32)"
+  - Filter by "All (125)", "Ch 2: Assumptions (27)", "Ch 3: Logic (26)", "Ch 4: Observation (32)", or "⚡ Previous Exam (40)"
   - Immediate grading with correct answer highlighting
   - Expanded explanation blocks displaying why the correct choice works and why common wrong choices fail
   - 🔀 Shuffle questions
   - 🔄 Reset quiz
   - Real-time score & accuracy tracker
 - **Course Files**:
-  - Stored in `Critical Thinking/` (`questionsandanswer.docx`, `newquestions.txt`, `Critical_Thinking_Midterm_Study_Guide_Ch2-4.docx`)
+  - Stored in `Critical Thinking/` (`questionsandanswer.docx`, `newquestions.txt`, `previousexamquetions.txt`, `Critical_Thinking_Midterm_Study_Guide_Ch2-4.docx`)
 
 ---
 

@@ -907,20 +907,21 @@
           <button class="enter-btn">Open AI Section →</button>
         </div>
 
-        <!-- Subject: Critical Thinking (Chapters 2, 3, 4) -->
+        <!-- Subject: Critical Thinking (Chapters 2, 3, 4 + Previous Exam) -->
         <div class="subject-card ct-card" onclick="navigateTo('critical-thinking')">
           <div>
             <div class="card-top">
               <div class="card-icon">💡</div>
-              <span class="card-status-badge badge-ct">Active • 85 Questions</span>
+              <span class="card-status-badge badge-ct">Active • 125 Questions</span>
             </div>
             <h2 class="card-title">Critical Thinking</h2>
-            <p class="card-desc">Master midterm bank covering Chapter 2 (Arguments & Assumptions), Chapter 3 (Logic & Certainty), and Chapter 4 (Observation & Uncertainty) with detailed explanations.</p>
+            <p class="card-desc">Master midterm bank covering Chapter 2 (Arguments & Assumptions), Chapter 3 (Logic & Certainty), Chapter 4 (Observation & Uncertainty), and Previous Exam Questions with detailed explanations.</p>
             <div class="card-chips">
-              <span class="chip chip-ct">All 85 Questions</span>
+              <span class="chip chip-ct">All 125 Questions</span>
               <span class="chip">Ch 2: Assumptions (27)</span>
               <span class="chip">Ch 3: Logic (26)</span>
               <span class="chip">Ch 4: Observation (32)</span>
+              <span class="chip chip-blooket">⚡ Previous Exam (40)</span>
               <span class="chip">Instant Explanations</span>
             </div>
           </div>
@@ -1036,13 +1037,14 @@
         </div>
         <div class="header-content">
           <h1 class="course-title course-title-ct">Critical Thinking Practice Quiz</h1>
-          <div class="sub-header" id="ctSub">All Questions • Chapters 2, 3, 4 (85 Total)</div>
+          <div class="sub-header" id="ctSub">All Questions • Chapters 2, 3, 4 + Previous Exam (125 Total)</div>
         </div>
         <div class="controls ct-controls">
-          <button class="ctrl-btn active" id="btn-ct-all" onclick="filterCT('all', this)">All (85)</button>
+          <button class="ctrl-btn active" id="btn-ct-all" onclick="filterCT('all', this)">All (125)</button>
           <button class="ctrl-btn" id="btn-ct-ch2" onclick="filterCT('ch2', this)">Ch 2: Assumptions (27)</button>
           <button class="ctrl-btn" id="btn-ct-ch3" onclick="filterCT('ch3', this)">Ch 3: Logic (26)</button>
           <button class="ctrl-btn" id="btn-ct-ch4" onclick="filterCT('ch4', this)">Ch 4: Observation (32)</button>
+          <button class="ctrl-btn btn-blooket" id="btn-ct-prev" onclick="filterCT('prev', this)">⚡ Previous Exam (40)</button>
           <button class="ctrl-btn" onclick="shuffleCT()">🔀 Shuffle</button>
           <button class="ctrl-btn" onclick="resetCT()">🔄 Reset</button>
         </div>
@@ -4786,6 +4788,546 @@
     ],
     "ans": 3,
     "exp": "<strong>Correct Answer: D. An equal chance of winning or losing, since previous tosses don’t affect it</strong><br><br>Rational expectation is what it is most reasonable to expect. For a fair coin each toss is independent, so the chance remains 50/50. (Extra explanation: this is the “gambler’s fallacy”.)"
+  },
+  {
+    "id": 86,
+    "code": "PE1",
+    "chapter": "Previous Exam",
+    "q": "If one premise in an argument made of independent premises turns out to be false, the entire argument automatically fails.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: False</strong><br><br>With independent premises, each one supports the conclusion separately. If one turns out false, the others still give some support. “The whole argument fails” is only true when the premises are linked."
+  },
+  {
+    "id": 87,
+    "code": "PE2",
+    "chapter": "Previous Exam",
+    "q": "A deductive proof demonstrates that:",
+    "opts": [
+      "If the premises are true, the conclusion must be true",
+      "New evidence is always needed",
+      "The premises are probably false",
+      "The conclusion might be true"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. If the premises are true, the conclusion must be true</strong><br><br>A deductive proof shows that if the premises are true, the conclusion has to be true. The other options describe things deduction doesn’t need: new evidence, false premises, or a merely possible conclusion."
+  },
+  {
+    "id": 88,
+    "code": "PE3",
+    "chapter": "Previous Exam",
+    "q": "What is an “extended argument”?",
+    "opts": [
+      "Only independent premises and no conclusion",
+      "An argument where the final conclusion is supported by premises that are themselves intermediate conclusions",
+      "One relying exclusively on empirical evidence from inductive research",
+      "One that exceeds 1,000 words"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. An argument where the final conclusion is supported by premises that are themselves intermediate conclusions</strong><br><br>An extended argument has more than one stage. The premises supporting the final conclusion are themselves conclusions of smaller arguments. Option a is wrong because there’s no conclusion at all, c confuses it with induction, and d is about word count, which doesn’t matter."
+  },
+  {
+    "id": 89,
+    "code": "PE4",
+    "chapter": "Previous Exam",
+    "q": "Inductive reasoning is:",
+    "opts": [
+      "Always 100% certain",
+      "Used only for spelling out assumptions",
+      "The same as deductive proof",
+      "A form of reasoning in which premises strongly support a conclusion, but we can never be certain it is true"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. A form of reasoning in which premises strongly support a conclusion, but we can never be certain it is true</strong><br><br>Induction gives strong support but never certainty. A new counterexample could always appear, which is why a (“always 100% certain”) and c (“the same as deduction”) are wrong."
+  },
+  {
+    "id": 90,
+    "code": "PE5",
+    "chapter": "Previous Exam",
+    "q": "What does “reconstructing an argument” mean according to the slides?",
+    "opts": [
+      "Identifying all its different parts and spelling them out clearly in standard form",
+      "Adding new evidence to strengthen someone else’s claim",
+      "Changing the conclusion to make it more persuasive",
+      "Summarizing it in one short sentence"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. Identifying all its different parts and spelling them out clearly in standard form</strong><br><br>Reconstructing means breaking the argument into its parts (premises, conclusion, assumptions) and writing them out clearly. It doesn’t involve adding evidence, changing the conclusion, or summarizing."
+  },
+  {
+    "id": 91,
+    "code": "PE6",
+    "chapter": "Previous Exam",
+    "q": "Inductive strength (inductive force) measures:",
+    "opts": [
+      "How likely we believe an inductive argument is to be true",
+      "The number of premises",
+      "Whether the argument is written in standard form",
+      "How certain the conclusion must be"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. How likely we believe an inductive argument is to be true</strong><br><br>Inductive strength is about how probable the conclusion is, given the premises. Option d, “how certain the conclusion must be”, describes deduction instead."
+  },
+  {
+    "id": 92,
+    "code": "PE7",
+    "chapter": "Previous Exam",
+    "q": "Deductive reasoning is not directly concerned with truth, it is simply concerned with validity.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: True</strong><br><br>Validity is a question of form: if the premises were true, would the conclusion follow? Whether the premises really are true is a different question, called soundness. That’s why deduction is “not directly concerned with truth”. This is the one I flagged as debatable, since “truth-preserving” can be read as being about truth."
+  },
+  {
+    "id": 93,
+    "code": "PE8",
+    "chapter": "Previous Exam",
+    "q": "Inductive reasoning can provide absolute logical certainty if a sample size is sufficiently large and randomized.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: False</strong><br><br>Induction can’t give absolute certainty however big or random the sample is. Even a huge sample leaves open the chance of a counterexample (a black swan)."
+  },
+  {
+    "id": 94,
+    "code": "PE9",
+    "chapter": "Previous Exam",
+    "q": "What distinguishes an extended argument from a simple argument?",
+    "opts": [
+      "It uses induction instead of deduction",
+      "It contains linked rather than independent premises",
+      "It relies entirely on implicit premises",
+      "Its final conclusion is supported by one or more premises that act as intermediate conclusions"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. Its final conclusion is supported by one or more premises that act as intermediate conclusions</strong><br><br>What makes an argument “extended” is its layered structure: some premises are intermediate conclusions. It has nothing to do with whether the reasoning is inductive (a) or whether the premises are linked (b)."
+  },
+  {
+    "id": 95,
+    "code": "PE10",
+    "chapter": "Previous Exam",
+    "q": "“If I am in Tokyo, I am in Japan. I am not in Tokyo. Therefore, I am not in Japan.” Which formal fallacy is this?",
+    "opts": [
+      "Denying the antecedent",
+      "Affirming the antecedent",
+      "Ampliative deduction",
+      "Denying the consequent"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. Denying the antecedent</strong><br><br>The form is “If P then Q. Not P. So not Q.” That denies the antecedent (the “if” part), which is invalid. You could be in Osaka, so not being in Tokyo doesn’t mean you’re not in Japan."
+  },
+  {
+    "id": 96,
+    "code": "PE11",
+    "chapter": "Previous Exam",
+    "q": "Reconstructing an argument in standard form involves spelling out its premises and conclusion clearly while eliminating extraneous material.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: True</strong><br><br>This is the definition of standard form. You state the premises and conclusion clearly and drop anything that isn’t doing logical work."
+  },
+  {
+    "id": 97,
+    "code": "PE12",
+    "chapter": "Previous Exam",
+    "q": "A premise is defined as:",
+    "opts": [
+      "The final proposition in any argument",
+      "Something the speaker has taken for granted",
+      "Information not relevant to the argument",
+      "A claim presented by an argument in support of its conclusion"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. A claim presented by an argument in support of its conclusion</strong><br><br>A premise is a claim offered in support of a conclusion. The final proposition (a) is the conclusion, something taken for granted (b) is an assumption, and irrelevant information (c) is extraneous."
+  },
+  {
+    "id": 98,
+    "code": "PE13",
+    "chapter": "Previous Exam",
+    "q": "In “All humans are mortal. Socrates is a human,” the logical conclusion is:",
+    "opts": [
+      "Mortality is uncertain",
+      "Socrates is immortal",
+      "Socrates is mortal",
+      "All humans like Socrates"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. Socrates is mortal</strong><br><br>This is a classic valid deduction. If all humans are mortal and Socrates is human, then Socrates is mortal."
+  },
+  {
+    "id": 99,
+    "code": "PE14",
+    "chapter": "Previous Exam",
+    "q": "Reconstructing an argument in standard form usually reveals flaws or gaps that would otherwise remain hidden.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: True</strong><br><br>Writing an argument out step by step exposes hidden assumptions, missing steps, and weak links that are easy to miss in ordinary prose."
+  },
+  {
+    "id": 100,
+    "code": "PE15",
+    "chapter": "Previous Exam",
+    "q": "In critical thinking and scientific inquiry, what is a “black swan event”?",
+    "opts": [
+      "A sample selection method using randomized algorithms",
+      "A predictable seasonal trend",
+      "An unexpected event that defies prior experience and expectations, demonstrating falsification of an accepted generalization",
+      "A formal fallacy involving linked premises"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. An unexpected event that defies prior experience and expectations, demonstrating falsification of an accepted generalization</strong><br><br>A black swan event is an unexpected observation that falsifies a generalization we thought was solid. The name comes from “all swans are white” being refuted by the first black swan."
+  },
+  {
+    "id": 101,
+    "code": "PE16",
+    "chapter": "Previous Exam",
+    "q": "Why is inductive reasoning referred to as “ampliative” reasoning?",
+    "opts": [
+      "It guarantees 100% mathematical certainty",
+      "It amplifies voice volume during debate",
+      "It refutes deductive proofs by doubling sample sizes",
+      "The conclusion goes beyond what is contained in the premises, extrapolating to broader claims"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. The conclusion goes beyond what is contained in the premises, extrapolating to broader claims</strong><br><br>“Ampliative” means expanding. An inductive conclusion goes beyond what the premises contain, as when you generalize from a sample to a whole population. The “voice volume” option in b is just a pun on “amplify”."
+  },
+  {
+    "id": 102,
+    "code": "PE17",
+    "chapter": "Previous Exam",
+    "q": "One practical reason for reconstructing an argument in standard form is:",
+    "opts": [
+      "It allows you to add your own opinions freely",
+      "It is one of the best ways of ensuring you understand it all the way through yourself",
+      "It hides flaws in reasoning",
+      "It makes the argument shorter and easier to ignore"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. It is one of the best ways of ensuring you understand it all the way through yourself</strong><br><br>Rebuilding an argument forces you to understand every step of it. Option a (adding your own opinions) and d (making it easier to ignore) work against the purpose, and c is the opposite of what happens, since reconstruction reveals flaws."
+  },
+  {
+    "id": 103,
+    "code": "PE18",
+    "chapter": "Previous Exam",
+    "q": "Another name for inductive reasoning is:",
+    "opts": [
+      "Extraneous reasoning",
+      "Ampliative reasoning",
+      "Standard-form reasoning",
+      "Truth-preserving reasoning"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. Ampliative reasoning</strong><br><br>“Ampliative reasoning” is simply another name for inductive reasoning, as explained in Q16."
+  },
+  {
+    "id": 104,
+    "code": "PE19",
+    "chapter": "Previous Exam",
+    "q": "How do linked premises function within an argument?",
+    "opts": [
+      "They rely on each other to support a conclusion, so if one fails, the argument fails; independent premises support the conclusion individually",
+      "They only appear in deductive reasoning",
+      "They are implicit, whereas independent premises are always explicit",
+      "They support the conclusion individually, while independent premises must all be true"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. They rely on each other to support a conclusion, so if one fails, the argument fails; independent premises support the conclusion individually</strong><br><br>Linked premises depend on each other, so the argument collapses if one fails. Independent premises each support the conclusion alone. The other options invent claims that aren’t true: that linked premises only appear in deduction, or that they’re always implicit."
+  },
+  {
+    "id": 105,
+    "code": "PE20",
+    "chapter": "Previous Exam",
+    "q": "Why is a sample size of “n = 1” considered extremely weak for inductive generalizations?",
+    "opts": [
+      "Sample sizes of one can only be evaluated using deductive proofs",
+      "It violates Modus Ponens",
+      "It automatically causes affirming the consequent",
+      "It represents an anecdote rather than a reliable investigation"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. It represents an anecdote rather than a reliable investigation</strong><br><br>One case (n = 1) is an anecdote. It can’t show a pattern, so generalizing from it is very weak. Options b and c use logic terms that have nothing to do with sample size."
+  },
+  {
+    "id": 106,
+    "code": "PE21",
+    "chapter": "Previous Exam",
+    "q": "“All birds have feathers. A robin is a bird.” This is an example of:",
+    "opts": [
+      "Extraneous material",
+      "An assumption that needs spelling out",
+      "Inductive reasoning",
+      "Truth-preserving deductive reasoning"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. Truth-preserving deductive reasoning</strong><br><br>“All birds have feathers” and “a robin is a bird” are two premises. Together they guarantee “a robin has feathers”, which is a deduction."
+  },
+  {
+    "id": 107,
+    "code": "PE22",
+    "chapter": "Previous Exam",
+    "q": "Deductive reasoning involves:",
+    "opts": [
+      "Spelling out whatever conclusion follows logically from your premises, without reference to external information",
+      "Ranking how strong an argument feels",
+      "Using probability to guess the answer",
+      "Adding outside information not in the premises"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. Spelling out whatever conclusion follows logically from your premises, without reference to external information</strong><br><br>Deduction works out what follows from the premises alone, using no outside information. Ranking how strong an argument feels (b) and using probability (c) are inductive ideas, and adding outside information (d) goes beyond the premises."
+  },
+  {
+    "id": 108,
+    "code": "PE23",
+    "chapter": "Previous Exam",
+    "q": "In inductive logic, what does it mean for an argument to be “inductively forceful”?",
+    "opts": [
+      "It uses emotional force to persuade",
+      "It has a valid deductive proof with no assumptions",
+      "It has a cogent structure AND true premises, giving good reason to accept its conclusion as probable",
+      "It proves a claim with absolute logical certainty"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. It has a cogent structure AND true premises, giving good reason to accept its conclusion as probable</strong><br><br>An inductively forceful argument has a cogent structure, meaning the premises make the conclusion likely, and the premises are true. Together these give good reason to accept the conclusion as probable, but not as certain (so d is wrong)."
+  },
+  {
+    "id": 109,
+    "code": "PE24",
+    "chapter": "Previous Exam",
+    "q": "Inductive reasoning is at its strongest when:",
+    "opts": [
+      "We have good reasons to believe we are seeing a well-established pattern with plenty of evidence",
+      "The scenario is extremely specific",
+      "There is little evidence and high unpredictability",
+      "We ignore past patterns completely"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. We have good reasons to believe we are seeing a well-established pattern with plenty of evidence</strong><br><br>Induction is strongest when there’s a well-established pattern backed by lots of evidence. It’s weakest when evidence is thin and the situation is unpredictable (c)."
+  },
+  {
+    "id": 110,
+    "code": "PE25",
+    "chapter": "Previous Exam",
+    "q": "Induction is something we use hundreds of times every day without noticing when we predict what will happen next based on past patterns.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: True</strong><br><br>We constantly predict from past patterns: the sun will rise tomorrow, a chair will hold our weight, a friend will reply. These are all inductive inferences."
+  },
+  {
+    "id": 111,
+    "code": "PE26",
+    "chapter": "Previous Exam",
+    "q": "A valid deductive argument whose premises are all factually true is classified as sound.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: True</strong><br><br>Soundness is defined as validity plus true premises. If both hold, the conclusion is guaranteed to be true."
+  },
+  {
+    "id": 112,
+    "code": "PE27",
+    "chapter": "Previous Exam",
+    "q": "What is an “implicit premise”?",
+    "opts": [
+      "A claim explicitly stated in the first sentence",
+      "A final conclusion that contradicts the main premise",
+      "Irrelevant information that should be discarded",
+      "An unstated assumption taken for granted by the arguer and needed to complete the logical reconstruction"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. An unstated assumption taken for granted by the arguer and needed to complete the logical reconstruction</strong><br><br>An implicit premise is an unstated assumption that the argument needs, so you spell it out when reconstructing. It isn’t explicit (a), and it isn’t irrelevant (c), since it’s needed."
+  },
+  {
+    "id": 113,
+    "code": "PE28",
+    "chapter": "Previous Exam",
+    "q": "“If it is raining, the street is wet. The street is wet. Therefore, it is raining.” Which fallacy?",
+    "opts": [
+      "Affirming the consequent",
+      "Denying the antecedent",
+      "Straw man",
+      "Denying the consequent"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. Affirming the consequent</strong><br><br>The form is “If P then Q. Q. So P.” That affirms the consequent, which is invalid because the street could be wet for another reason, such as a sprinkler or a burst pipe."
+  },
+  {
+    "id": 114,
+    "code": "PE29",
+    "chapter": "Previous Exam",
+    "q": "Affirming the Consequent is a valid form of deductive reasoning.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: False</strong><br><br>Affirming the consequent is a classic invalid form. Affirming the antecedent (Modus Ponens) is the valid one, and the two names are easy to mix up."
+  },
+  {
+    "id": 115,
+    "code": "PE30",
+    "chapter": "Previous Exam",
+    "q": "An inductively forceful argument is exactly the same as a sound deductive argument in terms of certainty.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: False</strong><br><br>A sound deductive argument guarantees its conclusion. An inductively forceful one only makes it probable, so the certainty is not the same."
+  },
+  {
+    "id": 116,
+    "code": "PE31",
+    "chapter": "Previous Exam",
+    "q": "Which form represents the valid rule Modus Ponens?",
+    "opts": [
+      "If P, then Q. P is false. Therefore Q is false",
+      "If P, then Q. Q is true. Therefore P is true",
+      "If P, then Q. P is true. Therefore Q is true",
+      "If P, then Q. Q is false. Therefore P is true"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. If P, then Q. P is true. Therefore Q is true</strong><br><br>Modus Ponens is “If P then Q. P. Therefore Q.” Option a denies the antecedent (invalid), b affirms the consequent (invalid), and d is not a valid pattern at all."
+  },
+  {
+    "id": 117,
+    "code": "PE32",
+    "chapter": "Previous Exam",
+    "q": "Extraneous material should be:",
+    "opts": [
+      "Kept because it makes the argument sound more natural",
+      "Left out as we carefully clarify each premise and conclusion by rewriting them",
+      "Used as the conclusion",
+      "Added to make the argument longer"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. Left out as we carefully clarify each premise and conclusion by rewriting them</strong><br><br>Extraneous material is information that doesn’t affect the logic. We leave it out and rewrite each premise and the conclusion clearly. Keeping it (a), adding to it (d), or treating it as the conclusion (c) would muddy the argument."
+  },
+  {
+    "id": 118,
+    "code": "PE33",
+    "chapter": "Previous Exam",
+    "q": "Getting into the habit of reconstructing arguments makes you:",
+    "opts": [
+      "More confident (and successful) at making convincing, reasonable arguments yourself",
+      "Only good at criticizing others",
+      "Less confident at making your own arguments",
+      "Able to ignore logic completely"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. More confident (and successful) at making convincing, reasonable arguments yourself</strong><br><br>Practice taking arguments apart helps you build clear, reasonable ones of your own. It doesn’t make you worse at arguing (c) or only good at criticizing (b)."
+  },
+  {
+    "id": 119,
+    "code": "PE34",
+    "chapter": "Previous Exam",
+    "q": "What is the key distinction between a “necessary condition” and a “sufficient condition”?",
+    "opts": [
+      "They are identical terms",
+      "A necessary condition guarantees the outcome, while a sufficient one is required but doesn’t guarantee it",
+      "Necessary applies only to induction, sufficient only to deduction",
+      "A necessary condition must be met for something to be true but doesn’t guarantee it; a sufficient condition guarantees the truth if met"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. A necessary condition must be met for something to be true but doesn’t guarantee it; a sufficient condition guarantees the truth if met</strong><br><br>A necessary condition is required, but meeting it doesn’t guarantee the outcome. A sufficient condition guarantees the outcome if met. For example, oxygen is necessary for fire but not sufficient. Option b swaps the two definitions."
+  },
+  {
+    "id": 120,
+    "code": "PE35",
+    "chapter": "Previous Exam",
+    "q": "Distorting or oversimplifying an opponent’s argument to make it easy to defeat is known as which fallacy?",
+    "opts": [
+      "Affirming the antecedent",
+      "Begging the question",
+      "Black swan fallacy",
+      "Straw man fallacy"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. Straw man fallacy</strong><br><br>A straw man misrepresents or oversimplifies someone’s position so it’s easier to attack. The word “straw” suggests an easily knocked-down dummy."
+  },
+  {
+    "id": 121,
+    "code": "PE36",
+    "chapter": "Previous Exam",
+    "q": "When reconstructing an argument into standard form, what should be done with extraneous material?",
+    "opts": [
+      "Identified as an implicit premise",
+      "Converted",
+      "Included",
+      "Left out"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. Left out</strong><br><br>Extraneous material is left out. If it’s actually needed for the argument to work, then it’s an implicit premise, not extraneous."
+  },
+  {
+    "id": 122,
+    "code": "PE37",
+    "chapter": "Previous Exam",
+    "q": "A cogent inductive argument has:",
+    "opts": [
+      "True premises and 100% certainty",
+      "No assumptions",
+      "Only one premise",
+      "Good structure but we should not necessarily accept the conclusion as true"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. Good structure but we should not necessarily accept the conclusion as true</strong><br><br>A cogent inductive argument has strong structure and true premises, so the conclusion is likely. But it’s still only probable, so we shouldn’t treat it as certain. The other options are clearly wrong: it never has 100% certainty (a), it can have assumptions (b), and it normally has several premises (c)."
+  },
+  {
+    "id": 123,
+    "code": "PE38",
+    "chapter": "Previous Exam",
+    "q": "Why is valid deductive reasoning described as “truth-preserving”?",
+    "opts": [
+      "It discovers brand-new empirical facts not in the original premises",
+      "If the premises are true, the logical structure guarantees the conclusion must also be true",
+      "It guarantees that all premises found in nature are scientifically true",
+      "It relies on statistical probability to preserve accuracy"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. If the premises are true, the logical structure guarantees the conclusion must also be true</strong><br><br>“Truth-preserving” means that if you start with true premises and the form is valid, you can’t end up with a false conclusion. It doesn’t discover new facts (a), and it says nothing about premises being true in nature (c) or about probability (d)."
+  },
+  {
+    "id": 124,
+    "code": "PE39",
+    "chapter": "Previous Exam",
+    "q": "When we reason inductively, we are generalizing about future events from past ones and asking what is most likely to be true, rather than dealing in absolutes.",
+    "opts": [
+      "True",
+      "False"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: True</strong><br><br>That’s what induction is: generalizing from past observations to what’s most likely, rather than proving something with certainty."
+  },
+  {
+    "id": 125,
+    "code": "PE40",
+    "chapter": "Previous Exam",
+    "q": "An assumption is:",
+    "opts": [
+      "A premise that is repeated twice",
+      "The opposite of a conclusion",
+      "Something relevant to an argument that has been taken for granted by the person presenting it, rather than spelled out",
+      "Irrelevant information"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. Something relevant to an argument that has been taken for granted by the person presenting it, rather than spelled out</strong><br><br>An assumption is something the arguer takes for granted without stating it. Irrelevant information is extraneous material, a different thing, and a repeated premise (a) or the opposite of a conclusion (b) isn’t what the term means."
   }
 ];
 
@@ -5334,17 +5876,25 @@
         const meta = document.createElement("div");
         meta.className = "q-meta";
 
-        let chShort = "Chapter 2";
-        if (item.chapter.includes("Chapter 3")) chShort = "Chapter 3: Logic";
-        else if (item.chapter.includes("Chapter 4")) chShort = "Chapter 4: Observation";
-        else chShort = "Chapter 2: Assumptions";
+        let chShort = "Chapter 2: Assumptions";
+        let tagClass = "tag-chapter";
+        let badgeClass = "tag-ct";
+        if (item.chapter === "Previous Exam") {
+          chShort = "Previous Exam";
+          tagClass = "tag-blooket";
+          badgeClass = "tag-blooket";
+        } else if (item.chapter.includes("Chapter 3")) {
+          chShort = "Chapter 3: Logic";
+        } else if (item.chapter.includes("Chapter 4")) {
+          chShort = "Chapter 4: Observation";
+        }
 
         const qBadge = item.code || ('Q' + (index + 1));
 
         meta.innerHTML = `
           <div class="q-tags-group">
-            <span class="q-tag tag-ct">${qBadge}</span>
-            <span class="q-tag tag-chapter">${chShort}</span>
+            <span class="q-tag ${badgeClass}">${qBadge}</span>
+            <span class="q-tag ${tagClass}">${chShort}</span>
           </div>
           <span>Question ${index + 1} of ${activeCTQuestions.length}</span>
         `;
@@ -5407,7 +5957,7 @@
       const subHeader = document.getElementById("ctSub");
       if (filterType === "all") {
         activeCTQuestions = [...ctQuestionsData];
-        subHeader.textContent = "All Questions • Chapters 2, 3, 4 (85 Total)";
+        subHeader.textContent = "All Questions • Chapters 2, 3, 4 + Previous Exam (125 Total)";
       } else if (filterType === "ch2") {
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 2"));
         subHeader.textContent = "Chapter 2: Spelling out arguments and assumptions (27 Questions)";
@@ -5417,6 +5967,9 @@
       } else if (filterType === "ch4") {
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 4"));
         subHeader.textContent = "Chapter 4: Reasoning with observation and uncertainty (32 Questions)";
+      } else if (filterType === "prev") {
+        activeCTQuestions = ctQuestionsData.filter(q => q.chapter === "Previous Exam");
+        subHeader.textContent = "⚡ Previous Exam Questions • Midterm Practice (40 Questions)";
       }
       renderCTQuiz();
     }
@@ -5438,6 +5991,8 @@
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 3"));
       } else if (ctFilter === "ch4") {
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 4"));
+      } else if (ctFilter === "prev") {
+        activeCTQuestions = ctQuestionsData.filter(q => q.chapter === "Previous Exam");
       }
       renderCTQuiz();
       window.scrollTo({ top: 0, behavior: "smooth" });
