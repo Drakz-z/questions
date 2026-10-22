@@ -1,4 +1,4 @@
-# Academic Study Portal • Emirates Studies, Engineering Physics 1 & Artificial Intelligence
+# Academic Study Portal • Emirates Studies, Engineering Physics 1, Artificial Intelligence & Critical Thinking
 
 An interactive study and quiz portal designed for university practice tests, midterm preparation, and master question banks.
 
@@ -11,6 +11,7 @@ Direct Links:
 - 🏛️ [Emirates Studies Practice Quiz](https://drakz-z.github.io/questions/#emirates-studies)
 - ⚛️ [Engineering Physics 1 Practice Quiz](https://drakz-z.github.io/questions/#engineering-physics-1)
 - 🤖 [Artificial Intelligence (AIT111) Acronyms & Quiz](https://drakz-z.github.io/questions/#artificial-intelligence)
+- 💡 [Critical Thinking Practice Quiz (Chapters 2, 3, 4)](https://drakz-z.github.io/questions/#critical-thinking)
 
 ---
 
@@ -57,9 +58,27 @@ Essential acronyms and terminology from the AIT111 Midterm Study Guide (Pages 2�
   - **Applications**: CV (Computer Vision), ASR, TTS
 - **Dual Study Modes**:
   - 📖 **Acronyms Directory**: Searchable reference cards with instant keyword search and category filtering pills
-  - ✍️ **Practice Quiz**: 35 randomized multiple-choice questions testing acronym expansions and exam definitions with instant grading
+  - ✍️ **Practice Quiz**: 35 randomized multiple-choice questions with letter-matching, authentic exam traps and instant grading
 - **Course Files**:
   - Stored in `AIT111/` (`AIT111_Complete_Midterm_Study_Guide.docx`, `Artifical Inteligence.docx`, `AIT111-PPT2.pdf`)
+
+---
+
+### 4. 💡 Critical Thinking • Chapters 2, 3, 4 (69 Questions)
+Master question and answer bank from `questionsandanswer.docx` with detailed reasoning and answer key explanations:
+- **Comprehensive Chapter Breakdown**:
+  - **Chapter 2**: Spelling out arguments and assumptions, standard form reconstruction, principle of charity, linked vs. independent premises, and challenge questions (22 questions)
+  - **Chapter 3**: Reasoning with logic and certainty, deductive reasoning, truth-preservation, valid vs. sound arguments, affirming the antecedent / denying the consequent, and formal fallacies (22 questions)
+  - **Chapter 4**: Reasoning with observation and uncertainty, inductive/ampliative reasoning, cogency, inductive force, sampling biases (self-selection, pre-screening, survivorship), margins of error, and black swan events (25 questions)
+- **Features**:
+  - Filter by "All (69)", "Ch 2: Arguments & Assumptions (22)", "Ch 3: Logic & Certainty (22)", or "Ch 4: Observation & Uncertainty (25)"
+  - Immediate grading with correct answer highlighting
+  - Expanded explanation blocks displaying why the correct choice works and why common wrong choices fail
+  - 🔀 Shuffle questions
+  - 🔄 Reset quiz
+  - Real-time score & accuracy tracker
+- **Course Files**:
+  - Stored in `Critical Thinking/` (`questionsandanswer.docx`, `Critical_Thinking_Midterm_Study_Guide_Ch2-4.docx`)
 
 ---
 
