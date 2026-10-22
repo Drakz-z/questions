@@ -1,0 +1,118 @@
+8.2 Questions
+Chapter 2 – Spelling out arguments and assumptions
+P1.  “Our bakery should hire a second baker orders have doubled since spring.” Which implicit premise does this argument rely on
+a.  Bakers are always underpaid
+b.  Orders usually fall again in winter
+c.  A bakery whose orders have doubled needs more staff than one baker can provide
+d.  The second baker will be cheaper than the first
+P2.  A friend says “School uniforms should be abolished they stifle self-expression.” Which reply applies the principle of charity
+a.  “So your point is that uniforms limit students’ chance to express who they are, which matters for their development. Let me explain where I think that goes wrong.”
+b.  “So you want pupils to wear anything they like, even offensive clothes”
+c.  “You only say that because you hate school.”
+d.  “I already know uniforms are good, so I won’t listen.”
+P3.  Which pair of premises is best read as LINKED
+a.  “The film has great reviews. It also stars my favourite actor.”
+b.  “The flat is cheap. The flat is close to my work.”
+c.  “The soup smells good. The soup looks good.”
+d.  “Anyone under 18 needs a signed permission form. Mia is under 18.”
+P4.  In “Honestly, I think we should switch suppliers. The current one has been late four times this quarter and, by the way, their logo is awful.” which part is extraneous material
+a.  “We should switch suppliers”
+b.  “Their logo is awful”
+c.  “The current one has been late four times this quarter”
+d.  The whole passage is extraneous
+P5.  “Sales rose after we repainted the shop, so the repaint caused the increase.” Which of the five challenge questions applies most directly
+a.  Has the argument begun by assuming what it is trying to prove
+b.  Is an assumption being made about one thing being the cause of another when this is not obviously true
+c.  Are beliefs about what is natural and unnatural being used without being made explicit
+d.  Is the argument made up of linked premises
+Chapter 3 – Reasoning with logic and certainty
+P6.  “If the server is down, the website is unavailable. The website is unavailable. Therefore the server is down.” Why is this argument invalid
+a.  Because the first premise is false
+b.  Because it denies the antecedent
+c.  Because a conclusion can never follow from a conditional premise
+d.  The website could be unavailable for other reasons, so affirming the consequent doesn’t prove the antecedent
+P7.  “If the battery is charged, the lamp lights. The lamp does not light. Therefore the battery is not charged.” This is
+a.  Denying the consequent, a valid form
+b.  Denying the antecedent, an invalid form
+c.  Affirming the consequent, an invalid form
+d.  Affirming the antecedent, a valid form
+P8.  Being a mammal, for being a dog, is
+a.  Sufficient but not necessary
+b.  Both necessary and sufficient
+c.  Necessary but not sufficient
+d.  Neither necessary nor sufficient
+P9.  Which statement about deductive arguments is TRUE
+a.  A valid argument always has a true conclusion
+b.  An argument with true premises is always valid
+c.  A sound argument can have a false conclusion
+d.  A valid argument can have a false conclusion if at least one of its premises is false
+Chapter 4 – Reasoning with observation and uncertainty
+P10.  To learn how students feel about the university’s new library opening hours, a researcher stands outside the library at 10 pm and asks everyone who leaves. What is the main sampling problem
+a.  The researcher is asking too many questions
+b.  The sample is drawn only from people who use the library late at night, so it doesn’t represent all students
+c.  Students are not allowed to be interviewed at night
+d.  Interviews outside buildings always give accurate results
+P11.  “My uncle smoked for 60 years and lived to 95, so smoking can’t be dangerous.” What is the main weakness of this inductive argument
+a.  It rests on a sample of one (n = 1), which is an anecdote, not a serious investigation
+b.  It is a deductively invalid argument
+c.  It uses a randomized sample
+d.  The premise is impossible to believe
+P12.  Which of these is MOST probable for a randomly selected employee
+a.  The employee is a manager and has an MBA
+b.  The employee is a manager, has an MBA and speaks three languages
+c.  The employee is a manager
+d.  The employee is a manager with an MBA and is under 30
+P13.  A well-structured inductive argument has one premise that is in fact false. It is best described as
+a.  Inductively forceful
+b.  Sound
+c.  Cogent but not inductively forceful
+d.  Invalid
+P14.  For forty years a bank’s forecasting models assumed house prices would never fall nationwide. Then they did, and the models collapsed. This is best described as
+a.  A black swan event that falsified the generalisation “prices never fall nationwide”
+b.  An example of a randomized sample
+c.  A deductive proof
+d.  An implicit qualification
+P15.  “Cats always land on their feet.” What is the most reasonable implicit qualification
+a.  Only cats that have been trained land on their feet
+b.  Cats usually (but not invariably) land on their feet
+c.  No cat ever lands on its feet
+d.  Cats land on their feet only in laboratories
+P16.  Maya has lost nine fair coin tosses in a row and says she is “due” a win. What is the rational expectation for the next toss
+a.  She is almost certain to win
+b.  She is certain to lose again
+c.  She is more likely to lose, because the streak shows the coin is unfair
+d.  An equal chance of winning or losing, since previous tosses don’t affect it
+8.3 Answers with explanations
+P1 c      P2 a      P3 d      P4 b      P5 b      P6 d      P7 a      P8 c      P9 d      P10 b      P11 a      P12 c      P13 c      P14 a      P15 b      P16 d
+P1 – c.  A bakery whose orders have doubled needs more staff than one baker can provide
+The stated reason (orders doubled) only supports hiring if more orders mean one baker can’t cope. That unstated link is the implicit premise. The other options add ideas the argument never uses.
+P2 – a.  “So your point is that uniforms limit students’ chance to express who they are, which matters for their development. Let me explain where I think that goes wrong.”
+Charity = restate the argument in its strongest reasonable form, then engage with it. The second option is a straw man, the third attacks the person instead of the argument, and the fourth is prejudice (deciding in advance).
+P3 – d.  “Anyone under 18 needs a signed permission form. Mia is under 18.”
+The conclusion (“Mia needs a signed form”) only follows when both premises are taken together – drop either and nothing follows. In the other pairs each premise gives its own reason, so they are independent.
+P4 – b.  “Their logo is awful”
+A logo has no bearing on whether a supplier is reliable, so it is left out of the standard form. The conclusion is “switch suppliers” and the lateness is the premise.
+P5 – b.  Is an assumption being made about one thing being the cause of another when this is not obviously true
+The argument assumes that because B followed A, A caused B. Challenge question 2 targets exactly that. Other things (season, advertising) may explain the rise.
+P6 – d.  The website could be unavailable for other reasons, so affirming the consequent doesn’t prove the antecedent
+This is affirming the consequent. The rule says server down → website unavailable, not the reverse, so other causes (maintenance, an expired domain) are possible.
+P7 – a.  Denying the consequent, a valid form
+Given “if P then Q”, if Q is false then P must be false. That is denying the consequent (modus tollens) and it is valid.
+P8 – c.  Necessary but not sufficient
+Every dog is a mammal, so a dog can’t exist without being a mammal (necessary). But being a mammal isn’t enough – cats and whales are mammals too (not sufficient).
+P9 – d.  A valid argument can have a false conclusion if at least one of its premises is false
+Validity concerns structure only. With a false premise a valid argument may yield a false conclusion – it is then unsound. A sound argument (valid + true premises) must have a true conclusion.
+P10 – b.  The sample is drawn only from people who use the library late at night, so it doesn’t represent all students
+This is a form of specific areapre-screening bias only late-night library users are included, while students who never use the library or use it by day are excluded.
+P11 – a.  It rests on a sample of one (n = 1), which is an anecdote, not a serious investigation
+One case can’t stand for a whole category. Any inductive argument based on a single instance is very weak.
+P12 – c.  The employee is a manager
+Each added detail makes the scenario more specific, and a specific scenario can never be more likely than the general one it belongs to.
+P13 – c.  Cogent but not inductively forceful
+Cogent = good structure. Inductively forceful = good structure AND true premises. With a false premise we have no good reason to accept the conclusion. (“Sound” and “invalid” are deductive terms.)
+P14 – a.  A black swan event that falsified the generalisation “prices never fall nationwide”
+The event defied previous experience and the expectations based on it. Forty years of confirming cases never proved the generalisation – one counter-event disproved it (the problem of induction).
+P15 – b.  Cats usually (but not invariably) land on their feet
+A general statement is rarely meant literally; the implicit qualification indicates the frequency with which it applies – here “usually” or “nearly always”.
+P16 – d.  An equal chance of winning or losing, since previous tosses don’t affect it
+Rational expectation is what it is most reasonable to expect, which can differ from what someone personally expects. For a fair coin each toss is independent, so the chance remains 5050. (Extra explanation this is the “gambler’s fallacy”.)

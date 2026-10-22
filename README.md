@@ -64,21 +64,22 @@ Essential acronyms and terminology from the AIT111 Midterm Study Guide (Pages 2�
 
 ---
 
-### 4. 💡 Critical Thinking • Chapters 2, 3, 4 (69 Questions)
-Master question and answer bank from `questionsandanswer.docx` with detailed reasoning and answer key explanations:
+### 4. 💡 Critical Thinking • Chapters 2, 3, 4 + Practice Set (85 Questions)
+Master question and answer bank from `questionsandanswer.docx` and `newquestions.txt` with detailed reasoning and answer key explanations:
 - **Comprehensive Chapter Breakdown**:
-  - **Chapter 2**: Spelling out arguments and assumptions, standard form reconstruction, principle of charity, linked vs. independent premises, and challenge questions (22 questions)
-  - **Chapter 3**: Reasoning with logic and certainty, deductive reasoning, truth-preservation, valid vs. sound arguments, affirming the antecedent / denying the consequent, and formal fallacies (22 questions)
-  - **Chapter 4**: Reasoning with observation and uncertainty, inductive/ampliative reasoning, cogency, inductive force, sampling biases (self-selection, pre-screening, survivorship), margins of error, and black swan events (25 questions)
+  - **Chapter 2**: Spelling out arguments and assumptions, standard form reconstruction, principle of charity, linked vs. independent premises, and challenge questions (27 questions: Q1–Q22 + P1–P5)
+  - **Chapter 3**: Reasoning with logic and certainty, deductive reasoning, truth-preservation, valid vs. sound arguments, affirming the antecedent / denying the consequent, and formal fallacies (26 questions: Q23–Q44 + P6–P9)
+  - **Chapter 4**: Reasoning with observation and uncertainty, inductive/ampliative reasoning, cogency, inductive force, sampling biases (self-selection, pre-screening, survivorship), margins of error, and black swan events (32 questions: Q45–Q69 + P10–P16)
+  - **⚡ Practice Set**: Dedicated 16-question set (P1–P16) from `newquestions.txt` covering all core concepts
 - **Features**:
-  - Filter by "All (69)", "Ch 2: Arguments & Assumptions (22)", "Ch 3: Logic & Certainty (22)", or "Ch 4: Observation & Uncertainty (25)"
+  - Filter by "All (85)", "Ch 2: Assumptions (27)", "Ch 3: Logic (26)", "Ch 4: Observation (32)", or "⚡ Practice Set P1–P16 (16)"
   - Immediate grading with correct answer highlighting
   - Expanded explanation blocks displaying why the correct choice works and why common wrong choices fail
   - 🔀 Shuffle questions
   - 🔄 Reset quiz
   - Real-time score & accuracy tracker
 - **Course Files**:
-  - Stored in `Critical Thinking/` (`questionsandanswer.docx`, `Critical_Thinking_Midterm_Study_Guide_Ch2-4.docx`)
+  - Stored in `Critical Thinking/` (`questionsandanswer.docx`, `newquestions.txt`, `Critical_Thinking_Midterm_Study_Guide_Ch2-4.docx`)
 
 ---
 

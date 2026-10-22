@@ -907,21 +907,21 @@
           <button class="enter-btn">Open AI Section →</button>
         </div>
 
-        <!-- Subject: Critical Thinking (Chapters 2, 3, 4) -->
+        <!-- Subject: Critical Thinking (Chapters 2, 3, 4 + Practice Set) -->
         <div class="subject-card ct-card" onclick="navigateTo('critical-thinking')">
           <div>
             <div class="card-top">
               <div class="card-icon">💡</div>
-              <span class="card-status-badge badge-ct">Active • 69 Questions</span>
+              <span class="card-status-badge badge-ct">Active • 85 Questions</span>
             </div>
             <h2 class="card-title">Critical Thinking</h2>
-            <p class="card-desc">Master midterm bank from questionsandanswer.docx covering Chapter 2 (Assumptions), Chapter 3 (Logic & Certainty), and Chapter 4 (Induction & Bias).</p>
+            <p class="card-desc">Master midterm bank from questionsandanswer.docx & newquestions.txt covering Chapter 2 (Assumptions), Chapter 3 (Logic & Certainty), and Chapter 4 (Induction & Bias).</p>
             <div class="card-chips">
-              <span class="chip chip-ct">All 69 Questions</span>
-              <span class="chip">Ch 2: Assumptions (22)</span>
-              <span class="chip">Ch 3: Logic (22)</span>
-              <span class="chip">Ch 4: Observation (25)</span>
-              <span class="chip">Detailed Reasons</span>
+              <span class="chip chip-ct">All 85 Questions</span>
+              <span class="chip">Ch 2: Assumptions (27)</span>
+              <span class="chip">Ch 3: Logic (26)</span>
+              <span class="chip">Ch 4: Observation (32)</span>
+              <span class="chip">⚡ Practice Set (16)</span>
             </div>
           </div>
           <button class="enter-btn">Start Practice →</button>
@@ -1036,13 +1036,14 @@
         </div>
         <div class="header-content">
           <h1 class="course-title course-title-ct">Critical Thinking Practice Quiz</h1>
-          <div class="sub-header" id="ctSub">All Questions • Chapters 2, 3, 4 (69 Total)</div>
+          <div class="sub-header" id="ctSub">All Questions • Chapters 2, 3, 4 + Practice Set (85 Total)</div>
         </div>
         <div class="controls ct-controls">
-          <button class="ctrl-btn active" id="btn-ct-all" onclick="filterCT('all', this)">All (69)</button>
-          <button class="ctrl-btn" id="btn-ct-ch2" onclick="filterCT('ch2', this)">Ch 2: Arguments & Assumptions (22)</button>
-          <button class="ctrl-btn" id="btn-ct-ch3" onclick="filterCT('ch3', this)">Ch 3: Logic & Certainty (22)</button>
-          <button class="ctrl-btn" id="btn-ct-ch4" onclick="filterCT('ch4', this)">Ch 4: Observation & Uncertainty (25)</button>
+          <button class="ctrl-btn active" id="btn-ct-all" onclick="filterCT('all', this)">All (85)</button>
+          <button class="ctrl-btn" id="btn-ct-ch2" onclick="filterCT('ch2', this)">Ch 2: Assumptions (27)</button>
+          <button class="ctrl-btn" id="btn-ct-ch3" onclick="filterCT('ch3', this)">Ch 3: Logic (26)</button>
+          <button class="ctrl-btn" id="btn-ct-ch4" onclick="filterCT('ch4', this)">Ch 4: Observation (32)</button>
+          <button class="ctrl-btn btn-blooket" id="btn-ct-practice" onclick="filterCT('practice', this)">⚡ Practice Set P1–P16 (16)</button>
           <button class="ctrl-btn" onclick="shuffleCT()">🔀 Shuffle</button>
           <button class="ctrl-btn" onclick="resetCT()">🔄 Reset</button>
         </div>
@@ -3608,7 +3609,9 @@
       "Replace the author’s reasoning with a stronger argument of your own"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Identify all of its parts and spell them out clearly in standard form so we can see exactly how they work</strong><br><br>Reconstruction means identifying the premises, conclusion (and assumptions) and writing them in a clear standard form. It does not add persuasion, shorten for its own sake, or swap in your own reasoning."
+    "exp": "<strong>Correct Answer: B. Identify all of its parts and spell them out clearly in standard form so we can see exactly how they work</strong><br><br>Reconstruction means identifying the premises, conclusion (and assumptions) and writing them in a clear standard form. It does not add persuasion, shorten for its own sake, or swap in your own reasoning.",
+    "code": "Q1",
+    "is_practice": false
   },
   {
     "id": 2,
@@ -3621,7 +3624,9 @@
       "An assumption that the speaker has left unstated"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. The final proposition, supported by the premises</strong><br><br>The conclusion is the final proposition the premises support. In standard form it is placed at the bottom, even if the speaker said it first. Examples are illustrations, and unstated assumptions are implicit premises."
+    "exp": "<strong>Correct Answer: C. The final proposition, supported by the premises</strong><br><br>The conclusion is the final proposition the premises support. In standard form it is placed at the bottom, even if the speaker said it first. Examples are illustrations, and unstated assumptions are implicit premises.",
+    "code": "Q2",
+    "is_practice": false
   },
   {
     "id": 3,
@@ -3634,7 +3639,9 @@
       "We need to set off by 5pm at the latest"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. We need to set off by 5pm at the latest</strong><br><br>The other three statements are premises that explain why the group must leave by 5pm (open until 6pm, one hour away, need to cross). The conclusion is the claim they support, even though it was said first."
+    "exp": "<strong>Correct Answer: D. We need to set off by 5pm at the latest</strong><br><br>The other three statements are premises that explain why the group must leave by 5pm (open until 6pm, one hour away, need to cross). The conclusion is the claim they support, even though it was said first.",
+    "code": "Q3",
+    "is_practice": false
   },
   {
     "id": 4,
@@ -3647,7 +3654,9 @@
       "“We need to use that river crossing”"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. “Listen up!”</strong><br><br>Extraneous material is not relevant to the reasoning and is left out of the standard form. “Listen up!” only grabs attention. The other three statements are premises."
+    "exp": "<strong>Correct Answer: B. “Listen up!”</strong><br><br>Extraneous material is not relevant to the reasoning and is left out of the standard form. “Listen up!” only grabs attention. The other three statements are premises.",
+    "code": "Q4",
+    "is_practice": false
   },
   {
     "id": 5,
@@ -3660,7 +3669,9 @@
       "Premises are all implicit"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Final conclusion is supported by premises that are themselves intermediate conclusions</strong><br><br>Extended arguments have stepping-stone (intermediate) conclusions that become premises for the final conclusion, as in the team-structure example (Conclusion 1 → Conclusion 2)."
+    "exp": "<strong>Correct Answer: B. Final conclusion is supported by premises that are themselves intermediate conclusions</strong><br><br>Extended arguments have stepping-stone (intermediate) conclusions that become premises for the final conclusion, as in the team-structure example (Conclusion 1 → Conclusion 2).",
+    "code": "Q5",
+    "is_practice": false
   },
   {
     "id": 6,
@@ -3673,7 +3684,9 @@
       "It proves that the author’s conclusion is true"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. It proves that the author’s conclusion is true</strong><br><br>The four reasons are: understanding, revealing flaws/gaps, identifying assumptions, and improving your own arguments. Reconstruction clarifies an argument; it does not prove its conclusion."
+    "exp": "<strong>Correct Answer: D. It proves that the author’s conclusion is true</strong><br><br>The four reasons are: understanding, revealing flaws/gaps, identifying assumptions, and improving your own arguments. Reconstruction clarifies an argument; it does not prove its conclusion.",
+    "code": "Q6",
+    "is_practice": false
   },
   {
     "id": 7,
@@ -3686,7 +3699,9 @@
       "Apply the principle of charity"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Apply the principle of charity</strong><br><br>The order is: charity → final conclusion → explicit premises → implicit premises → linked vs independent. Charity comes first so that you reconstruct the strongest version."
+    "exp": "<strong>Correct Answer: D. Apply the principle of charity</strong><br><br>The order is: charity → final conclusion → explicit premises → implicit premises → linked vs independent. Charity comes first so that you reconstruct the strongest version.",
+    "code": "Q7",
+    "is_practice": false
   },
   {
     "id": 8,
@@ -3699,7 +3714,9 @@
       "Distinguish between linked and independent premises"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Identify any implicit premises</strong><br><br>Charity is step 1, conclusion step 2, explicit premises step 3, implicit premises step 4 and linked/independent is step 5."
+    "exp": "<strong>Correct Answer: B. Identify any implicit premises</strong><br><br>Charity is step 1, conclusion step 2, explicit premises step 3, implicit premises step 4 and linked/independent is step 5.",
+    "code": "Q8",
+    "is_practice": false
   },
   {
     "id": 9,
@@ -3712,7 +3729,9 @@
       "Softening your own argument so that nobody is offended"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Assuming the other person is truthful and reasonable and stating their argument in its strongest form</strong><br><br>Charity is about how you represent others’ arguments (strongest form), not about agreeing with them. Assuming they are mistaken is the opposite attitude."
+    "exp": "<strong>Correct Answer: B. Assuming the other person is truthful and reasonable and stating their argument in its strongest form</strong><br><br>Charity is about how you represent others’ arguments (strongest form), not about agreeing with them. Assuming they are mistaken is the opposite attitude.",
+    "code": "Q9",
+    "is_practice": false
   },
   {
     "id": 10,
@@ -3725,7 +3744,9 @@
       "A set of independent premises"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. A straw man</strong><br><br>A straw man is an absurd simplification of someone’s position, stated so it can easily be defeated. Stricter phone rules is not the same as banning all technology."
+    "exp": "<strong>Correct Answer: A. A straw man</strong><br><br>A straw man is an absurd simplification of someone’s position, stated so it can easily be defeated. Stricter phone rules is not the same as banning all technology.",
+    "code": "Q10",
+    "is_practice": false
   },
   {
     "id": 11,
@@ -3738,7 +3759,9 @@
       "A premise that supports a conclusion on its own"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Holding a belief without considering the evidence, or deciding in advance what you think before hearing an argument</strong><br><br>Prejudice is a belief formed without regard to the evidence or decided in advance of the argument. Weighing both sides and charity are the opposite of prejudice."
+    "exp": "<strong>Correct Answer: B. Holding a belief without considering the evidence, or deciding in advance what you think before hearing an argument</strong><br><br>Prejudice is a belief formed without regard to the evidence or decided in advance of the argument. Weighing both sides and charity are the opposite of prejudice.",
+    "code": "Q11",
+    "is_practice": false
   },
   {
     "id": 12,
@@ -3751,7 +3774,9 @@
       "Because it guarantees that we will end up agreeing with the author"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. Attacking straw men or only their weakest points merely reinforces existing beliefs and lets weak arguments get away with it</strong><br><br>If we want to genuinely challenge someone’s thinking we must engage with their best case. Easy targets only reinforce what we already believed. Strength does not make an argument true, and the aim is not agreement."
+    "exp": "<strong>Correct Answer: C. Attacking straw men or only their weakest points merely reinforces existing beliefs and lets weak arguments get away with it</strong><br><br>If we want to genuinely challenge someone’s thinking we must engage with their best case. Easy targets only reinforce what we already believed. Strength does not make an argument true, and the aim is not agreement.",
+    "code": "Q12",
+    "is_practice": false
   },
   {
     "id": 13,
@@ -3764,7 +3789,9 @@
       "People who fail degrees never attend exams"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. If I never see someone at lectures they aren’t attending, and if you don’t attend lectures you won’t pass your degree</strong><br><br>The argument moves from “I don’t see her” to “she isn’t attending” and then to “she will fail”. The slides say these assumptions are worth spelling out, since neither is certain."
+    "exp": "<strong>Correct Answer: C. If I never see someone at lectures they aren’t attending, and if you don’t attend lectures you won’t pass your degree</strong><br><br>The argument moves from “I don’t see her” to “she isn’t attending” and then to “she will fail”. The slides say these assumptions are worth spelling out, since neither is certain.",
+    "code": "Q13",
+    "is_practice": false
   },
   {
     "id": 14,
@@ -3777,7 +3804,9 @@
       "Things that the Prince of Wales likes are good"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Things that the Prince of Wales likes are good</strong><br><br>The speaker treats the Prince’s liking as a reason the marmalade is good. Spelling this out makes it easy to question: why is his taste a reliable guide?"
+    "exp": "<strong>Correct Answer: D. Things that the Prince of Wales likes are good</strong><br><br>The speaker treats the Prince’s liking as a reason the marmalade is good. Spelling this out makes it easy to question: why is his taste a reliable guide?",
+    "code": "Q14",
+    "is_practice": false
   },
   {
     "id": 15,
@@ -3790,7 +3819,9 @@
       "Because it contains extraneous material"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. It assumes that nothing natural is wrong, which has problems (e.g. urinating in public is also “natural”) and ‘natural’ is hard to define</strong><br><br>The hidden premise “there is nothing wrong with doing things that are perfectly natural” is questionable and so needs examining. The slide notes examples like public urination and asks what counts as natural (clothes, writing)."
+    "exp": "<strong>Correct Answer: B. It assumes that nothing natural is wrong, which has problems (e.g. urinating in public is also “natural”) and ‘natural’ is hard to define</strong><br><br>The hidden premise “there is nothing wrong with doing things that are perfectly natural” is questionable and so needs examining. The slide notes examples like public urination and asks what counts as natural (clothes, writing).",
+    "code": "Q15",
+    "is_practice": false
   },
   {
     "id": 16,
@@ -3803,7 +3834,9 @@
       "Independent premises; the argument is merely weakened"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Linked premises; the argument fails</strong><br><br>The two conditions work only together (“if both … and …”), so they are linked. If one is faulty (e.g. it was a test) the argument fails."
+    "exp": "<strong>Correct Answer: A. Linked premises; the argument fails</strong><br><br>The two conditions work only together (“if both … and …”), so they are linked. If one is faulty (e.g. it was a test) the argument fails.",
+    "code": "Q16",
+    "is_practice": false
   },
   {
     "id": 17,
@@ -3816,7 +3849,9 @@
       "Independent; the argument is weakened but does not automatically fail"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Independent; the argument is weakened but does not automatically fail</strong><br><br>Each premise gives its own reason (“if X, then perhaps Z; if Y, then perhaps Z”). If one is faulty, the remaining one still gives some support, so the argument is weakened rather than destroyed."
+    "exp": "<strong>Correct Answer: D. Independent; the argument is weakened but does not automatically fail</strong><br><br>Each premise gives its own reason (“if X, then perhaps Z; if Y, then perhaps Z”). If one is faulty, the remaining one still gives some support, so the argument is weakened rather than destroyed.",
+    "code": "Q17",
+    "is_practice": false
   },
   {
     "id": 18,
@@ -3829,7 +3864,9 @@
       "Being more confident makes it easier to ask someone out"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Being more confident makes it easier to ask someone out</strong><br><br>The speaker concludes they are more confident than you (implicit Conclusion 2) and needs the hidden Premise 5 (“being more confident makes it easier to ask someone out”) to reach the final conclusion."
+    "exp": "<strong>Correct Answer: D. Being more confident makes it easier to ask someone out</strong><br><br>The speaker concludes they are more confident than you (implicit Conclusion 2) and needs the hidden Premise 5 (“being more confident makes it easier to ask someone out”) to reach the final conclusion.",
+    "code": "Q18",
+    "is_practice": false
   },
   {
     "id": 19,
@@ -3842,7 +3879,9 @@
       "An explicit independent premise"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. An implicit intermediate conclusion that serves as a premise for the final conclusion</strong><br><br>It is never stated, but it follows from “tall people are more confident” and “I am taller than you”, and then supports the final conclusion. That makes it an implicit intermediate conclusion in an extended argument."
+    "exp": "<strong>Correct Answer: C. An implicit intermediate conclusion that serves as a premise for the final conclusion</strong><br><br>It is never stated, but it follows from “tall people are more confident” and “I am taller than you”, and then supports the final conclusion. That makes it an implicit intermediate conclusion in an extended argument.",
+    "code": "Q19",
+    "is_practice": false
   },
   {
     "id": 20,
@@ -3855,7 +3894,9 @@
       "Research projects always use large datasets"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Meaningfully testing a theory requires good quality data</strong><br><br>The stated reason (no good data) only supports the conclusion if good quality data is needed for meaningful testing. That is the slide’s Premise 1 [implicit]."
+    "exp": "<strong>Correct Answer: B. Meaningfully testing a theory requires good quality data</strong><br><br>The stated reason (no good data) only supports the conclusion if good quality data is needed for meaningful testing. That is the slide’s Premise 1 [implicit].",
+    "code": "Q20",
+    "is_practice": false
   },
   {
     "id": 21,
@@ -3868,7 +3909,9 @@
       "Are beliefs about what is natural and unnatural used without being made explicit?"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Has what you’re reading begun by assuming the thing it is supposed to be proving?</strong><br><br>Question 5 targets circular reasoning – assuming what you are trying to prove. The others target assumed causation, future-follows-past, and hidden values."
+    "exp": "<strong>Correct Answer: A. Has what you’re reading begun by assuming the thing it is supposed to be proving?</strong><br><br>Question 5 targets circular reasoning – assuming what you are trying to prove. The others target assumed causation, future-follows-past, and hidden values.",
+    "code": "Q21",
+    "is_practice": false
   },
   {
     "id": 22,
@@ -3881,7 +3924,9 @@
       "Does the argument rely on linked premises?"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. Is the argument moving too simplistically from the particular to the general?</strong><br><br>The speaker generalises from a few particular cases (people at the gym) to a whole group. That is challenge question 1."
+    "exp": "<strong>Correct Answer: C. Is the argument moving too simplistically from the particular to the general?</strong><br><br>The speaker generalises from a few particular cases (people at the gym) to a whole group. That is challenge question 1.",
+    "code": "Q22",
+    "is_practice": false
   },
   {
     "id": 23,
@@ -3894,7 +3939,9 @@
       "Persuading an audience by appealing to their emotions"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. Spelling out whatever conclusion follows logically from the premises, without reference to external information</strong><br><br>Deduction works only with what the premises contain. Predicting from experience is induction; gathering evidence and emotional appeals are not deductive reasoning."
+    "exp": "<strong>Correct Answer: C. Spelling out whatever conclusion follows logically from the premises, without reference to external information</strong><br><br>Deduction works only with what the premises contain. Predicting from experience is induction; gathering evidence and emotional appeals are not deductive reasoning.",
+    "code": "Q23",
+    "is_practice": false
   },
   {
     "id": 24,
@@ -3907,7 +3954,9 @@
       "If the premises are true, the conclusion must also be true"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. If the premises are true, the conclusion must also be true</strong><br><br>Used correctly, deduction preserves truth: true premises → true conclusion. It does not guarantee the premises are true and doesn’t create new truth."
+    "exp": "<strong>Correct Answer: D. If the premises are true, the conclusion must also be true</strong><br><br>Used correctly, deduction preserves truth: true premises → true conclusion. It does not guarantee the premises are true and doesn’t create new truth.",
+    "code": "Q24",
+    "is_practice": false
   },
   {
     "id": 25,
@@ -3920,7 +3969,9 @@
       "Nothing can be concluded"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. I can’t stand sailing</strong><br><br>Sailing falls under the category “physical activity”, which the speaker can’t stand, so the conclusion follows directly."
+    "exp": "<strong>Correct Answer: C. I can’t stand sailing</strong><br><br>Sailing falls under the category “physical activity”, which the speaker can’t stand, so the conclusion follows directly.",
+    "code": "Q25",
+    "is_practice": false
   },
   {
     "id": 26,
@@ -3933,7 +3984,9 @@
       "George will not suffer memory loss"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. George will suffer memory loss</strong><br><br>George meets both conditions, so the rule applies to him. Barbara doesn’t meet the combination, so the premises tell us nothing certain about her – she might or might not have memory loss for other reasons."
+    "exp": "<strong>Correct Answer: A. George will suffer memory loss</strong><br><br>George meets both conditions, so the rule applies to him. Barbara doesn’t meet the combination, so the premises tell us nothing certain about her – she might or might not have memory loss for other reasons.",
+    "code": "Q26",
+    "is_practice": false
   },
   {
     "id": 27,
@@ -3946,7 +3999,9 @@
       "“There is no such thing as a purple monkey. This creature is purple, so it can’t be a monkey.”"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. “There is no such thing as a purple monkey. This creature is purple, so it can’t be a monkey.”</strong><br><br>The valid one follows necessarily from its premises (a purple monkey can’t exist, so a purple creature isn’t a monkey). The others are invalid: hard-to-spot and shared-category arguments and affirming the consequent."
+    "exp": "<strong>Correct Answer: D. “There is no such thing as a purple monkey. This creature is purple, so it can’t be a monkey.”</strong><br><br>The valid one follows necessarily from its premises (a purple monkey can’t exist, so a purple creature isn’t a monkey). The others are invalid: hard-to-spot and shared-category arguments and affirming the consequent.",
+    "code": "Q27",
+    "is_practice": false
   },
   {
     "id": 28,
@@ -3959,7 +4014,9 @@
       "Because it is not an argument"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Being difficult to spot doesn’t mean it is a purple monkey – many things are hard to spot</strong><br><br>It reverses the rule “purple monkeys → hard to spot” into “hard to spot → purple monkey”, i.e. affirming the consequent."
+    "exp": "<strong>Correct Answer: A. Being difficult to spot doesn’t mean it is a purple monkey – many things are hard to spot</strong><br><br>It reverses the rule “purple monkeys → hard to spot” into “hard to spot → purple monkey”, i.e. affirming the consequent.",
+    "code": "Q28",
+    "is_practice": false
   },
   {
     "id": 29,
@@ -3972,7 +4029,9 @@
       "…so we should obtain permission before proceeding ethically"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. …so we can only experiment on them if they don’t know what we are doing</strong><br><br>The invalid conclusion adds a new idea (secret experiments) the premises do not support. The others follow from “no permission → not ethical”."
+    "exp": "<strong>Correct Answer: C. …so we can only experiment on them if they don’t know what we are doing</strong><br><br>The invalid conclusion adds a new idea (secret experiments) the premises do not support. The others follow from “no permission → not ethical”.",
+    "code": "Q29",
+    "is_practice": false
   },
   {
     "id": 30,
@@ -3985,7 +4044,9 @@
       "A premise that has been taken for granted"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. A conclusion that is not supported by the argument</strong><br><br>Unwarranted = not supported by the premises. (That is why “experiment secretly” was unwarranted above.)"
+    "exp": "<strong>Correct Answer: B. A conclusion that is not supported by the argument</strong><br><br>Unwarranted = not supported by the premises. (That is why “experiment secretly” was unwarranted above.)",
+    "code": "Q30",
+    "is_practice": false
   },
   {
     "id": 31,
@@ -3998,7 +4059,9 @@
       "Must be met if something is to be true, but cannot by itself guarantee it"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Must be met if something is to be true, but cannot by itself guarantee it</strong><br><br>Necessary = required but perhaps not enough. A guarantee describes a sufficient condition."
+    "exp": "<strong>Correct Answer: D. Must be met if something is to be true, but cannot by itself guarantee it</strong><br><br>Necessary = required but perhaps not enough. A guarantee describes a sufficient condition.",
+    "code": "Q31",
+    "is_practice": false
   },
   {
     "id": 32,
@@ -4011,7 +4074,9 @@
       "Is true only for deductive arguments"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. If met, guarantees the truth of something</strong><br><br>Sufficient = enough by itself to guarantee the result. Example: being a square guarantees being a rectangle."
+    "exp": "<strong>Correct Answer: C. If met, guarantees the truth of something</strong><br><br>Sufficient = enough by itself to guarantee the result. Example: being a square guarantees being a rectangle.",
+    "code": "Q32",
+    "is_practice": false
   },
   {
     "id": 33,
@@ -4024,7 +4089,9 @@
       "Neither necessary nor sufficient"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Necessary but not sufficient</strong><br><br>Humans can’t survive without oxygen (necessary), but oxygen alone isn’t enough – you also need water, food, etc. (not sufficient)."
+    "exp": "<strong>Correct Answer: A. Necessary but not sufficient</strong><br><br>Humans can’t survive without oxygen (necessary), but oxygen alone isn’t enough – you also need water, food, etc. (not sufficient).",
+    "code": "Q33",
+    "is_practice": false
   },
   {
     "id": 34,
@@ -4037,7 +4104,9 @@
       "Sufficient but not necessary"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Sufficient but not necessary</strong><br><br>Every bachelor is unmarried (sufficient), but many people are unmarried without being bachelors (not necessary)."
+    "exp": "<strong>Correct Answer: D. Sufficient but not necessary</strong><br><br>Every bachelor is unmarried (sufficient), but many people are unmarried without being bachelors (not necessary).",
+    "code": "Q34",
+    "is_practice": false
   },
   {
     "id": 35,
@@ -4050,7 +4119,9 @@
       "Studying enough to understand the material"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Being enrolled in the course</strong><br><br>You can’t pass without being enrolled (necessary), but enrolment alone doesn’t guarantee a pass. Answering all questions correctly would be (practically) sufficient. (This is the slide’s own question, answer D.)"
+    "exp": "<strong>Correct Answer: B. Being enrolled in the course</strong><br><br>You can’t pass without being enrolled (necessary), but enrolment alone doesn’t guarantee a pass. Answering all questions correctly would be (practically) sufficient. (This is the slide’s own question, answer D.)",
+    "code": "Q35",
+    "is_practice": false
   },
   {
     "id": 36,
@@ -4063,7 +4134,9 @@
       "Being larger than a coin"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Being a triangle</strong><br><br>Every triangle is a polygon, so being a triangle guarantees being a polygon (sufficient). It is not necessary, because other shapes (squares, pentagons …) are polygons too. The slide’s own version of this question has different wrong options but the same answer: being a triangle."
+    "exp": "<strong>Correct Answer: A. Being a triangle</strong><br><br>Every triangle is a polygon, so being a triangle guarantees being a polygon (sufficient). It is not necessary, because other shapes (squares, pentagons …) are polygons too. The slide’s own version of this question has different wrong options but the same answer: being a triangle.",
+    "code": "Q36",
+    "is_practice": false
   },
   {
     "id": 37,
@@ -4076,7 +4149,9 @@
       "Denying the consequent (valid)"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Affirming the antecedent (valid)</strong><br><br>The second premise affirms the “if” part (the antecedent: it rains), so the consequent must follow. This is also called modus ponens."
+    "exp": "<strong>Correct Answer: A. Affirming the antecedent (valid)</strong><br><br>The second premise affirms the “if” part (the antecedent: it rains), so the consequent must follow. This is also called modus ponens.",
+    "code": "Q37",
+    "is_practice": false
   },
   {
     "id": 38,
@@ -4089,7 +4164,9 @@
       "If I am in Rome, then I am in Italy. I am not in Rome. Therefore, I am not in Italy."
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. If I eat peanuts, I will have an allergic reaction. I had an allergic reaction. Therefore, I ate peanuts.</strong><br><br>The correct choice affirms the consequent (the reaction) to conclude the antecedent (peanuts) – the reaction could have other causes. The others are affirming the antecedent, denying the consequent (both valid) and denying the antecedent (invalid)."
+    "exp": "<strong>Correct Answer: C. If I eat peanuts, I will have an allergic reaction. I had an allergic reaction. Therefore, I ate peanuts.</strong><br><br>The correct choice affirms the consequent (the reaction) to conclude the antecedent (peanuts) – the reaction could have other causes. The others are affirming the antecedent, denying the consequent (both valid) and denying the antecedent (invalid).",
+    "code": "Q38",
+    "is_practice": false
   },
   {
     "id": 39,
@@ -4102,7 +4179,9 @@
       "If a device is a smartphone, it has a battery. This device is a smartphone. So it must be expensive."
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. If a device is a smartphone, it has a battery. This device has no battery. So it is not a smartphone.</strong><br><br>Denying the consequent: if the consequent (battery) is false, the antecedent (smartphone) must be false. The second option affirms the consequent, the third denies the antecedent, and the fourth is an unwarranted conclusion."
+    "exp": "<strong>Correct Answer: B. If a device is a smartphone, it has a battery. This device has no battery. So it is not a smartphone.</strong><br><br>Denying the consequent: if the consequent (battery) is false, the antecedent (smartphone) must be false. The second option affirms the consequent, the third denies the antecedent, and the fourth is an unwarranted conclusion.",
+    "code": "Q39",
+    "is_practice": false
   },
   {
     "id": 40,
@@ -4115,7 +4194,9 @@
       "Denying the antecedent, an invalid form"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Denying the antecedent, an invalid form</strong><br><br>It denies the antecedent (not in Paris) and wrongly concludes the consequent is false. I could be in Lyon – still in France."
+    "exp": "<strong>Correct Answer: D. Denying the antecedent, an invalid form</strong><br><br>It denies the antecedent (not in Paris) and wrongly concludes the consequent is false. I could be in Lyon – still in France.",
+    "code": "Q40",
+    "is_practice": false
   },
   {
     "id": 41,
@@ -4128,7 +4209,9 @@
       "Denying the consequent and affirming the consequent"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Affirming the consequent and denying the antecedent</strong><br><br>Valid: affirming the antecedent, denying the consequent. Invalid (formal fallacies): affirming the consequent, denying the antecedent."
+    "exp": "<strong>Correct Answer: B. Affirming the consequent and denying the antecedent</strong><br><br>Valid: affirming the antecedent, denying the consequent. Invalid (formal fallacies): affirming the consequent, denying the antecedent.",
+    "code": "Q41",
+    "is_practice": false
   },
   {
     "id": 42,
@@ -4141,7 +4224,9 @@
       "A valid argument with true premises"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. An invalid form of argument, so arguments of that form cannot be relied on to reach valid conclusions</strong><br><br>A formal fallacy is an error in the structure of the argument. It remains unreliable even when the premises and conclusion happen to be true."
+    "exp": "<strong>Correct Answer: A. An invalid form of argument, so arguments of that form cannot be relied on to reach valid conclusions</strong><br><br>A formal fallacy is an error in the structure of the argument. It remains unreliable even when the premises and conclusion happen to be true.",
+    "code": "Q42",
+    "is_practice": false
   },
   {
     "id": 43,
@@ -4154,7 +4239,9 @@
       "Sound"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Sound</strong><br><br>Sound = valid + true premises, so the conclusion must be true. “Cogent” is the inductive counterpart of valid."
+    "exp": "<strong>Correct Answer: D. Sound</strong><br><br>Sound = valid + true premises, so the conclusion must be true. “Cogent” is the inductive counterpart of valid.",
+    "code": "Q43",
+    "is_practice": false
   },
   {
     "id": 44,
@@ -4167,7 +4254,9 @@
       "Invalid but sound"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Valid but unsound</strong><br><br>The structure is perfect (valid), but the first premise is false, so it is unsound. Soundness needs validity and true premises."
+    "exp": "<strong>Correct Answer: A. Valid but unsound</strong><br><br>The structure is perfect (valid), but the first premise is false, so it is unsound. Soundness needs validity and true premises.",
+    "code": "Q44",
+    "is_practice": false
   },
   {
     "id": 45,
@@ -4180,7 +4269,9 @@
       "No premises are needed"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. The premises strongly support the conclusion, but we can never be absolutely certain it is true</strong><br><br>Induction gives strong but never absolute support. “Must be true if premises are true” describes deduction."
+    "exp": "<strong>Correct Answer: B. The premises strongly support the conclusion, but we can never be absolutely certain it is true</strong><br><br>Induction gives strong but never absolute support. “Must be true if premises are true” describes deduction.",
+    "code": "Q45",
+    "is_practice": false
   },
   {
     "id": 46,
@@ -4193,7 +4284,9 @@
       "Charitable reasoning"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Ampliative reasoning</strong><br><br>Ampliative reasoning goes beyond what the premises strictly contain. Truth-preserving describes deduction."
+    "exp": "<strong>Correct Answer: A. Ampliative reasoning</strong><br><br>Ampliative reasoning goes beyond what the premises strictly contain. Truth-preserving describes deduction.",
+    "code": "Q46",
+    "is_practice": false
   },
   {
     "id": 47,
@@ -4206,7 +4299,9 @@
       "…but there will probably be one within the next decade"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. …so there will never be a female US president</strong><br><br>“Never” asserts certainty about an unlimited future, which induction can never prove. The slides don’t give an official ranking, but modest, near-term extrapolations (like the next president) are stronger than absolute ones."
+    "exp": "<strong>Correct Answer: C. …so there will never be a female US president</strong><br><br>“Never” asserts certainty about an unlimited future, which induction can never prove. The slides don’t give an official ranking, but modest, near-term extrapolations (like the next president) are stronger than absolute ones.",
+    "code": "Q47",
+    "is_practice": false
   },
   {
     "id": 48,
@@ -4219,7 +4314,9 @@
       "There is one example; there are many examples"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. There is a well-established pattern with plenty of evidence; there is little evidence, no clear pattern or high unpredictability</strong><br><br>Strong induction needs a well-supported pattern; weak induction arises with little evidence, no clear pattern, or high unpredictability, complexity or uncertainty."
+    "exp": "<strong>Correct Answer: C. There is a well-established pattern with plenty of evidence; there is little evidence, no clear pattern or high unpredictability</strong><br><br>Strong induction needs a well-supported pattern; weak induction arises with little evidence, no clear pattern, or high unpredictability, complexity or uncertainty.",
+    "code": "Q48",
+    "is_practice": false
   },
   {
     "id": 49,
@@ -4232,7 +4329,9 @@
       "It is impossible to say"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. (A) – a general scenario is always at least as likely as a more specific subset of it</strong><br><br>Every case in (B) is also a case in (A), so (A) cannot be less likely. Extra detail adds conditions and can only reduce the probability."
+    "exp": "<strong>Correct Answer: B. (A) – a general scenario is always at least as likely as a more specific subset of it</strong><br><br>Every case in (B) is also a case in (A), so (A) cannot be less likely. Extra detail adds conditions and can only reduce the probability.",
+    "code": "Q49",
+    "is_practice": false
   },
   {
     "id": 50,
@@ -4245,7 +4344,9 @@
       "The number of premises in the argument"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. A measure of how likely we believe an inductive argument is to be true</strong><br><br>It measures the believability/likelihood of the argument, never a guarantee, and has nothing to do with length."
+    "exp": "<strong>Correct Answer: C. A measure of how likely we believe an inductive argument is to be true</strong><br><br>It measures the believability/likelihood of the argument, never a guarantee, and has nothing to do with length.",
+    "code": "Q50",
+    "is_practice": false
   },
   {
     "id": 51,
@@ -4258,7 +4359,9 @@
       "Is based on a single anecdote"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Has a good structure, but whose conclusion we should not necessarily accept as true</strong><br><br>Cogent is similar to valid in deduction (structure only). The second option describes an inductively forceful argument."
+    "exp": "<strong>Correct Answer: A. Has a good structure, but whose conclusion we should not necessarily accept as true</strong><br><br>Cogent is similar to valid in deduction (structure only). The second option describes an inductively forceful argument.",
+    "code": "Q51",
+    "is_practice": false
   },
   {
     "id": 52,
@@ -4271,7 +4374,9 @@
       "A formal fallacy"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. A sound argument (but without its certainty)</strong><br><br>Forceful = good structure + true premises, like soundness, but induction never gives certainty. Cogent corresponds to valid."
+    "exp": "<strong>Correct Answer: A. A sound argument (but without its certainty)</strong><br><br>Forceful = good structure + true premises, like soundness, but induction never gives certainty. Cogent corresponds to valid.",
+    "code": "Q52",
+    "is_practice": false
   },
   {
     "id": 53,
@@ -4284,7 +4389,9 @@
       "(A) is much more inductively forceful than (B)"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. (A) is much more inductively forceful than (B)</strong><br><br>(A) rests on a long, consistent pattern. (B) uses only three observations of a highly variable phenomenon, so it is weak."
+    "exp": "<strong>Correct Answer: D. (A) is much more inductively forceful than (B)</strong><br><br>(A) rests on a long, consistent pattern. (B) uses only three observations of a highly variable phenomenon, so it is weak.",
+    "code": "Q53",
+    "is_practice": false
   },
   {
     "id": 54,
@@ -4297,7 +4404,9 @@
       "Computers are already more capable than humans"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. The doubling trend will continue at the same rate and translate into capabilities that overtake humans</strong><br><br>The inductive leap is the assumption that the past trend will hold for the future. Stating it turns the argument into a deductive one whose premise can then be examined."
+    "exp": "<strong>Correct Answer: A. The doubling trend will continue at the same rate and translate into capabilities that overtake humans</strong><br><br>The inductive leap is the assumption that the past trend will hold for the future. Stating it turns the argument into a deductive one whose premise can then be examined.",
+    "code": "Q54",
+    "is_practice": false
   },
   {
     "id": 55,
@@ -4310,7 +4419,9 @@
       "An assumed qualification, indicating the frequency with which a general statement applies, when it is not meant literally"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. An assumed qualification, indicating the frequency with which a general statement applies, when it is not meant literally</strong><br><br>“Dogs bark” is not meant to apply to every dog; the implicit qualification (“most”) tells us how often. We often fail to examine such qualifications."
+    "exp": "<strong>Correct Answer: D. An assumed qualification, indicating the frequency with which a general statement applies, when it is not meant literally</strong><br><br>“Dogs bark” is not meant to apply to every dog; the implicit qualification (“most”) tells us how often. We often fail to examine such qualifications.",
+    "code": "Q55",
+    "is_practice": false
   },
   {
     "id": 56,
@@ -4323,7 +4434,9 @@
       "The average of all possible outcomes"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. Whatever it would be most reasonable to expect in a particular situation, which may differ from what a person personally expects</strong><br><br>Rational expectation is the reasonable expectation given the evidence. Personal expectations can be biased or unreasonable."
+    "exp": "<strong>Correct Answer: C. Whatever it would be most reasonable to expect in a particular situation, which may differ from what a person personally expects</strong><br><br>Rational expectation is the reasonable expectation given the evidence. Personal expectations can be biased or unreasonable.",
+    "code": "Q56",
+    "is_practice": false
   },
   {
     "id": 57,
@@ -4336,7 +4449,9 @@
       "A deductive proof"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. An anecdote, and the inductive argument is likely to be very weak</strong><br><br>n = 1 is an anecdote, not a serious investigation. One instance gives very little inductive support."
+    "exp": "<strong>Correct Answer: A. An anecdote, and the inductive argument is likely to be very weak</strong><br><br>n = 1 is an anecdote, not a serious investigation. One instance gives very little inductive support.",
+    "code": "Q57",
+    "is_practice": false
   },
   {
     "id": 58,
@@ -4349,7 +4464,9 @@
       "Selected at random from across a field of study, with no element misleadingly overrepresented"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. Selected at random from across a field of study, with no element misleadingly overrepresented</strong><br><br>Random selection avoids misleading overrepresentation. Convenient, volunteer and single-location samples are classic sources of bias."
+    "exp": "<strong>Correct Answer: D. Selected at random from across a field of study, with no element misleadingly overrepresented</strong><br><br>Random selection avoids misleading overrepresentation. Convenient, volunteer and single-location samples are classic sources of bias.",
+    "code": "Q58",
+    "is_practice": false
   },
   {
     "id": 59,
@@ -4362,7 +4479,9 @@
       "Survivorship"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Random selection from across the whole population</strong><br><br>The five listed sources are self-selection, specific area selection, exclusion, pre-screening and survivorship. Random selection helps avoid bias."
+    "exp": "<strong>Correct Answer: A. Random selection from across the whole population</strong><br><br>The five listed sources are self-selection, specific area selection, exclusion, pre-screening and survivorship. Random selection helps avoid bias.",
+    "code": "Q59",
+    "is_practice": false
   },
   {
     "id": 60,
@@ -4375,7 +4494,9 @@
       "The samples were taken at random"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. All samples come from one spot, so they may not represent the whole lake (specific area selection)</strong><br><br>Varying the time is not a flaw, and 20 samples is a reasonable number. The big problem is location: one convenient spot can’t stand for the whole lake."
+    "exp": "<strong>Correct Answer: B. All samples come from one spot, so they may not represent the whole lake (specific area selection)</strong><br><br>Varying the time is not a flaw, and 20 samples is a reasonable number. The big problem is location: one convenient spot can’t stand for the whole lake.",
+    "code": "Q60",
+    "is_practice": false
   },
   {
     "id": 61,
@@ -4388,7 +4509,9 @@
       "The sample is limited to readers (pre-screened) who choose to respond (self-selection), so it misses non-readers"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. The sample is limited to readers (pre-screened) who choose to respond (self-selection), so it misses non-readers</strong><br><br>Magazine readers are already literate, so they can’t show literacy decline; they also respond by choice. The sample is unrepresentative and biased."
+    "exp": "<strong>Correct Answer: D. The sample is limited to readers (pre-screened) who choose to respond (self-selection), so it misses non-readers</strong><br><br>Magazine readers are already literate, so they can’t show literacy decline; they also respond by choice. The sample is unrepresentative and biased.",
+    "code": "Q61",
+    "is_practice": false
   },
   {
     "id": 62,
@@ -4401,7 +4524,9 @@
       "Harvard students cannot be volunteers"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. Small, self-selected group of highly selected students that can’t represent the general population</strong><br><br>The claim is about the general population but the sample is volunteers from an elite, specialised group. That is unrepresentative and self-selected."
+    "exp": "<strong>Correct Answer: C. Small, self-selected group of highly selected students that can’t represent the general population</strong><br><br>The claim is about the general population but the sample is volunteers from an elite, specialised group. That is unrepresentative and self-selected.",
+    "code": "Q62",
+    "is_practice": false
   },
   {
     "id": 63,
@@ -4414,7 +4539,9 @@
       "Self-selection"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. Observational error</strong><br><br>Observational error comes from the accuracy of the measuring system and is reported as ±X. Margin of error describes how far a sample’s result may be from the population."
+    "exp": "<strong>Correct Answer: C. Observational error</strong><br><br>Observational error comes from the accuracy of the measuring system and is reported as ±X. Margin of error describes how far a sample’s result may be from the population.",
+    "code": "Q63",
+    "is_practice": false
   },
   {
     "id": 64,
@@ -4427,7 +4554,9 @@
       "The degree to which sample results are likely to differ from those of the overall population"
     ],
     "ans": 3,
-    "exp": "<strong>Correct Answer: D. The degree to which sample results are likely to differ from those of the overall population</strong><br><br>Margin of error describes how far results based on a sample are likely to be from the overall population. Equipment accuracy would be observational error."
+    "exp": "<strong>Correct Answer: D. The degree to which sample results are likely to differ from those of the overall population</strong><br><br>Margin of error describes how far results based on a sample are likely to be from the overall population. Equipment accuracy would be observational error.",
+    "code": "Q64",
+    "is_practice": false
   },
   {
     "id": 65,
@@ -4440,7 +4569,9 @@
       "Deductive arguments are weaker than inductive ones"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. No matter how likely we believe something to be, an inductive argument can never actually prove it to be true</strong><br><br>However much evidence supports a generalisation, the next case could contradict it, so induction can never prove it."
+    "exp": "<strong>Correct Answer: A. No matter how likely we believe something to be, an inductive argument can never actually prove it to be true</strong><br><br>However much evidence supports a generalisation, the next case could contradict it, so induction can never prove it.",
+    "code": "Q65",
+    "is_practice": false
   },
   {
     "id": 66,
@@ -4453,7 +4584,9 @@
       "An implicit premise"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. A counter-example that falsifies the generalisation</strong><br><br>A counter-example directly contradicts a previous generalisation, which falsifies it. This shows that one counter-example can disprove what many confirming cases could never prove."
+    "exp": "<strong>Correct Answer: B. A counter-example that falsifies the generalisation</strong><br><br>A counter-example directly contradicts a previous generalisation, which falsifies it. This shows that one counter-example can disprove what many confirming cases could never prove.",
+    "code": "Q66",
+    "is_practice": false
   },
   {
     "id": 67,
@@ -4466,7 +4599,9 @@
       "An event that confirms an inductive generalisation"
     ],
     "ans": 2,
-    "exp": "<strong>Correct Answer: C. An event that defies both previous experience and the expectations based on it, making it almost impossible to predict</strong><br><br>Black swan events are surprises beyond past experience and therefore almost impossible to predict from it."
+    "exp": "<strong>Correct Answer: C. An event that defies both previous experience and the expectations based on it, making it almost impossible to predict</strong><br><br>Black swan events are surprises beyond past experience and therefore almost impossible to predict from it.",
+    "code": "Q67",
+    "is_practice": false
   },
   {
     "id": 68,
@@ -4479,7 +4614,9 @@
       "Observational error"
     ],
     "ans": 0,
-    "exp": "<strong>Correct Answer: A. Survivorship – failed startups that also took big risks are ignored</strong><br><br>Only the survivors (successful startups) were examined. If many failures also took big risks, the conclusion is unsupported."
+    "exp": "<strong>Correct Answer: A. Survivorship – failed startups that also took big risks are ignored</strong><br><br>Only the survivors (successful startups) were examined. If many failures also took big risks, the conclusion is unsupported.",
+    "code": "Q68",
+    "is_practice": false
   },
   {
     "id": 69,
@@ -4492,7 +4629,249 @@
       "Both guarantee a true conclusion"
     ],
     "ans": 1,
-    "exp": "<strong>Correct Answer: B. Deduction preserves truth (a valid argument with true premises must have a true conclusion), whereas induction gives strong but never certain support</strong><br><br>Valid deduction with true premises guarantees its conclusion; induction can only make it likely. Induction can never prove its conclusion (problem of induction)."
+    "exp": "<strong>Correct Answer: B. Deduction preserves truth (a valid argument with true premises must have a true conclusion), whereas induction gives strong but never certain support</strong><br><br>Valid deduction with true premises guarantees its conclusion; induction can only make it likely. Induction can never prove its conclusion (problem of induction).",
+    "code": "Q69",
+    "is_practice": false
+  },
+  {
+    "id": 70,
+    "code": "P1",
+    "chapter": "Chapter 2 – Spelling out arguments and assumptions",
+    "q": "“Our bakery should hire a second baker orders have doubled since spring.” Which implicit premise does this argument rely on",
+    "opts": [
+      "Bakers are always underpaid",
+      "Orders usually fall again in winter",
+      "A bakery whose orders have doubled needs more staff than one baker can provide",
+      "The second baker will be cheaper than the first"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. A bakery whose orders have doubled needs more staff than one baker can provide</strong><br><br>The stated reason (orders doubled) only supports hiring if more orders mean one baker can’t cope. That unstated link is the implicit premise. The other options add ideas the argument never uses.",
+    "is_practice": true
+  },
+  {
+    "id": 71,
+    "code": "P2",
+    "chapter": "Chapter 2 – Spelling out arguments and assumptions",
+    "q": "A friend says “School uniforms should be abolished they stifle self-expression.” Which reply applies the principle of charity",
+    "opts": [
+      "“So your point is that uniforms limit students’ chance to express who they are, which matters for their development. Let me explain where I think that goes wrong.”",
+      "“So you want pupils to wear anything they like, even offensive clothes”",
+      "“You only say that because you hate school.”",
+      "“I already know uniforms are good, so I won’t listen.”"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. “So your point is that uniforms limit students’ chance to express who they are, which matters for their development. Let me explain where I think that goes wrong.”</strong><br><br>Charity = restate the argument in its strongest reasonable form, then engage with it. The second option is a straw man, the third attacks the person instead of the argument, and the fourth is prejudice (deciding in advance).",
+    "is_practice": true
+  },
+  {
+    "id": 72,
+    "code": "P3",
+    "chapter": "Chapter 2 – Spelling out arguments and assumptions",
+    "q": "Which pair of premises is best read as LINKED",
+    "opts": [
+      "“The film has great reviews. It also stars my favourite actor.”",
+      "“The flat is cheap. The flat is close to my work.”",
+      "“The soup smells good. The soup looks good.”",
+      "“Anyone under 18 needs a signed permission form. Mia is under 18.”"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. “Anyone under 18 needs a signed permission form. Mia is under 18.”</strong><br><br>The conclusion (“Mia needs a signed form”) only follows when both premises are taken together – drop either and nothing follows. In the other pairs each premise gives its own reason, so they are independent.",
+    "is_practice": true
+  },
+  {
+    "id": 73,
+    "code": "P4",
+    "chapter": "Chapter 2 – Spelling out arguments and assumptions",
+    "q": "In “Honestly, I think we should switch suppliers. The current one has been late four times this quarter and, by the way, their logo is awful.” which part is extraneous material",
+    "opts": [
+      "“We should switch suppliers”",
+      "“Their logo is awful”",
+      "“The current one has been late four times this quarter”",
+      "The whole passage is extraneous"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. “Their logo is awful”</strong><br><br>A logo has no bearing on whether a supplier is reliable, so it is left out of the standard form. The conclusion is “switch suppliers” and the lateness is the premise.",
+    "is_practice": true
+  },
+  {
+    "id": 74,
+    "code": "P5",
+    "chapter": "Chapter 2 – Spelling out arguments and assumptions",
+    "q": "“Sales rose after we repainted the shop, so the repaint caused the increase.” Which of the five challenge questions applies most directly",
+    "opts": [
+      "Has the argument begun by assuming what it is trying to prove",
+      "Is an assumption being made about one thing being the cause of another when this is not obviously true",
+      "Are beliefs about what is natural and unnatural being used without being made explicit",
+      "Is the argument made up of linked premises"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. Is an assumption being made about one thing being the cause of another when this is not obviously true</strong><br><br>The argument assumes that because B followed A, A caused B. Challenge question 2 targets exactly that. Other things (season, advertising) may explain the rise.",
+    "is_practice": true
+  },
+  {
+    "id": 75,
+    "code": "P6",
+    "chapter": "Chapter 3 – Reasoning with logic and certainty",
+    "q": "“If the server is down, the website is unavailable. The website is unavailable. Therefore the server is down.” Why is this argument invalid",
+    "opts": [
+      "Because the first premise is false",
+      "Because it denies the antecedent",
+      "Because a conclusion can never follow from a conditional premise",
+      "The website could be unavailable for other reasons, so affirming the consequent doesn’t prove the antecedent"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. The website could be unavailable for other reasons, so affirming the consequent doesn’t prove the antecedent</strong><br><br>This is affirming the consequent. The rule says server down → website unavailable, not the reverse, so other causes (maintenance, an expired domain) are possible.",
+    "is_practice": true
+  },
+  {
+    "id": 76,
+    "code": "P7",
+    "chapter": "Chapter 3 – Reasoning with logic and certainty",
+    "q": "“If the battery is charged, the lamp lights. The lamp does not light. Therefore the battery is not charged.” This is",
+    "opts": [
+      "Denying the consequent, a valid form",
+      "Denying the antecedent, an invalid form",
+      "Affirming the consequent, an invalid form",
+      "Affirming the antecedent, a valid form"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. Denying the consequent, a valid form</strong><br><br>Given “if P then Q”, if Q is false then P must be false. That is denying the consequent (modus tollens) and it is valid.",
+    "is_practice": true
+  },
+  {
+    "id": 77,
+    "code": "P8",
+    "chapter": "Chapter 3 – Reasoning with logic and certainty",
+    "q": "Being a mammal, for being a dog, is",
+    "opts": [
+      "Sufficient but not necessary",
+      "Both necessary and sufficient",
+      "Necessary but not sufficient",
+      "Neither necessary nor sufficient"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. Necessary but not sufficient</strong><br><br>Every dog is a mammal, so a dog can’t exist without being a mammal (necessary). But being a mammal isn’t enough – cats and whales are mammals too (not sufficient).",
+    "is_practice": true
+  },
+  {
+    "id": 78,
+    "code": "P9",
+    "chapter": "Chapter 3 – Reasoning with logic and certainty",
+    "q": "Which statement about deductive arguments is TRUE",
+    "opts": [
+      "A valid argument always has a true conclusion",
+      "An argument with true premises is always valid",
+      "A sound argument can have a false conclusion",
+      "A valid argument can have a false conclusion if at least one of its premises is false"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. A valid argument can have a false conclusion if at least one of its premises is false</strong><br><br>Validity concerns structure only. With a false premise a valid argument may yield a false conclusion – it is then unsound. A sound argument (valid + true premises) must have a true conclusion.",
+    "is_practice": true
+  },
+  {
+    "id": 79,
+    "code": "P10",
+    "chapter": "Chapter 4 – Reasoning with observation and uncertainty",
+    "q": "To learn how students feel about the university’s new library opening hours, a researcher stands outside the library at 10 pm and asks everyone who leaves. What is the main sampling problem",
+    "opts": [
+      "The researcher is asking too many questions",
+      "The sample is drawn only from people who use the library late at night, so it doesn’t represent all students",
+      "Students are not allowed to be interviewed at night",
+      "Interviews outside buildings always give accurate results"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. The sample is drawn only from people who use the library late at night, so it doesn’t represent all students</strong><br><br>This is a form of specific areapre-screening bias only late-night library users are included, while students who never use the library or use it by day are excluded.",
+    "is_practice": true
+  },
+  {
+    "id": 80,
+    "code": "P11",
+    "chapter": "Chapter 4 – Reasoning with observation and uncertainty",
+    "q": "“My uncle smoked for 60 years and lived to 95, so smoking can’t be dangerous.” What is the main weakness of this inductive argument",
+    "opts": [
+      "It rests on a sample of one (n = 1), which is an anecdote, not a serious investigation",
+      "It is a deductively invalid argument",
+      "It uses a randomized sample",
+      "The premise is impossible to believe"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. It rests on a sample of one (n = 1), which is an anecdote, not a serious investigation</strong><br><br>One case can’t stand for a whole category. Any inductive argument based on a single instance is very weak.",
+    "is_practice": true
+  },
+  {
+    "id": 81,
+    "code": "P12",
+    "chapter": "Chapter 4 – Reasoning with observation and uncertainty",
+    "q": "Which of these is MOST probable for a randomly selected employee",
+    "opts": [
+      "The employee is a manager and has an MBA",
+      "The employee is a manager, has an MBA and speaks three languages",
+      "The employee is a manager",
+      "The employee is a manager with an MBA and is under 30"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. The employee is a manager</strong><br><br>Each added detail makes the scenario more specific, and a specific scenario can never be more likely than the general one it belongs to.",
+    "is_practice": true
+  },
+  {
+    "id": 82,
+    "code": "P13",
+    "chapter": "Chapter 4 – Reasoning with observation and uncertainty",
+    "q": "A well-structured inductive argument has one premise that is in fact false. It is best described as",
+    "opts": [
+      "Inductively forceful",
+      "Sound",
+      "Cogent but not inductively forceful",
+      "Invalid"
+    ],
+    "ans": 2,
+    "exp": "<strong>Correct Answer: C. Cogent but not inductively forceful</strong><br><br>Cogent = good structure. Inductively forceful = good structure AND true premises. With a false premise we have no good reason to accept the conclusion. (“Sound” and “invalid” are deductive terms.)",
+    "is_practice": true
+  },
+  {
+    "id": 83,
+    "code": "P14",
+    "chapter": "Chapter 4 – Reasoning with observation and uncertainty",
+    "q": "For forty years a bank’s forecasting models assumed house prices would never fall nationwide. Then they did, and the models collapsed. This is best described as",
+    "opts": [
+      "A black swan event that falsified the generalisation “prices never fall nationwide”",
+      "An example of a randomized sample",
+      "A deductive proof",
+      "An implicit qualification"
+    ],
+    "ans": 0,
+    "exp": "<strong>Correct Answer: A. A black swan event that falsified the generalisation “prices never fall nationwide”</strong><br><br>The event defied previous experience and the expectations based on it. Forty years of confirming cases never proved the generalisation – one counter-event disproved it (the problem of induction).",
+    "is_practice": true
+  },
+  {
+    "id": 84,
+    "code": "P15",
+    "chapter": "Chapter 4 – Reasoning with observation and uncertainty",
+    "q": "“Cats always land on their feet.” What is the most reasonable implicit qualification",
+    "opts": [
+      "Only cats that have been trained land on their feet",
+      "Cats usually (but not invariably) land on their feet",
+      "No cat ever lands on its feet",
+      "Cats land on their feet only in laboratories"
+    ],
+    "ans": 1,
+    "exp": "<strong>Correct Answer: B. Cats usually (but not invariably) land on their feet</strong><br><br>A general statement is rarely meant literally; the implicit qualification indicates the frequency with which it applies – here “usually” or “nearly always”.",
+    "is_practice": true
+  },
+  {
+    "id": 85,
+    "code": "P16",
+    "chapter": "Chapter 4 – Reasoning with observation and uncertainty",
+    "q": "Maya has lost nine fair coin tosses in a row and says she is “due” a win. What is the rational expectation for the next toss",
+    "opts": [
+      "She is almost certain to win",
+      "She is certain to lose again",
+      "She is more likely to lose, because the streak shows the coin is unfair",
+      "An equal chance of winning or losing, since previous tosses don’t affect it"
+    ],
+    "ans": 3,
+    "exp": "<strong>Correct Answer: D. An equal chance of winning or losing, since previous tosses don’t affect it</strong><br><br>Rational expectation is what it is most reasonable to expect, which can differ from what someone personally expects. For a fair coin each toss is independent, so the chance remains 5050. (Extra explanation this is the “gambler’s fallacy”.)",
+    "is_practice": true
   }
 ];
 
@@ -5046,10 +5425,14 @@
         else if (item.chapter.includes("Chapter 4")) chShort = "Chapter 4: Observation";
         else chShort = "Chapter 2: Assumptions";
 
+        const qBadge = item.code || ('Q' + (index + 1));
+        const badgeClass = item.is_practice ? 'tag-blooket' : 'tag-ct';
+
         meta.innerHTML = `
           <div class="q-tags-group">
-            <span class="q-tag tag-ct">Critical Thinking</span>
+            <span class="q-tag ${badgeClass}">${qBadge}</span>
             <span class="q-tag tag-chapter">${chShort}</span>
+            ${item.is_practice ? '<span class="q-tag tag-ai">Practice Set</span>' : ''}
           </div>
           <span>Question ${index + 1} of ${activeCTQuestions.length}</span>
         `;
@@ -5112,16 +5495,19 @@
       const subHeader = document.getElementById("ctSub");
       if (filterType === "all") {
         activeCTQuestions = [...ctQuestionsData];
-        subHeader.textContent = "All Questions • Chapters 2, 3, 4 (69 Total)";
+        subHeader.textContent = "All Questions • Chapters 2, 3, 4 + Practice Set (85 Total)";
       } else if (filterType === "ch2") {
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 2"));
-        subHeader.textContent = "Chapter 2: Spelling out arguments and assumptions (22 Questions)";
+        subHeader.textContent = "Chapter 2: Spelling out arguments and assumptions (27 Questions)";
       } else if (filterType === "ch3") {
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 3"));
-        subHeader.textContent = "Chapter 3: Reasoning with logic and certainty (22 Questions)";
+        subHeader.textContent = "Chapter 3: Reasoning with logic and certainty (26 Questions)";
       } else if (filterType === "ch4") {
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 4"));
-        subHeader.textContent = "Chapter 4: Reasoning with observation and uncertainty (25 Questions)";
+        subHeader.textContent = "Chapter 4: Reasoning with observation and uncertainty (32 Questions)";
+      } else if (filterType === "practice") {
+        activeCTQuestions = ctQuestionsData.filter(q => q.is_practice);
+        subHeader.textContent = "⚡ Practice Set • Questions P1–P16 from newquestions.txt (16 Questions)";
       }
       renderCTQuiz();
     }
@@ -5143,6 +5529,8 @@
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 3"));
       } else if (ctFilter === "ch4") {
         activeCTQuestions = ctQuestionsData.filter(q => q.chapter.includes("Chapter 4"));
+      } else if (ctFilter === "practice") {
+        activeCTQuestions = ctQuestionsData.filter(q => q.is_practice);
       }
       renderCTQuiz();
       window.scrollTo({ top: 0, behavior: "smooth" });
